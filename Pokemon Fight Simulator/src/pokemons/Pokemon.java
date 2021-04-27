@@ -1,6 +1,6 @@
 package pokemons;
 
-abstract class Pokemon {
+public abstract class Pokemon {
 	
 	private Types type;
 	private String name;

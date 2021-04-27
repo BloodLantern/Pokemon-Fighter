@@ -1,6 +1,8 @@
-package pokemons;
+package electric;
 
-public class Pikachu extends Pokemon {
+import pokemons.Types;
+
+public class Pikachu extends Pichu {
 	
 	public Pikachu() {
 		

@@ -1,6 +1,6 @@
 package pokemons;
 
-enum Types {
+public enum Types {
 NORMAL, FIRE, FIGHTING, WATER,
 FLYING, GRASS, POISON, ELECTRIC,
 GROUND, PSYCHIC, ROCK, ICE,
