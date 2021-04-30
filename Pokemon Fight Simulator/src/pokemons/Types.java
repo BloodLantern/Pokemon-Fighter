@@ -1,9 +1,34 @@
 package pokemons;
 
 public enum Types {
-NORMAL, FIRE, FIGHTING, WATER,
-FLYING, GRASS, POISON, ELECTRIC,
-GROUND, PSYCHIC, ROCK, ICE,
-BUG, DRAGON, GHOST, DARK,
-STEEL, FAIRY
+	
+BUG (11),
+DARK (15),
+DRAGON (14),
+ELECTRIC (3),
+FAIRY (17),
+FIGHTING (6),
+FIRE (1),
+FLYING (9),
+GHOST (13),
+GRASS (4),
+GROUND (8),
+ICE (5),
+NORMAL (0),
+POISON (7),
+PSYCHIC (10),
+ROCK (12),
+STEEL (16),
+WATER (2);
+
+private final int index;
+
+Types(int index) {
+	this.index = index;
+}
+
+public int getIndex() {
+	return this.index;
+}
+
 }

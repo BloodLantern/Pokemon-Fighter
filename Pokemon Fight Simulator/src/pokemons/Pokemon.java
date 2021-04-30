@@ -1,5 +1,10 @@
 package pokemons;
 
+/**
+ * This is the superclass for all
+ * pokemons. It contains all the
+ * common variables and methods.
+ */
 public abstract class Pokemon {
 	
 	private Types type;
@@ -13,11 +18,157 @@ public abstract class Pokemon {
 	private int SpDef;
 	private int Speed;
 	
+	
+	private double[] BUG = {
+			1.0, 2.0, 1.0, 1.0,
+			0.5, 1.0, 0.5, 1.0,
+			0.5, 2.0, 1.0, 1.0,
+			2.0, 1.0, 1.0, 1.0,
+			1.0, 1.0
+	};
+	private double[] DARK = {
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 2.0, 1.0,
+			1.0, 1.0, 0.0, 2.0,
+			1.0, 0.5, 1.0, 0.5,
+			1.0, 2.0
+	};
+	private double[] DRAGON = {
+			1.0, 0.5, 0.5, 0.5,
+			0.5, 2.0, 1.0, 1.0,
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 2.0, 1.0,
+			1.0, 2.0
+	};
+	private double[] ELECTRIC = {
+			1.0, 1.0, 1.0, 0.5,
+			1.0, 1.0, 1.0, 1.0,
+			2.0, 0.5, 1.0, 1.0,
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0
+	};
+	private double[] FAIRY = {
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 0.5, 2.0,
+			1.0, 1.0, 1.0, 0.5,
+			1.0, 1.0, 0.0, 0.5,
+			2.0, 1.0
+	};
+	private double[] FIGHTING = {
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 2.0, 2.0, 0.5,
+			0.5, 1.0, 1.0, 0.5,
+			1.0, 2.0
+	};
+	private double[] FIRE = {
+			1.0, 0.5, 2.0, 1.0,
+			0.5, 0.5, 1.0, 1.0,
+			2.0, 1.0, 1.0, 0.5,
+			2.0, 1.0, 1.0, 1.0,
+			0.5, 0.5
+	};
+	private double[] FLYING = {
+			1.0, 1.0, 1.0, 2.0,
+			0.5, 2.0, 0.5, 1.0,
+			0.0, 1.0, 1.0, 0.5,
+			2.0, 1.0, 1.0, 1.0,
+			1.0, 1.0
+	};
+	private double[] GHOST = {
+			0.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 0.0, 0.5,
+			1.0, 1.0, 1.0, 0.5,
+			1.0, 2.0, 1.0, 2.0,
+			1.0, 1.0
+	};
+	private double[] GRASS = {
+			1.0, 2.0, 0.5, 0.5,
+			0.5, 2.0, 1.0, 2.0,
+			0.5, 2.0, 1.0, 2.0,
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0
+	};
+	private double[] GROUND = {
+			1.0, 1.0, 2.0, 0.0,
+			2.0, 2.0, 1.0, 0.5,
+			1.0, 1.0, 1.0, 1.0,
+			0.5, 1.0, 1.0, 1.0,
+			1.0, 1.0
+	};
+	private double[] ICE = {
+			1.0, 2.0, 1.0, 1.0,
+			1.0, 0.5, 2.0, 1.0,
+			1.0, 1.0, 1.0, 1.0,
+			2.0, 1.0, 1.0, 1.0,
+			2.0, 1.0
+	};
+	private double[] NORMAL = {
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 2.0, 1.0,
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 0.0, 1.0, 1.0,
+			1.0, 1.0
+	};
+	private double[] POISON = {
+			1.0, 1.0, 1.0, 1.0,
+			0.5, 1.0, 0.5, 0.5,
+			2.0, 1.0, 2.0, 0.5,
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 0.5
+	};
+	private double[] PSYCHIC = {
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 0.5, 1.0,
+			1.0, 1.0, 0.5, 2.0,
+			1.0, 2.0, 1.0, 2.0,
+			1.0, 1.0
+	};
+	private double[] ROCK = {
+			0.5, 0.5, 2.0, 1.0,
+			2.0, 1.0, 2.0, 0.5,
+			2.0, 0.5, 1.0, 1.0,
+			1.0, 1.0, 1.0, 1.0,
+			2.0, 1.0
+	};
+	private double[] STEEL = {
+			0.5, 2.0, 1.0, 1.0,
+			0.5, 0.5, 2.0, 0.0,
+			2.0, 0.5, 0.5, 0.5,
+			0.5, 1.0, 0.5, 1.0,
+			0.5, 0.5
+	};
+	private double[] WATER = {
+			1.0, 0.5, 0.5, 2.0,
+			2.0, 0.5, 1.0, 1.0,
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 1.0, 1.0,
+			0.5, 1.0
+	};
+	
+	private double[][] weaknessesList = {
+			NORMAL, FIRE, WATER, ELECTRIC,
+			GRASS, ICE, FIGHTING, POISON,
+			GROUND, FLYING, PSYCHIC, BUG,
+			ROCK, GHOST, DRAGON, DARK,
+			STEEL, FAIRY
+			};
+	
+	
 	public Pokemon() {}
 	
 	public void levelUp() {}
 	
 	public void evolve() {}
+	
+	protected double weakness(Types type1, Types type2) {
+		double weakness = 1.0;
+		
+		// We suppose that type1 is attacking type2
+		weakness = weaknessesList[type1.getIndex()][type2.getIndex()];
+		
+		return weakness;
+	}
 
 	public Types getType() {
 		return type;
