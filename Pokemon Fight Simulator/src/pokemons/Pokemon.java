@@ -18,7 +18,8 @@ public abstract class Pokemon {
 	private int SpDef;
 	private int Speed;
 	private int experience = 0;
-	
+	private int accuracy = 100;
+	private int dodge = 0;
 	
 	private double[] BUG = {
 			1.0, 2.0, 1.0, 1.0,
@@ -187,6 +188,18 @@ public abstract class Pokemon {
 		return type2;
 	}
 
+	public int getAccuracy() {
+		return accuracy;
+	}
+	public void setAccuracy(int accuracy) {
+		this.accuracy = accuracy;
+	}
+	public int getDodge() {
+		return dodge;
+	}
+	public void setDodge(int dodge) {
+		this.dodge = dodge;
+	}
 	public void setType2(Types type2) {
 		this.type2 = type2;
 	}
