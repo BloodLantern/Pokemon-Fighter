@@ -2,9 +2,9 @@ package pokemons.ghost;
 
 import pokemons.Pokemon;
 
-public class Sablye extends Pokemon {
+public class Sableye extends Pokemon {
 
-	public Sablye() {
+	public Sableye() {
 		// TODO Auto-generated constructor stub
 	}
 
