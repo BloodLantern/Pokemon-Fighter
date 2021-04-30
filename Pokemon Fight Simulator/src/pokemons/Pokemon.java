@@ -3,6 +3,7 @@ package pokemons;
 public abstract class Pokemon {
 	
 	private Types type;
+	private Types type2;
 	private String name;
 	private int level = 1;
 	private int HP;
