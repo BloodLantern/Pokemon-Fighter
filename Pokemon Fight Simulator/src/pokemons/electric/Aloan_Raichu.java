@@ -8,12 +8,12 @@ public class Aloan_Raichu extends Pikachu {
 		
 		this.setType(Types.ELECTRIC);
 		this.setName("Aloan_Raichu");
-		this.setHP(60);
-		this.setAtk(85);
-		this.setDef(50);
-		this.setSpAtk(95);
-		this.setSpDef(85);
-		this.setSpeed(110);
+		this.setBaseHP(60);
+		this.setBaseAtk(85);
+		this.setBaseDef(50);
+		this.setBaseSpAtk(95);
+		this.setBaseSpDef(85);
+		this.setBaseSpeed(110);
 		
 	}
 	
@@ -22,12 +22,12 @@ public class Aloan_Raichu extends Pikachu {
 		this.setType(Types.ELECTRIC);
 		this.setName("Aloan_Raichu");
 		this.setLevel(level);
-		this.setHP(60);
-		this.setAtk(85);
-		this.setDef(50);
-		this.setSpAtk(95);
-		this.setSpDef(85);
-		this.setSpeed(110);
+		this.setBaseHP(60);
+		this.setBaseAtk(85);
+		this.setBaseDef(50);
+		this.setBaseSpAtk(95);
+		this.setBaseSpDef(85);
+		this.setBaseSpeed(110);
 		
 	}
 	
@@ -35,12 +35,12 @@ public class Aloan_Raichu extends Pikachu {
 		
 		this.setType(Types.ELECTRIC);
 		this.setName(name);
-		this.setHP(60);
-		this.setAtk(85);
-		this.setDef(50);
-		this.setSpAtk(95);
-		this.setSpDef(85);
-		this.setSpeed(110);
+		this.setBaseHP(60);
+		this.setBaseAtk(85);
+		this.setBaseDef(50);
+		this.setBaseSpAtk(95);
+		this.setBaseSpDef(85);
+		this.setBaseSpeed(110);
 		
 	}
 	
@@ -49,12 +49,12 @@ public class Aloan_Raichu extends Pikachu {
 		this.setType(Types.ELECTRIC);
 		this.setName(name);
 		this.setLevel(level);
-		this.setHP(60);
-		this.setAtk(85);
-		this.setDef(50);
-		this.setSpAtk(95);
-		this.setSpDef(85);
-		this.setSpeed(110);
+		this.setBaseHP(60);
+		this.setBaseAtk(85);
+		this.setBaseDef(50);
+		this.setBaseSpAtk(95);
+		this.setBaseSpDef(85);
+		this.setBaseSpeed(110);
 		
 	}
 	

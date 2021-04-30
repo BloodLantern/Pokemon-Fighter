@@ -9,12 +9,12 @@ public class Pichu extends Pokemon {
 		
 		this.setType(Types.ELECTRIC);
 		this.setName("Pichu");
-		this.setHP(20);
-		this.setAtk(40);
-		this.setDef(15);
-		this.setSpAtk(35);
-		this.setSpDef(35);
-		this.setSpeed(60);
+		this.setBaseHP(20);
+		this.setBaseAtk(40);
+		this.setBaseDef(15);
+		this.setBaseSpAtk(35);
+		this.setBaseSpDef(35);
+		this.setBaseSpeed(60);
 		
 	}
 	
@@ -23,12 +23,12 @@ public class Pichu extends Pokemon {
 		this.setType(Types.ELECTRIC);
 		this.setName("Pichu");
 		this.setLevel(level);
-		this.setHP(20);
-		this.setAtk(40);
-		this.setDef(15);
-		this.setSpAtk(35);
-		this.setSpDef(35);
-		this.setSpeed(60);
+		this.setBaseHP(20);
+		this.setBaseAtk(40);
+		this.setBaseDef(15);
+		this.setBaseSpAtk(35);
+		this.setBaseSpDef(35);
+		this.setBaseSpeed(60);
 		
 	}
 	
@@ -36,12 +36,12 @@ public class Pichu extends Pokemon {
 		
 		this.setType(Types.ELECTRIC);
 		this.setName(name);
-		this.setHP(20);
-		this.setAtk(40);
-		this.setDef(15);
-		this.setSpAtk(35);
-		this.setSpDef(35);
-		this.setSpeed(60);
+		this.setBaseHP(20);
+		this.setBaseAtk(40);
+		this.setBaseDef(15);
+		this.setBaseSpAtk(35);
+		this.setBaseSpDef(35);
+		this.setBaseSpeed(60);
 		
 	}
 	
@@ -50,12 +50,12 @@ public class Pichu extends Pokemon {
 		this.setType(Types.ELECTRIC);
 		this.setName(name);
 		this.setLevel(level);
-		this.setHP(20);
-		this.setAtk(40);
-		this.setDef(15);
-		this.setSpAtk(35);
-		this.setSpDef(35);
-		this.setSpeed(60);
+		this.setBaseHP(20);
+		this.setBaseAtk(40);
+		this.setBaseDef(15);
+		this.setBaseSpAtk(35);
+		this.setBaseSpDef(35);
+		this.setBaseSpeed(60);
 		
 	}
 	

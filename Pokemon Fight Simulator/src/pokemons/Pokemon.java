@@ -21,6 +21,14 @@ public abstract class Pokemon {
 	private int accuracy = 100;
 	private int dodge = 0;
 	
+	// Base stats
+	private int baseHP;
+	private int baseAtk;
+	private int baseDef;
+	private int baseSpAtk;
+	private int baseSpDef;
+	private int baseSpeed;
+	
 	private double[] BUG = {
 			1.0, 2.0, 1.0, 1.0,
 			0.5, 1.0, 0.5, 1.0,
@@ -175,6 +183,10 @@ public abstract class Pokemon {
 		
 		return weakness;
 	}
+	
+	protected int generateIV() {
+		return (int)Math.floor(Math.random()*31);
+	}
 
 	public Types getType() {
 		return type;
@@ -274,6 +286,42 @@ public abstract class Pokemon {
 
 	protected void setSpeed(int speed) {
 		Speed = speed;
+	}
+	public int getBaseHP() {
+		return baseHP;
+	}
+	public void setBaseHP(int baseHP) {
+		this.baseHP = baseHP;
+	}
+	public int getBaseAtk() {
+		return baseAtk;
+	}
+	public void setBaseAtk(int baseAtk) {
+		this.baseAtk = baseAtk;
+	}
+	public int getBaseDef() {
+		return baseDef;
+	}
+	public void setBaseDef(int baseDef) {
+		this.baseDef = baseDef;
+	}
+	public int getBaseSpAtk() {
+		return baseSpAtk;
+	}
+	public void setBaseSpAtk(int baseSpAtk) {
+		this.baseSpAtk = baseSpAtk;
+	}
+	public int getBaseSpDef() {
+		return baseSpDef;
+	}
+	public void setBaseSpDef(int baseSpDef) {
+		this.baseSpDef = baseSpDef;
+	}
+	public int getBaseSpeed() {
+		return baseSpeed;
+	}
+	public void setBaseSpeed(int baseSpeed) {
+		this.baseSpeed = baseSpeed;
 	}
 	
 }
