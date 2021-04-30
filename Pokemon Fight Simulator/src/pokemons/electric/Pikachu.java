@@ -1,4 +1,4 @@
-package electric;
+package pokemons.electric;
 
 import pokemons.Types;
 

@@ -27,6 +27,14 @@ public abstract class Pokemon {
 		this.type = type;
 	}
 
+	public Types getType2() {
+		return type2;
+	}
+
+	public void setType2(Types type2) {
+		this.type2 = type2;
+	}
+
 	public String getName() {
 		return name;
 	}
