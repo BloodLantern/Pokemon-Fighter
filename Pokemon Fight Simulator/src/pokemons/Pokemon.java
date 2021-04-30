@@ -17,6 +17,7 @@ public abstract class Pokemon {
 	private int SpAtk;
 	private int SpDef;
 	private int Speed;
+	private int experience = 0;
 	
 	
 	private double[] BUG = {
@@ -155,7 +156,11 @@ public abstract class Pokemon {
 			};
 	
 	
+	// Constructors
 	public Pokemon() {}
+	public Pokemon(int level) {}
+	public Pokemon(String name) {}
+	public Pokemon(String name, int level) {}
 	
 	public void levelUp() {}
 	
@@ -192,6 +197,14 @@ public abstract class Pokemon {
 
 	protected void setName(String name) {
 		this.name = name;
+	}
+
+	public int getExperience() {
+		return experience;
+	}
+
+	public void setExperience(int experience) {
+		this.experience = experience;
 	}
 
 	public int getLevel() {
