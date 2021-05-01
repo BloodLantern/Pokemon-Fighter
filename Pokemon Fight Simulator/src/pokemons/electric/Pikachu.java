@@ -7,6 +7,7 @@ public class Pikachu extends Pichu {
 	public Pikachu() {
 		
 		this.setName("Pikachu");
+		this.generateIVs();
 		initStats();
 		
 	}
@@ -15,6 +16,7 @@ public class Pikachu extends Pichu {
 		
 		this.setName("Pikachu");
 		this.setLevel(level);
+		this.generateIVs();
 		initStats();
 		
 	}
@@ -22,6 +24,7 @@ public class Pikachu extends Pichu {
 	public Pikachu(String name) {
 		
 		this.setName(name);
+		this.generateIVs();
 		initStats();
 		
 	}
@@ -30,6 +33,7 @@ public class Pikachu extends Pichu {
 		
 		this.setName(name);
 		this.setLevel(level);
+		this.generateIVs();
 		initStats();
 		
 	}
