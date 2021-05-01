@@ -20,9 +20,11 @@ public class Fight {
 		
 		System.out.println("Beginning fight");
 		
+		
+		
 	}
 	
-	public Pokemon fastest(Pokemon pokemon1, Pokemon pokemon2) {
+	private Pokemon fastest(Pokemon pokemon1, Pokemon pokemon2) {
 		if (pokemon1.getSpeed() > pokemon2.getSpeed()) {
 			return pokemon1;
 		} else if (pokemon1.getSpeed() < pokemon2.getSpeed()) {
