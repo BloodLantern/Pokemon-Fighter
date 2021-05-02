@@ -1,6 +1,5 @@
 package all;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.electric.*;
 import pokemons.bug.*;
@@ -21,6 +20,7 @@ import pokemons.rock.*;
 import pokemons.steel.*;
 import pokemons.water.*;
 @SuppressWarnings("unused")
+
 class Main {
 	
 	public static void main(String[] args) {

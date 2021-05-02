@@ -3,7 +3,7 @@ package attacks;
 import pokemons.Pokemon;
 import pokemons.Types;
 
-public enum Attack_Special {
+public enum Attack_Special implements Attacks {
 	CHARGE_BEAM(Types.ELECTRIC, 50, 90, 10);
 	
 	private final Types type;
