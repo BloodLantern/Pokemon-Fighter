@@ -46,7 +46,7 @@ public class Fight {
 			}
 		}
 	}
-	
+
 	private Actions chooseAction(Pokemon pokemon) {
 		
 		System.out.println("Choose an action to do:\n1 - " + Actions.ATTACK);
@@ -75,5 +75,4 @@ public class Fight {
 		}
 		
 	}
-	
 }
