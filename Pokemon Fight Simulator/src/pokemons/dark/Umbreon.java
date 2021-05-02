@@ -1,5 +1,6 @@
 package pokemons.dark;
 
+import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -48,6 +49,8 @@ public Umbreon() {
 		this.setBaseSpAtk(60);
 		this.setBaseSpDef(130);
 		this.setBaseSpeed(65);
+		this.setNature(Natures.randomNature());
+		this.calculateStats();
 	}
 
 }

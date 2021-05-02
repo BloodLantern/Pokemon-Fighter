@@ -1,5 +1,6 @@
 package pokemons.steel;
 
+import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,6 +50,8 @@ public Magearna() {
 		this.setBaseSpAtk(130);
 		this.setBaseSpDef(115);
 		this.setBaseSpeed(65);
+		this.setNature(Natures.randomNature());
+		this.calculateStats();
 	}
 
 }
