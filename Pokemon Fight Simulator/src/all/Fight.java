@@ -19,7 +19,14 @@ public class Fight {
 	public void begin() {
 		
 		System.out.println("Beginning fight");
+		do {
+			turn();
+		} while (pokemon1.getHP() > 0 || pokemon2.getHP() > 0);
+	}
+	
+	private void turn() {
 		System.out.println(fastest(pokemon1, pokemon2).getName() + " attacks first !");
+		
 		
 	}
 	
@@ -35,6 +42,10 @@ public class Fight {
 				return pokemon2;
 			}
 		}
+	}
+	
+	private Action chooseAction() {
+		
 	}
 	
 }
