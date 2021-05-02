@@ -1,6 +1,5 @@
 package all;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.electric.*;
 import pokemons.bug.*;

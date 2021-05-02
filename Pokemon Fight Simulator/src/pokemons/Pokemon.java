@@ -581,6 +581,7 @@ public abstract class Pokemon {
 			this.setAttacks(attack, 3);
 		}
 	}
+	
 	public void describe() {
 		System.out.println(this.getHP() + "\n" + this.getAtk() + "\n" + this.getDef() + "\n" + this.getSpAtk() + "\n" + this.getSpDef() + "\n" + this.getSpeed() + "\n" + this.getNature() + "\n" + this.getType() + "\n" + this.getType2() + "\n" + this.getName());
 	}

@@ -1,8 +1,8 @@
 package all;
 
+import java.io.File;
 import java.util.Scanner;
 
-import attacks.Attacks;
 import pokemons.Pokemon;
 
 public class Fight {
