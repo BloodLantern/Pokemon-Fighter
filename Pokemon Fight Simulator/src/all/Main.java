@@ -1,6 +1,5 @@
 package all;
 
-import attacks.Attack_Physical;
 import pokemons.Pokemon;
 import pokemons.electric.*;
 import pokemons.bug.*;
