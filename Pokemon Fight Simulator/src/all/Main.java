@@ -1,5 +1,6 @@
 package all;
 
+import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.electric.*;
 import pokemons.bug.*;
@@ -25,14 +26,6 @@ class Main {
 		
 		Pokemon pikachu = new Pikachu("PikaPika", 30);
 		Pokemon raichu = new Raichu();
-		Pokemon ronflex = new Snorlax();
-		System.out.println(ronflex.getSpAtk());
-		System.out.println(ronflex.getSpDef());
-		System.out.println(ronflex.getAtk());
-		System.out.println(ronflex.getDef());
-		System.out.println(ronflex.getSpeed());
-		System.out.println(ronflex.getHP());
-		System.out.println(ronflex.getNature());
 		Fight fight = new Fight(pikachu, raichu);
 		fight.begin();
 		
