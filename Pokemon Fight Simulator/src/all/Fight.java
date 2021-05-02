@@ -70,8 +70,10 @@ public class Fight {
 			if (pokemon.getAttacks()[answer].getClass().getSimpleName() == "Attack_Physical")
 			pokemon.getAttacks();
 			
-		} else {
+			return null;
 			
+		} else {
+			return null;
 		}
 		
 	}

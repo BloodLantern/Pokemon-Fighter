@@ -29,9 +29,6 @@ class Main {
 		Pokemon momartik = new Froslass(100);
 		ronflex.describe();
 		momartik.describe();
-		ronflex.addAttack(Attack_Physical.BOLT_BEAK);
-		if (Main.class.getSimpleName() == "Main")
-			System.out.println("\nA");
 	}
 	
 }
