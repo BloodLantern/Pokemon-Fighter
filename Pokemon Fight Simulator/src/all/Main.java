@@ -1,5 +1,6 @@
 package all;
 
+import attacks.Attack_Physical;
 import pokemons.Pokemon;
 import pokemons.electric.*;
 import pokemons.bug.*;
@@ -28,6 +29,9 @@ class Main {
 		Pokemon momartik = new Froslass(100);
 		ronflex.describe();
 		momartik.describe();
+		ronflex.addAttack(Attack_Physical.BOLT_BEAK);
+		if (ronflex.getAttacks().getClass().getSimpleName() == "Attack_Physical")
+			System.out.println("\nA");
 	}
 	
 }

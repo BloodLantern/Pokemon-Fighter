@@ -576,7 +576,7 @@ public abstract class Pokemon {
 
 	public void addAttack(Attacks attack) {
 		if (this.getAttacks().length < 4) {
-			this.getAttacks()[this.getAttacks().length] = attack;
+			this.setAttacks(attack, this.getAttacks().length + 1);
 		} else {
 			this.setAttacks(attack, 3);
 		}

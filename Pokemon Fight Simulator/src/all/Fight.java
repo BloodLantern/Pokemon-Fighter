@@ -67,7 +67,7 @@ public class Fight {
 			
 			answer = sc.nextInt();
 			
-			if (pokemon.getAttacks()[answer].getClass() == Attack_Physical)
+			if (pokemon.getAttacks()[answer].getClass().getSimpleName() == "Attack_Physical")
 			pokemon.getAttacks();
 			
 		} else {
