@@ -48,6 +48,7 @@ public enum Attack_Physical implements Attacks {
 		// TODO Objects, talents multiplier
 		
 		CM *= Pokemon.weakness(attack.getType(), attacked.getType());
+		if(attacked.getType2() != null)
 		CM *= Pokemon.weakness(attack.getType(), attacked.getType2());
 		
 		// Damage formula
