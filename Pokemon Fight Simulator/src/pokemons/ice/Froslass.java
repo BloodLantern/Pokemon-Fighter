@@ -1,6 +1,5 @@
 package pokemons.ice;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -50,8 +49,6 @@ public Froslass() {
 		this.setBaseSpAtk(80);
 		this.setBaseSpDef(70);
 		this.setBaseSpeed(110);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 
 }

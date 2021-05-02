@@ -1,6 +1,5 @@
 package pokemons.psychic;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,7 +48,5 @@ public Alakazam() {
 		this.setBaseSpAtk(135);
 		this.setBaseSpDef(95);
 		this.setBaseSpeed(120);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 }

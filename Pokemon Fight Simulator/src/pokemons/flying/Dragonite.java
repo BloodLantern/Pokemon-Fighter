@@ -1,6 +1,5 @@
 package pokemons.flying;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -50,8 +49,6 @@ public Dragonite() {
 		this.setBaseSpAtk(100);
 		this.setBaseSpDef(100);
 		this.setBaseSpeed(80);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 
 }

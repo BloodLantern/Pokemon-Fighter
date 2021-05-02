@@ -1,6 +1,5 @@
 package pokemons.water;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,8 +48,6 @@ public Squirtle() {
 		this.setBaseSpAtk(50);
 		this.setBaseSpDef(64);
 		this.setBaseSpeed(43);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 
 }

@@ -1,6 +1,5 @@
 package pokemons.ground;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -50,8 +49,6 @@ public Geodude() {
 		this.setBaseSpAtk(30);
 		this.setBaseSpDef(30);
 		this.setBaseSpeed(20);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 
 }

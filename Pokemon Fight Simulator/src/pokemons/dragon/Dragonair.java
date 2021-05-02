@@ -1,6 +1,5 @@
 package pokemons.dragon;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,8 +48,6 @@ public Dragonair() {
 		this.setBaseSpAtk(70);
 		this.setBaseSpDef(70);
 		this.setBaseSpeed(70);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 
 }

@@ -1,6 +1,5 @@
 package pokemons.normal;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,8 +48,6 @@ public Snorlax() {
 		this.setBaseSpAtk(65);
 		this.setBaseSpDef(110);
 		this.setBaseSpeed(30);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 
 }

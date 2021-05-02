@@ -1,6 +1,5 @@
 package pokemons.fairy;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,8 +48,6 @@ public Xerneas() {
 		this.setBaseSpAtk(131);
 		this.setBaseSpDef(98);
 		this.setBaseSpeed(99);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 
 }

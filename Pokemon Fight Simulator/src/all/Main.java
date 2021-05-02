@@ -25,14 +25,10 @@ import pokemons.water.*;
 class Main {
 	
 	public static void main(String[] args) {
-		
-		Pokemon pikachu = new Pikachu("PikaPika", 30);
-		Pokemon raichu = new Raichu();
 		Pokemon ronflex = new Snorlax(100);
-		System.out.println(ronflex.getHP() + "\n" + ronflex.getAtk() + "\n" + ronflex.getDef() + "\n" + ronflex.getSpAtk() + "\n" + ronflex.getSpDef() + "\n" + ronflex.getSpeed() + "\n" + ronflex.getNature() + "\n" + ronflex.getType() + "\n" + ronflex.getType2() + "\n" + ronflex.getName());
-		//Fight fight = new Fight(pikachu, raichu);
-		//fight.begin();
-		
+		Pokemon momartik = new Froslass(100);
+		ronflex.describe();
+		momartik.describe();
 	}
 	
 }

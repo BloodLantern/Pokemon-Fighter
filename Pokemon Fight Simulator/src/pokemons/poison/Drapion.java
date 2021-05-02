@@ -1,6 +1,5 @@
 package pokemons.poison;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -50,8 +49,6 @@ public Drapion() {
 		this.setBaseSpAtk(60);
 		this.setBaseSpDef(75);
 		this.setBaseSpeed(95);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 
 }

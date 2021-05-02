@@ -1,6 +1,5 @@
 package pokemons.electric;
 
-import pokemons.Natures;
 import pokemons.Types;
 
 public final class Raichu extends Pikachu {
@@ -48,8 +47,6 @@ public Raichu() {
 		this.setBaseSpAtk(90);
 		this.setBaseSpDef(80);
 		this.setBaseSpeed(110);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 	
 }

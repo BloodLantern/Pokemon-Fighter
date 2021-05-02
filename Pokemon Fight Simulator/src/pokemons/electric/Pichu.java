@@ -1,6 +1,5 @@
 package pokemons.electric;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,8 +48,6 @@ public Pichu() {
 		this.setBaseSpAtk(35);
 		this.setBaseSpDef(35);
 		this.setBaseSpeed(60);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 	
 }

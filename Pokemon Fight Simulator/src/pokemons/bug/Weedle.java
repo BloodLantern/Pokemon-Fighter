@@ -1,6 +1,5 @@
 package pokemons.bug;
 
-import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,8 +48,6 @@ public Weedle() {
 		this.setBaseSpAtk(20);
 		this.setBaseSpDef(20);
 		this.setBaseSpeed(50);
-		this.setNature(Natures.randomNature());
-		this.calculateStats();
 	}
 
 }
