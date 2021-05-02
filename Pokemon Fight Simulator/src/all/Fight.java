@@ -2,6 +2,7 @@ package all;
 
 import java.util.Scanner;
 
+import attacks.*;
 import pokemons.Pokemon;
 
 public class Fight {
@@ -27,9 +28,10 @@ public class Fight {
 	}
 	
 	private void turn() {
-		System.out.println(fastest(pokemon1, pokemon2).getName() + " attacks first !");
-		
+		System.out.println(fastest(pokemon1, pokemon2).getName() + " plays first !");
 		chooseAction(fastest(pokemon1, pokemon2));
+		System.out.println(slowest(pokemon1, pokemon2).getName() + " plays !");
+		chooseAction(slowest(pokemon1, pokemon2));
 		
 	}
 	
@@ -46,20 +48,34 @@ public class Fight {
 			}
 		}
 	}
+	
+	private Pokemon slowest(Pokemon pokemon1, Pokemon pokemon2) {
+		if (pokemon1.getSpeed() < pokemon2.getSpeed()) {
+			return pokemon1;
+		} else if (pokemon1.getSpeed() > pokemon2.getSpeed()) {
+			return pokemon2;
+		} else {
+			if (Math.random()*2 < 0.5) {
+				return pokemon1;
+			} else {
+				return pokemon2;
+			}
+		}
+	}
 
-	private Actions chooseAction(Pokemon pokemon) {
+	private void chooseAction(Pokemon pokemon) {
 		
-		System.out.println("Choose an action to do:\n1 - " + Actions.ATTACK);
+		System.out.println("Choose an action to do:\n1 - Attack\n2 - Switch");
 		Scanner sc = new Scanner(System.in);
 		int answer = sc.nextInt();
 		if (answer == 1) {
 			
 			System.out.println("Choose an attack to use:\n1 - " + pokemon.getAttacks()[0]);
-			if (pokemon.getAttacks().length > 1) {
+			if (pokemon.getAttacksLength() > 1) {
 				System.out.println("2 - " + pokemon.getAttacks()[1]);
-				if (pokemon.getAttacks().length > 2) {
+				if (pokemon.getAttacksLength() > 2) {
 					System.out.println("3 - " + pokemon.getAttacks()[2]);
-					if (pokemon.getAttacks().length > 3) {
+					if (pokemon.getAttacksLength() > 3) {
 						System.out.println("4 - " + pokemon.getAttacks()[3]);
 					}
 				}
@@ -67,14 +83,13 @@ public class Fight {
 			
 			answer = sc.nextInt();
 			
-			if (pokemon.getAttacks()[answer].getClass().getSimpleName() == "Attack_Physical")
-			pokemon.getAttacks();
+			if (pokemon.getAttacks()[answer - 1].getClass().getSimpleName().equals("Attack_Physical")) {
+				Attack_Physical.use((Attack_Physical)pokemon.getAttacks()[answer], pokemon, slowest(pokemon1, pokemon2));
+			}
 			
-			return null;
-			
-		} else {
-			return null;
 		}
+		
+		sc.close();
 		
 	}
 }

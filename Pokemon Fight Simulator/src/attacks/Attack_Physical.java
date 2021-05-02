@@ -14,7 +14,7 @@ public enum Attack_Physical implements Attacks {
 	private final Types type;
 	private final int power;
 	private final int accuracy;
-	private final int pp;
+	private int pp;
 	private final String secondaryEffect;
 	
 	Attack_Physical(Types type, int power, int accuracy, int pp, String secondaryEffect) {
@@ -31,7 +31,7 @@ public enum Attack_Physical implements Attacks {
 	 * pokemon attacker against the pokemon attacked. It returns
 	 * the final damage of this attack with these parameters.
 	 */
-	public int use(Attack_Physical attack, Pokemon attacker, Pokemon attacked) {
+	public static int use(Attack_Physical attack, Pokemon attacker, Pokemon attacked) {
 		double CM = 1;
 		
 		if (attack.getType() == attacker.getType())
@@ -75,6 +75,11 @@ public enum Attack_Physical implements Attacks {
 		return pp;
 	}
 	
+	public void setPp(int pp) {
+		this.pp = pp;
+	}
+
+
 	public String getSecondaryEffect() {
 		return secondaryEffect;
 	}

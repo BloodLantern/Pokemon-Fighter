@@ -1,5 +1,6 @@
 package all;
 
+import attacks.Attack_Physical;
 import pokemons.Pokemon;
 import pokemons.electric.*;
 import pokemons.bug.*;
@@ -26,8 +27,9 @@ class Main {
 	public static void main(String[] args) {
 		Pokemon ronflex = new Snorlax(100);
 		Pokemon momartik = new Froslass(100);
-		ronflex.describe();
-		momartik.describe();
+		momartik.addAttack(Attack_Physical.BOLT_BEAK);
+		Fight f = new Fight(ronflex, momartik);
+		f.begin();
 	}
 	
 }
