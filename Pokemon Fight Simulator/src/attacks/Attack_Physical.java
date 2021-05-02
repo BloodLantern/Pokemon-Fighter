@@ -51,7 +51,7 @@ public enum Attack_Physical implements Attacks {
 		CM *= Pokemon.weakness(attack.getType(), attacked.getType2());
 		
 		// Damage formula
-		int finalDamage = (int)Math.floor(((attacker.getLevel()*0.4+2)*attacker.getAtk()*attack.getPower()/attacked.getDef()*50+2)*CM);
+		int finalDamage = (int)Math.floor(((((attacker.getLevel()*0.4+2)*attacker.getAtk()*attack.getPower())/(attacked.getDef()*50))+2)*CM);
 		
 		attacked.setHP(attacked.getHP() - finalDamage);
 		
