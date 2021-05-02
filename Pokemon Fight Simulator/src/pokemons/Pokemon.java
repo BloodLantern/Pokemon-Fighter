@@ -46,44 +46,6 @@ public abstract class Pokemon {
 	private int baseSpDef;
 	private int baseSpeed;
 
-	private static double[] BUG = { 1.0, 2.0, 1.0, 1.0, 0.5, 1.0, 0.5, 1.0, 0.5, 2.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0 };
-	private static double[] DARK = { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 0.0, 2.0, 1.0, 0.5, 1.0, 0.5, 1.0,
-			2.0 };
-	private static double[] DRAGON = { 1.0, 0.5, 0.5, 0.5, 0.5, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0,
-			2.0 };
-	private static double[] ELECTRIC = { 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
-			1.0 };
-	private static double[] FAIRY = { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 2.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 0.0, 0.5, 2.0,
-			1.0 };
-	private static double[] FIGHTING = { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 0.5, 0.5, 1.0, 1.0, 0.5, 1.0,
-			2.0 };
-	private static double[] FIRE = { 1.0, 0.5, 2.0, 1.0, 0.5, 0.5, 1.0, 1.0, 2.0, 1.0, 1.0, 0.5, 2.0, 1.0, 1.0, 1.0, 0.5,
-			0.5 };
-	private static double[] FLYING = { 1.0, 1.0, 1.0, 2.0, 0.5, 2.0, 0.5, 1.0, 0.0, 1.0, 1.0, 0.5, 2.0, 1.0, 1.0, 1.0, 1.0,
-			1.0 };
-	private static double[] GHOST = { 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.5, 1.0, 1.0, 1.0, 0.5, 1.0, 2.0, 1.0, 2.0, 1.0,
-			1.0 };
-	private static double[] GRASS = { 1.0, 2.0, 0.5, 0.5, 0.5, 2.0, 1.0, 2.0, 0.5, 2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0,
-			1.0 };
-	private static double[] GROUND = { 1.0, 1.0, 2.0, 0.0, 2.0, 2.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0,
-			1.0 };
-	private static double[] ICE = { 1.0, 2.0, 1.0, 1.0, 1.0, 0.5, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 1.0 };
-	private static double[] NORMAL = { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0,
-			1.0 };
-	private static double[] POISON = { 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 0.5, 0.5, 2.0, 1.0, 2.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0,
-			0.5 };
-	private static double[] PSYCHIC = { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 0.5, 2.0, 1.0, 2.0, 1.0, 2.0, 1.0,
-			1.0 };
-	private static double[] ROCK = { 0.5, 0.5, 2.0, 1.0, 2.0, 1.0, 2.0, 0.5, 2.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0,
-			1.0 };
-	private static double[] STEEL = { 0.5, 2.0, 1.0, 1.0, 0.5, 0.5, 2.0, 0.0, 2.0, 0.5, 0.5, 0.5, 0.5, 1.0, 0.5, 1.0, 0.5,
-			0.5 };
-	private static double[] WATER = { 1.0, 0.5, 0.5, 2.0, 2.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5,
-			1.0 };
-
-	private static double[][] weaknessesList = { NORMAL, FIRE, WATER, ELECTRIC, GRASS, ICE, FIGHTING, POISON, GROUND, FLYING,
-			PSYCHIC, BUG, ROCK, GHOST, DRAGON, DARK, STEEL, FAIRY };
-
 	// Constructors
 	public Pokemon() {
 	}
@@ -120,16 +82,15 @@ public abstract class Pokemon {
 		return (int)Math.floor((int)Math.floor((((2*baseStat+this.getIV(baseStatName)/*+(int)Math.floor(EV/4)*/)*this.getLevel())/100)+5)/**nature*/);
 	}
 	
-	protected Natures generateNature() {
-		this.setNature(new Natures((int)Math.round(Math.random()*25)));
+	protected void generateNature() {
+		this.setNature(Natures.randomNature());
 	}
 
 	public void levelUp() {
 		this.setLevel(this.getLevel() + 1);
 	}
 
-	public void evolve() {
-	}
+	public void evolve() {}
 	
 	/**
 	 * Used to get a type attack multiplier against
@@ -140,7 +101,7 @@ public abstract class Pokemon {
 		double weakness = 1.0;
 
 		// We suppose that type1 is attacking type2
-		weakness = weaknessesList[attacker.getIndex()][attacked.getIndex()];
+		weakness = Weaknesses.getWeaknessesList()[attacker.getIndex()][attacked.getIndex()];
 
 		return weakness;
 	}
