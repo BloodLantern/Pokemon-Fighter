@@ -30,7 +30,7 @@ class Main {
 		ronflex.describe();
 		momartik.describe();
 		ronflex.addAttack(Attack_Physical.BOLT_BEAK);
-		if (ronflex.getAttacks().getClass().getSimpleName() == "Attack_Physical")
+		if (Main.class.getSimpleName() == "Main")
 			System.out.println("\nA");
 	}
 	

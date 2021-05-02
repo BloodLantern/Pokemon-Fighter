@@ -573,10 +573,20 @@ public abstract class Pokemon {
 	protected void setAttacks(Attacks attack, int index) {
 		this.attacks[index] = attack;
 	}
+	
+	public int getAttacksLength() {
+		int count = 0;
+		int i = 0;
+		while (this.getAttacks()[i] != null) {
+			count++;
+			i++;
+		}
+		return count;
+	}
 
 	public void addAttack(Attacks attack) {
-		if (this.getAttacks().length < 4) {
-			this.setAttacks(attack, this.getAttacks().length + 1);
+		if (this.getAttacksLength() < 4) {
+			this.setAttacks(attack, this.getAttacksLength() + 1);
 		} else {
 			this.setAttacks(attack, 3);
 		}
