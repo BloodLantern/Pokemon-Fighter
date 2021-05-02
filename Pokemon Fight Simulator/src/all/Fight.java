@@ -1,5 +1,8 @@
 package all;
 
+import java.util.Scanner;
+
+import attacks.Attacks;
 import pokemons.Pokemon;
 
 public class Fight {
@@ -27,6 +30,7 @@ public class Fight {
 	private void turn() {
 		System.out.println(fastest(pokemon1, pokemon2).getName() + " attacks first !");
 		
+		chooseAction(fastest(pokemon1, pokemon2));
 		
 	}
 	
@@ -44,7 +48,32 @@ public class Fight {
 		}
 	}
 	
-	private Action chooseAction() {
+	private Actions chooseAction(Pokemon pokemon) {
+		
+		System.out.println("Choose an action to do:\n1 - " + Actions.ATTACK);
+		Scanner sc = new Scanner(System.in);
+		int answer = sc.nextInt();
+		if (answer == 1) {
+			
+			System.out.println("Choose an attack to use:\n1 - " + pokemon.getAttacks()[0]);
+			if (pokemon.getAttacks().length > 1) {
+				System.out.println("2 - " + pokemon.getAttacks()[1]);
+				if (pokemon.getAttacks().length > 2) {
+					System.out.println("3 - " + pokemon.getAttacks()[2]);
+					if (pokemon.getAttacks().length > 3) {
+						System.out.println("4 - " + pokemon.getAttacks()[3]);
+					}
+				}
+			}
+			
+			answer = sc.nextInt();
+			
+			if (pokemon.getAttacks()[answer].getClass() == Attack_Physical)
+			pokemon.getAttacks();
+			
+		} else {
+			
+		}
 		
 	}
 	

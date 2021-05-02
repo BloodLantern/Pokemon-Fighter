@@ -3,7 +3,7 @@ package attacks;
 import pokemons.Pokemon;
 import pokemons.Types;
 
-public enum Attack_Physical {
+public enum Attack_Physical implements Attacks {
 	BOLT_BEAK(Types.ELECTRIC, 85, 100, 10), BOLT_STRIKE(Types.ELECTRIC, 130, 85, 5);
 	
 	private final Types type;
