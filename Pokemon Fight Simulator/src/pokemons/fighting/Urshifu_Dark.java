@@ -4,7 +4,7 @@ import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
-public class Urshifu_Dark extends Pokemon {
+public class Urshifu_Dark extends Kubfu {
 
 public Urshifu_Dark() {
 		

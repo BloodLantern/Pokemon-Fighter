@@ -4,7 +4,7 @@ import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
-public class Dragonair extends Pokemon {
+public class Dragonair extends Dratini {
 
 public Dragonair() {
 		

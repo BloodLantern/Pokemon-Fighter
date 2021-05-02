@@ -4,7 +4,7 @@ import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
-public class Charizard extends Pokemon {
+public class Charizard extends Charmeleon {
 
 public Charizard() {
 		

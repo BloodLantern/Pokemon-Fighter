@@ -3,8 +3,9 @@ package pokemons.rock;
 import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
+import pokemons.ground.Pupitar;
 
-public class Tyranitar extends Pokemon {
+public class Tyranitar extends Pupitar {
 
 public Tyranitar() {
 		

@@ -4,7 +4,7 @@ import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
-public class Froslass extends Pokemon {
+public class Froslass extends Snorunt {
 
 public Froslass() {
 		

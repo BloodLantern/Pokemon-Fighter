@@ -4,7 +4,7 @@ import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
-public class Drapion extends Pokemon {
+public class Drapion extends Skorupi {
 
 public Drapion() {
 		

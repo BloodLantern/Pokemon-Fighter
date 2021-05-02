@@ -3,8 +3,9 @@ package pokemons.flying;
 import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
+import pokemons.bug.Metapod;
 
-public class Butterfree extends Pokemon {
+public class Butterfree extends Metapod {
 
 public Butterfree() {
 		

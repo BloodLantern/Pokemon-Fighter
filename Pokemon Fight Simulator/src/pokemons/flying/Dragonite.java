@@ -3,8 +3,9 @@ package pokemons.flying;
 import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
+import pokemons.dragon.Dragonair;
 
-public class Dragonite extends Pokemon {
+public class Dragonite extends Dragonair {
 
 public Dragonite() {
 		

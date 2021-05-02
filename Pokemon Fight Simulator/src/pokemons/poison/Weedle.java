@@ -1,4 +1,4 @@
-package pokemons.bug;
+package pokemons.poison;
 
 import pokemons.Natures;
 import pokemons.Pokemon;
@@ -42,7 +42,8 @@ public Weedle() {
 	
 	@Override
 	protected void initStats() {
-		this.setType(Types.BUG);
+		this.setType(Types.POISON);
+		this.setType2(Types.BUG);
 		this.setBaseHP(40);
 		this.setBaseAtk(35);
 		this.setBaseDef(30);
