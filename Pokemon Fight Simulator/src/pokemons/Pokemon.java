@@ -62,15 +62,7 @@ public abstract class Pokemon {
 	public Pokemon(String name, int level) {
 	}
 	
-	protected void initStats() {
-		this.setType(Types.NORMAL);
-		this.setBaseHP(0);
-		this.setBaseAtk(0);
-		this.setBaseDef(0);
-		this.setBaseSpAtk(0);
-		this.setBaseSpDef(0);
-		this.setBaseSpeed(0);
-	}
+	protected abstract void initStats();
 	
 	public void calculateStats() {
 		this.setHP(calculateStat(this.getBaseHP(), "HP"));
@@ -588,6 +580,9 @@ public abstract class Pokemon {
 		} else {
 			this.setAttacks(attack, 3);
 		}
+	}
+	public void describe() {
+		System.out.println(this.getHP() + "\n" + this.getAtk() + "\n" + this.getDef() + "\n" + this.getSpAtk() + "\n" + this.getSpDef() + "\n" + this.getSpeed() + "\n" + this.getNature() + "\n" + this.getType() + "\n" + this.getType2() + "\n" + this.getName());
 	}
 	
 }

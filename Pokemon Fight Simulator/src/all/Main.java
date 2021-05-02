@@ -20,15 +20,14 @@ import pokemons.psychic.*;
 import pokemons.rock.*;
 import pokemons.steel.*;
 import pokemons.water.*;
+@SuppressWarnings("unused")
 class Main {
 	
 	public static void main(String[] args) {
-		
-		Pokemon pikachu = new Pikachu("PikaPika", 30);
-		Pokemon raichu = new Raichu();
-		Fight fight = new Fight(pikachu, raichu);
-		fight.begin();
-		
+		Pokemon ronflex = new Snorlax(100);
+		Pokemon momartik = new Froslass(100);
+		ronflex.describe();
+		momartik.describe();
 	}
 	
 }
