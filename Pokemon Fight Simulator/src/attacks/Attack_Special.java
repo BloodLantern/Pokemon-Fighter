@@ -24,7 +24,7 @@ public enum Attack_Special {
 	 * pokemon attacker against the pokemon attacked. It returns
 	 * the final damage of this attack with these parameters.
 	 */
-	public int use(Attack_Physical attack, Pokemon attacker, Pokemon attacked) {
+	public int use(Attack_Special attack, Pokemon attacker, Pokemon attacked) {
 		double CM = 1;
 		
 		if (attack.getType() == attacker.getType())

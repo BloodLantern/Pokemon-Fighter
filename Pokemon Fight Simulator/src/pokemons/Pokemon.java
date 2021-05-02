@@ -1,5 +1,7 @@
 package pokemons;
 
+import attacks.Attacks;
+
 /**
  * This is the superclass for all pokemons. It contains all the common variables
  * and methods.
@@ -20,6 +22,7 @@ public abstract class Pokemon {
 	private int experience = 0;
 	private int accuracy = 100;
 	private int dodge = 0;
+	private Attacks[] attacks = new Attacks[4];
 	
 	// EV Stats
 	private int totalEV = 0;
@@ -96,6 +99,10 @@ public abstract class Pokemon {
 
 	public void levelUp() {
 		this.setLevel(this.getLevel() + 1);
+		
+		if (this.getLevel() > 18) {
+			
+		}
 	}
 
 	public void evolve() {}
@@ -383,7 +390,8 @@ public abstract class Pokemon {
 		if (HPEV > this.getHPEV()) {
 			if (this.getTotalEV() < 512) {
 				if (this.getTotalEV() + HPEV > 512) {
-					System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + HPEV + " HP EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
+					System.out.println("Cannot fully add " + (HPEV - this.getTotalEV()) + ".\nIt would be grater than 512!\nStill adding " + (512 - this.getTotalEV()));
+					this.HPEV = HPEV - (512 - this.getTotalEV());
 				} else {
 					if (this.getHPEV() < 255) {
 						if (this.getHPEV() + HPEV <= 255) {
@@ -396,7 +404,8 @@ public abstract class Pokemon {
 					}
 				}
 			} else {
-				System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + HPEV + " HP EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
+				System.out.println("Cannot fully add " + (HPEV - this.getHPEV()) + ".\nIt would be grater than 255!\nStill adding " + (255 - this.getHPEV()));
+				this.HPEV = HPEV - (255 - this.getHPEV());
 			}
 		} else {
 			System.out.println("Successfully removed " + (this.getHPEV() - HPEV) + " HP EVs to " + this.getName() + ".\nIt now has " + HPEV + " HP EVs and " + this.getTotalEV() + " Total EVs.");
@@ -413,7 +422,8 @@ public abstract class Pokemon {
 		if (atkEV > this.getAtkEV()) {
 			if (this.getTotalEV() < 512) {
 				if (this.getTotalEV() + atkEV > 512) {
-					System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + atkEV + " Atk EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
+					System.out.println("Cannot fully add " + (atkEV - this.getTotalEV()) + ".\nIt would be grater than 512!\nStill adding " + (512 - this.getTotalEV()));
+					this.AtkEV = atkEV - (512 - this.getTotalEV());
 				} else {
 					if (this.getAtkEV() < 255) {
 						if (this.getAtkEV() + AtkEV <= 255) {
@@ -426,7 +436,8 @@ public abstract class Pokemon {
 					}
 				}
 			} else {
-				System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + atkEV + " Atk EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
+				System.out.println("Cannot fully add " + (atkEV - this.getAtkEV()) + ".\nIt would be grater than 255!\nStill adding " + (255 - this.getAtkEV()));
+				this.AtkEV = atkEV - (255 - this.getAtkEV());
 			}
 		} else {
 			System.out.println("Successfully removed " + (this.getAtkEV() - atkEV) + " Atk EVs to " + this.getName() + ".\nIt now has " + atkEV + " Atk EVs and " + this.getTotalEV() + " Total EVs.");
@@ -443,7 +454,8 @@ public abstract class Pokemon {
 		if (defEV > this.getDefEV()) {
 			if (this.getTotalEV() < 512) {
 				if (this.getTotalEV() + defEV > 512) {
-					System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + defEV + " Def EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
+					System.out.println("Cannot fully add " + (defEV - this.getTotalEV()) + ".\nIt would be grater than 512!\nStill adding " + (512 - this.getTotalEV()));
+					this.DefEV = defEV - (512 - this.getTotalEV());
 				} else {
 					if (this.getDefEV() < 255) {
 						if (this.getDefEV() + defEV <= 255) {
@@ -456,7 +468,8 @@ public abstract class Pokemon {
 					}
 				}
 			} else {
-				System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + defEV + " Def EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
+				System.out.println("Cannot fully add " + (defEV - this.getDefEV()) + ".\nIt would be grater than 255!\nStill adding " + (255 - this.getDefEV()));
+				this.DefEV = defEV - (255 - this.getDefEV());
 			}
 		} else {
 			System.out.println("Successfully removed " + (this.getDefEV() - defEV) + " Def EVs to " + this.getName() + ".\nIt now has " + defEV + " Def EVs and " + this.getTotalEV() + " Total EVs.");
@@ -473,7 +486,8 @@ public abstract class Pokemon {
 		if (spAtkEV > this.getSpAtkEV()) {
 			if (this.getTotalEV() < 512) {
 				if (this.getTotalEV() + spAtkEV > 512) {
-					System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + spAtkEV + " SpAtk EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
+					System.out.println("Cannot fully add " + (spAtkEV - this.getTotalEV()) + ".\nIt would be grater than 512!\nStill adding " + (512 - this.getTotalEV()));
+					this.SpAtkEV = spAtkEV - (512 - this.getTotalEV());
 				} else {
 					if (this.getSpAtkEV() < 255) {
 						if (this.getSpAtkEV() + spAtkEV <= 255) {
@@ -486,7 +500,8 @@ public abstract class Pokemon {
 					}
 				}
 			} else {
-				System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + spAtkEV + " SpAtk EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
+				System.out.println("Cannot fully add " + (spAtkEV - this.getSpAtkEV()) + ".\nIt would be grater than 255!\nStill adding " + (255 - this.getSpAtkEV()));
+				this.SpAtkEV = spAtkEV - (255 - this.getSpAtkEV());
 			}
 		} else {
 			System.out.println("Successfully removed " + (this.getSpAtkEV() - spAtkEV) + " SpAtk EVs to " + this.getName() + ".\nIt now has " + spAtkEV + " SpAtk EVs and " + this.getTotalEV() + " Total EVs.");
@@ -503,7 +518,8 @@ public abstract class Pokemon {
 		if (spDefEV > this.getSpDefEV()) {
 			if (this.getTotalEV() < 512) {
 				if (this.getTotalEV() + spDefEV > 512) {
-					System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + spDefEV + " SpDef EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
+					System.out.println("Cannot fully add " + (spDefEV - this.getTotalEV()) + ".\nIt would be grater than 512!\nStill adding " + (512 - this.getTotalEV()));
+					this.SpDefEV = spDefEV - (512 - this.getTotalEV());
 				} else {
 					if (this.getSpDefEV() < 255) {
 						if (this.getSpDefEV() + spDefEV <= 255) {
@@ -516,7 +532,8 @@ public abstract class Pokemon {
 					}
 				}
 			} else {
-				System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + spDefEV + " SpDef EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
+				System.out.println("Cannot fully add " + (spDefEV - this.getSpDefEV()) + ".\nIt would be grater than 255!\nStill adding " + (255 - this.getSpDefEV()));
+				this.SpDefEV = spDefEV - (255 - this.getSpDefEV());
 			}
 		} else {
 			System.out.println("Successfully removed " + (this.getSpDefEV() - spDefEV) + " SpDef EVs to " + this.getName() + ".\nIt now has " + spDefEV + " SpDef EVs and " + this.getTotalEV() + " Total EVs.");
@@ -533,14 +550,16 @@ public abstract class Pokemon {
 		if (speedEV > this.getSpeedEV()) {
 			if (this.getTotalEV() < 512) {
 				if (this.getTotalEV() + speedEV > 512) {
-					System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\nTrying to add " + speedEV + " Speed EVs while having a total of " + this.getTotalEV() + " EVs.\nThe latter mustn't be greater than 512!");
-				} else {
+					System.out.println("Cannot fully add " + (speedEV - this.getTotalEV()) + ".\nIt would be grater than 512!\nStill adding " + (512 - this.getTotalEV()));
+					this.SpeedEV = speedEV - (512 - this.getTotalEV());
+					} else {
 					if (this.getSpeedEV() < 255) {
 						if (this.getSpeedEV() + speedEV <= 255) {
 							System.out.println("Successfully added " + (speedEV - this.getSpeedEV()) + " Speed EVs to " + this.getName() + ".\nIt now has " + speedEV + " Speed EVs and " + this.getTotalEV() + " Total EVs.");
 							this.SpeedEV = speedEV;
 						} else {
-							System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\n Trying to add " + (speedEV - this.getSpeedEV()) + " Speed EVs but it would be grater than 255!");
+							System.out.println("Cannot fully add " + (speedEV - this.getSpeedEV()) + ".\nIt would be grater than 255!\nStill adding " + (255 - this.getSpeedEV()));
+							this.SpeedEV = speedEV - (255 - this.getSpeedEV());
 						}
 						System.err.println("Incorrect operation with " + this.getName() + "'s EVs.\n Trying to add " + (speedEV - this.getSpeedEV()) + " Speed EVs while already having a total of 255 Speed EVs!");
 					}
@@ -553,6 +572,22 @@ public abstract class Pokemon {
 			this.SpeedEV = speedEV;
 		}
 		this.refreshTotalEV();
+	}
+	
+	public Attacks[] getAttacks() {
+		return attacks;
+	}
+
+	protected void setAttacks(Attacks attack, int index) {
+		this.attacks[index] = attack;
+	}
+
+	public void addAttack(Attacks attack) {
+		if (this.getAttacks().length < 4) {
+			this.getAttacks()[this.getAttacks().length] = attack;
+		} else {
+			this.setAttacks(attack, 3);
+		}
 	}
 	
 }
