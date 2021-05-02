@@ -8,7 +8,7 @@ class Main {
 	
 	public static void main(String[] args) {
 		
-		Pokemon pikachu = new Pikachu();
+		Pokemon pikachu = new Pikachu("PikaPika", 30);
 		Pokemon raichu = new Raichu();
 		
 		Fight fight = new Fight(pikachu, raichu);

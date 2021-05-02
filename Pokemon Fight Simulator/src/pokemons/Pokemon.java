@@ -79,7 +79,15 @@ public abstract class Pokemon {
 	}
 	
 	private int calculateStat(int baseStat, String baseStatName) {
-		return (int)Math.floor((int)Math.floor((((2*baseStat+this.getIV(baseStatName)/*+(int)Math.floor(EV/4)*/)*this.getLevel())/100)+5)/**nature*/);
+		float nature = 1.0f;
+		
+		if (this.getNature().getPlus() == baseStatName) {
+			nature = 1.1f;
+		} else if (this.getNature().getMinus() == baseStatName) {
+			nature = 0.9f;
+		}
+		
+		return (int)Math.floor((int)Math.floor((((2*baseStat+this.getIV(baseStatName)+(int)Math.floor(this.getEV(baseStatName)/4))*this.getLevel())/100)+5)*nature);
 	}
 	
 	protected void generateNature() {
@@ -107,12 +115,12 @@ public abstract class Pokemon {
 	}
 
 	public void generateIVs() {
-		this.setHPIV((int)Math.floor(Math.random() * 31));
-		this.setAtkIV((int)Math.floor(Math.random() * 31));
-		this.setDefIV((int)Math.floor(Math.random() * 31));
-		this.setSpAtkIV((int)Math.floor(Math.random() * 31));
-		this.setSpDefIV((int)Math.floor(Math.random() * 31));
-		this.setSpeedIV((int)Math.floor(Math.random() * 31));
+		this.setHPIV((int)Math.round(Math.random() * 31));
+		this.setAtkIV((int)Math.round(Math.random() * 31));
+		this.setDefIV((int)Math.round(Math.random() * 31));
+		this.setSpAtkIV((int)Math.round(Math.random() * 31));
+		this.setSpDefIV((int)Math.round(Math.random() * 31));
+		this.setSpeedIV((int)Math.round(Math.random() * 31));
 	}
 
 	public Types getType() {
@@ -343,6 +351,24 @@ public abstract class Pokemon {
 
 	public int getTotalEV() {
 		return totalEV;
+	}
+	
+	public int getEV(String EVName) {
+		if (EVName == "HP") {
+			return this.getHPEV();
+		} else if (EVName.equals("Atk")) {
+			return this.getAtkEV();
+		} else if (EVName.equals("Def")) {
+			return this.getDefEV();
+		} else if (EVName.equals("SpAtk")) {
+			return this.getSpAtkEV();
+		} else if (EVName.equals("SpDef")) {
+			return this.getSpDefEV();
+		} else if (EVName.equals("Speed")) {
+			return this.getSpeedEV();
+		} else {
+			return -1;
+		}
 	}
 
 	public void refreshTotalEV() {

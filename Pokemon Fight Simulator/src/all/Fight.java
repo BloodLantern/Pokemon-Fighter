@@ -19,8 +19,7 @@ public class Fight {
 	public void begin() {
 		
 		System.out.println("Beginning fight");
-		
-		
+		System.out.println(fastest(pokemon1, pokemon2).getName() + " attacks first !");
 		
 	}
 	
