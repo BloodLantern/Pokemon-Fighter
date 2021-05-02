@@ -46,9 +46,7 @@ public class Fight {
 			}
 		}
 	}
-	
-<<<<<<< HEAD
-=======
+
 	private Actions chooseAction(Pokemon pokemon) {
 		
 		System.out.println("Choose an action to do:\n1 - " + Actions.ATTACK);
@@ -77,6 +75,4 @@ public class Fight {
 		}
 		
 	}
-	
->>>>>>> branch 'main' of https://github.com/BloodLantern/hellogit
 }
