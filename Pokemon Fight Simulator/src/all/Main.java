@@ -1,5 +1,6 @@
 package all;
 
+import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.electric.*;
 import pokemons.bug.*;
@@ -19,22 +20,17 @@ import pokemons.psychic.*;
 import pokemons.rock.*;
 import pokemons.steel.*;
 import pokemons.water.*;
+@SuppressWarnings("unused")
 class Main {
 	
 	public static void main(String[] args) {
 		
 		Pokemon pikachu = new Pikachu("PikaPika", 30);
 		Pokemon raichu = new Raichu();
-		Pokemon ronflex = new Snorlax();
-		System.out.println(ronflex.getSpAtk());
-		System.out.println(ronflex.getSpDef());
-		System.out.println(ronflex.getAtk());
-		System.out.println(ronflex.getDef());
-		System.out.println(ronflex.getSpeed());
-		System.out.println(ronflex.getHP());
-		System.out.println(ronflex.getNature());
-		Fight fight = new Fight(pikachu, raichu);
-		fight.begin();
+		Pokemon ronflex = new Snorlax(100);
+		System.out.println(ronflex.getHP() + "\n" + ronflex.getAtk() + "\n" + ronflex.getDef() + "\n" + ronflex.getSpAtk() + "\n" + ronflex.getSpDef() + "\n" + ronflex.getSpeed() + "\n" + ronflex.getNature() + "\n" + ronflex.getType() + "\n" + ronflex.getType2() + "\n" + ronflex.getName());
+		//Fight fight = new Fight(pikachu, raichu);
+		//fight.begin();
 		
 	}
 	

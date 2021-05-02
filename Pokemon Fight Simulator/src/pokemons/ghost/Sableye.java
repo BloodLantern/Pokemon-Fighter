@@ -1,5 +1,6 @@
 package pokemons.ghost;
 
+import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,6 +50,8 @@ public Sableye() {
 		this.setBaseSpAtk(65);
 		this.setBaseSpDef(65);
 		this.setBaseSpeed(50);
+		this.setNature(Natures.randomNature());
+		this.calculateStats();
 	}
 
 }

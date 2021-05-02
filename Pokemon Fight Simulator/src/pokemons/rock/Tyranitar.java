@@ -1,5 +1,6 @@
 package pokemons.rock;
 
+import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,6 +50,8 @@ public Tyranitar() {
 		this.setBaseSpAtk(95);
 		this.setBaseSpDef(100);
 		this.setBaseSpeed(61);
+		this.setNature(Natures.randomNature());
+		this.calculateStats();
 	}
 
 }

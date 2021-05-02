@@ -1,5 +1,6 @@
 package pokemons.flying;
 
+import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,5 +50,7 @@ public Butterfree() {
 		this.setBaseSpAtk(90);
 		this.setBaseSpDef(80);
 		this.setBaseSpeed(70);
+		this.setNature(Natures.randomNature());
+		this.calculateStats();
 	}
 }

@@ -1,5 +1,6 @@
 package pokemons.water;
 
+import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,6 +50,8 @@ public Urshifu_Water() {
 		this.setBaseSpAtk(63);
 		this.setBaseSpDef(60);
 		this.setBaseSpeed(97);
+		this.setNature(Natures.randomNature());
+		this.calculateStats();
 	}
 
 }

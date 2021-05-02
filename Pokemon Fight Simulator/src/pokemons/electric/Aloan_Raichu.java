@@ -1,5 +1,6 @@
 package pokemons.electric;
 
+import pokemons.Natures;
 import pokemons.Types;
 
 public class Aloan_Raichu extends Pikachu {
@@ -48,6 +49,8 @@ public Aloan_Raichu() {
 		this.setBaseSpAtk(95);
 		this.setBaseSpDef(85);
 		this.setBaseSpeed(110);
+		this.setNature(Natures.randomNature());
+		this.calculateStats();
 	}
 	
 }

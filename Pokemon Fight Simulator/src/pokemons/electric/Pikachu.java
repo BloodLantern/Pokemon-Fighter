@@ -1,5 +1,6 @@
 package pokemons.electric;
 
+import pokemons.Natures;
 import pokemons.Types;
 
 public class Pikachu extends Pichu {
@@ -47,6 +48,8 @@ public class Pikachu extends Pichu {
 		this.setBaseSpAtk(50);
 		this.setBaseSpDef(50);
 		this.setBaseSpeed(90);
+		this.setNature(Natures.randomNature());
+		this.calculateStats();
 	}
 	
 }

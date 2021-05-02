@@ -1,5 +1,6 @@
 package pokemons.grass;
 
+import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,6 +50,8 @@ public Bulbasaur() {
 		this.setBaseSpAtk(65);
 		this.setBaseSpDef(65);
 		this.setBaseSpeed(45);
+		this.setNature(Natures.randomNature());
+		this.calculateStats();
 	}
 
 }

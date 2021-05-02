@@ -1,5 +1,6 @@
 package pokemons.fire;
 
+import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
@@ -49,6 +50,8 @@ public Charizard() {
 		this.setBaseSpAtk(109);
 		this.setBaseSpDef(85);
 		this.setBaseSpeed(100);
+		this.setNature(Natures.randomNature());
+		this.calculateStats();
 	}
 
 }
