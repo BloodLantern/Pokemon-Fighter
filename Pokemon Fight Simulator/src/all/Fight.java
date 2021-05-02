@@ -44,8 +44,4 @@ public class Fight {
 		}
 	}
 	
-	private Action chooseAction() {
-		
-	}
-	
 }
