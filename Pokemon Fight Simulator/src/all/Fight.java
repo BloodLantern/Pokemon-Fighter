@@ -28,9 +28,9 @@ public class Fight {
 		do {
 			fastest(pokemon1, pokemon2);
 			turn(this.fastest);
-			if (pokemon1.getHP() > 0 || pokemon2.getHP() > 0)
+			if (pokemon1.getHP() > 0 && pokemon2.getHP() > 0)
 				turn(this.slowest);
-		} while (pokemon1.getHP() > 0 || pokemon2.getHP() > 0);
+		} while (pokemon1.getHP() > 0 && pokemon2.getHP() > 0);
 		
 		if (pokemon1.getHP() <= 0) {
 			System.out.println(pokemon1.getName() + " died.\n" + pokemon2.getName() + " won the fight !");
@@ -93,18 +93,20 @@ public class Fight {
 			
 			if (pokemon.equals(this.fastest)) {
 				
+				int HPBefore = this.slowest.getHP();
+				
 				if (pokemon.getAttacks()[answer - 1].getClass().getSimpleName().equals("Attack_Physical")) {
-					System.out.print(this.slowest.getName() + "'s HPs: " + this.slowest.getHP());
 					Attack_Physical.use((Attack_Physical)pokemon.getAttacks()[answer - 1], pokemon, this.slowest);
-					System.out.println(" -> " + this.slowest.getHP());
+					System.out.println(this.slowest.getName() + "'s HPs: " + HPBefore + " -> " + this.slowest.getHP());
 				}
 				
 			} else {
+
+				int HPBefore = this.fastest.getHP();
 				
 				if (pokemon.getAttacks()[answer - 1].getClass().getSimpleName().equals("Attack_Physical")) {
-					System.out.print(this.fastest.getName() + "'s HPs: " + this.fastest.getHP());
 					Attack_Physical.use((Attack_Physical)pokemon.getAttacks()[answer - 1], pokemon, this.fastest);
-					System.out.println(" -> " + this.fastest.getHP());
+					System.out.println(this.fastest.getName() + "'s HPs: " + HPBefore + " -> " + this.fastest.getHP());
 				}
 				
 			}
