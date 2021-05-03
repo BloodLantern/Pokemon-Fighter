@@ -28,6 +28,10 @@ class Main {
 		Pokemon ronflex = new Snorlax(100);
 		Pokemon momartik = new Froslass(100);
 		momartik.addAttack(Attack_Physical.BOLT_BEAK);
+		momartik.addAttack(Attack_Physical.BOLT_STRIKE);
+		momartik.addAttack(Attack_Physical.FUSION_BOLT);
+		momartik.addAttack(Attack_Physical.WILD_CHARGE);
+		ronflex.addAttack(Attack_Physical.BOLT_BEAK);
 		Fight f = new Fight(ronflex, momartik);
 		f.begin();
 	}

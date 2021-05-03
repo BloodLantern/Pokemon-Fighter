@@ -4,18 +4,22 @@ import pokemons.Pokemon;
 import pokemons.Types;
 
 public enum Attack_Special implements Attacks {
-	CHARGE_BEAM(Types.ELECTRIC, 50, 90, 10);
+	CHARGE_BEAM(Types.ELECTRIC, 50, 90, 10, "", "Charge Beam");
 	
 	private final Types type;
 	private final int power;
 	private final int accuracy;
 	private final int pp;
+	private final String secondaryEffect;
+	private final String textName;
 	
-	Attack_Special(Types type, int power, int accuracy, int pp) {
+	Attack_Special(Types type, int power, int accuracy, int pp, String secondaryEffect, String textName) {
 		this.type = type;
 		this.power = power;
 		this.accuracy = accuracy;
 		this.pp = pp;
+		this.secondaryEffect = secondaryEffect;
+		this.textName = textName;
 	}
 	
 	
@@ -64,6 +68,16 @@ public enum Attack_Special implements Attacks {
 
 	public int getPp() {
 		return pp;
+	}
+
+
+	public String getSecondaryEffect() {
+		return secondaryEffect;
+	}
+
+
+	public String getTextName() {
+		return textName;
 	}
 	
 }
