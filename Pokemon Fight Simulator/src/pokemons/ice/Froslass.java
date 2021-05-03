@@ -1,7 +1,6 @@
 package pokemons.ice;
 
 import pokemons.Natures;
-import pokemons.Pokemon;
 import pokemons.Types;
 
 public class Froslass extends Snorunt {

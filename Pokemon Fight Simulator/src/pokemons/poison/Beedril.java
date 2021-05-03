@@ -1,7 +1,6 @@
 package pokemons.poison;
 
 import pokemons.Natures;
-import pokemons.Pokemon;
 import pokemons.Types;
 
 public class Beedril extends Kakuna {

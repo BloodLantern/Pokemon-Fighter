@@ -1,7 +1,6 @@
 package pokemons.ground;
 
 import pokemons.Natures;
-import pokemons.Pokemon;
 import pokemons.Types;
 
 public class Golem extends Graveler {

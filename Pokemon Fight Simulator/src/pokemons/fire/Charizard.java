@@ -1,7 +1,6 @@
 package pokemons.fire;
 
 import pokemons.Natures;
-import pokemons.Pokemon;
 import pokemons.Types;
 
 public class Charizard extends Charmeleon {

@@ -1,7 +1,6 @@
 package pokemons.grass;
 
 import pokemons.Natures;
-import pokemons.Pokemon;
 import pokemons.Types;
 
 public class Venusaur extends Ivysaur {

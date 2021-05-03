@@ -1,7 +1,6 @@
 package pokemons.normal;
 
 import pokemons.Natures;
-import pokemons.Pokemon;
 import pokemons.Types;
 
 public class Snorlax extends Munchlax {

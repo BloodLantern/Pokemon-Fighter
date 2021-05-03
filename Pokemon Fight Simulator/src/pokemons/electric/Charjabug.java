@@ -1,7 +1,6 @@
 package pokemons.electric;
 
 import pokemons.Natures;
-import pokemons.Pokemon;
 import pokemons.Types;
 import pokemons.bug.Grubbin;
 
