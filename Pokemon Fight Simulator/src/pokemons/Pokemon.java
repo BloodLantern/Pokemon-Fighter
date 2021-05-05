@@ -106,10 +106,7 @@ public abstract class Pokemon {
 	 */
 	public static double weakness(Types attacker, Types attacked) {
 		double weakness = 1.0;
-
-		// We suppose that type1 is attacking type2
 		weakness = Weaknesses.getWeaknessesList()[attacker.getIndex()][attacked.getIndex()];
-
 		return weakness;
 	}
 
