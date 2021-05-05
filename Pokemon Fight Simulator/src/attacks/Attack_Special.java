@@ -4,7 +4,17 @@ import pokemons.Pokemon;
 import pokemons.Types;
 
 public enum Attack_Special implements Attacks {
-	CHARGE_BEAM(Types.ELECTRIC, 50, 90, 10, "", "Charge Beam");
+	CHARGE_BEAM(Types.ELECTRIC, 50, 90, 10, "70% spAtk +1", "Charge Beam"), MOONBLAST(Types.FAIRY, 95, 100, 15, "10% lowers foe's spAtk by 1 stage", "Moonblast"),
+	BOOMBURST(Types.NORMAL, 140, 100, 10, "", "Boomburst"), FLAMETHROWER(Types.FIRE, 90, 100, 15, "10% burn", "Flamethrower"),
+	FIRE_BLAST(Types.FIRE, 110, 85, 5, "10% burn", "Fire Blast"), SCALD(Types.WATER, 80, 100, 15, "30% burn", "Scald"),
+	SURF(Types.WATER, 90, 100, 15, "", "Surf"), HYDRO_PUMP(Types.WATER, 110, 80, 5, "", "Hydro Pump"),
+	THUNDERBOLT(Types.ELECTRIC, 90, 100, 15, "10% paralysis", "Thunderbolt"), THUNDER(Types.ELECTRIC, 110, 70, 10, "30% paralysis", "Thunder"),
+	ICE_BEAM(Types.ICE, 90, 100, 10, "10% freeze", "Ice beam"), BLIZZARD(Types.ICE, 110, 70, 5, "10% freeze", "Blizzard"),
+	PSYCHIC(Types.PSYCHIC, 90, 100, 10, "10% lowers foe's spDef by 1 stage", "Psychic"), SHADOW_BALL(Types.GHOST, 80, 100, 15, "20% lowers foe's spDef by 1 stage", "Shadow ball"),
+	FOCUS_BLAST(Types.FIGHTING, 120, 70, 5, "10% lowers foe's spDef by 1 stage", "Focus Blast"), AURA_SPHERE(Types.FIGHTING, 80, 1000, 10, "", "Aura sphere"),
+	EARTH_POWER(Types.GROUND, 90, 100, 10, "10% lowers foe's spDef by 1 stage", "Earth power"), BUG_BUZZ(Types.BUG, 90, 100, 10, "10% lowers foe's spDef by 1 stage", "Bug buzz"),
+	DARK_PULSE(Types.DARK, 80, 100, 15, "20% flinch", "Dark pulse"), DRAGON_BREATH(Types.DRAGON, 60, 100, 20, "30% paralysis", "Dragon Breath"),
+	LEAF_STORM(Types.GRASS, 130, 90, 5, "lowers user's spAtk by 2 stages", "Leaf storm"), HURRICANE(Types.FLYING, 110, 70, 10, "30% confusion", "Hurricane");
 	
 	private final Types type;
 	private final int power;
@@ -33,6 +43,11 @@ public enum Attack_Special implements Attacks {
 			
 			if (attack.getPp() > 0) {
 				attack.setPp(attack.getPp() - 1);
+				
+				if (Math.random() > (float)attack.getAccuracy()/100) {
+					System.out.println(attacker.getName() + " missed its attack!");
+					return -1;
+				}
 				
 				double CM = 1;
 				

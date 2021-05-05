@@ -1,6 +1,7 @@
 package all;
 
 import attacks.Attack_Physical;
+import attacks.Attack_Special;
 import pokemons.Pokemon;
 import pokemons.electric.*;
 import pokemons.bug.*;
@@ -25,14 +26,17 @@ import pokemons.water.*;
 class Main {
 	
 	public static void main(String[] args) {
-		Pokemon ronflex = new Froslass(100);
-		Pokemon pika = new Raichu(100);
-		pika.addAttack(Attack_Physical.BOLT_BEAK);
-		pika.addAttack(Attack_Physical.BOLT_STRIKE);
-		pika.addAttack(Attack_Physical.FUSION_BOLT);
-		pika.addAttack(Attack_Physical.WILD_CHARGE);
-		ronflex.addAttack(Attack_Physical.BOLT_BEAK);
-		Fight f = new Fight(ronflex, pika);
+		Pokemon ty = new Tyranitar(100);
+		Pokemon dr = new Dragonite(100);
+		ty.addAttack(Attack_Physical.DARKEST_LARIAT);
+		ty.addAttack(Attack_Physical.ROCK_SLIDE);
+		ty.addAttack(Attack_Physical.EARTHQUAKE);
+		ty.addAttack(Attack_Physical.ICE_PUNCH);
+		dr.addAttack(Attack_Physical.ACROBATICS);
+		dr.addAttack(Attack_Physical.EARTHQUAKE);
+		dr.addAttack(Attack_Physical.BODY_SLAM);
+		dr.addAttack(Attack_Physical.DRAGON_CLAW);
+		Fight f = new Fight(ty, dr);
 		f.begin();
 	}
 	
