@@ -44,8 +44,6 @@ public enum Attack_Physical implements Attacks {
 				if (attack.getType() == attacker.getType())
 					CM *= 1.5;
 				
-				// TODO Critical hit
-				
 				double rdm = 1;
 				do {
 					rdm = Math.random();
@@ -55,20 +53,31 @@ public enum Attack_Physical implements Attacks {
 				// TODO Objects, talents multiplier
 				
 				float weakness = 1.0f;
-				weakness *= Pokemon.weakness(attack.getType(), attacked.getType());
+				weakness *= Pokemon.weakness(attacked.getType(), attack.getType());
 				if (attacked.getType2() != null)
-					weakness *= Pokemon.weakness(attack.getType(), attacked.getType2());
+					weakness *= Pokemon.weakness(attacked.getType2(), attack.getType());
 			
-				if (weakness < 0.5f) {
-					System.out.println("It isn't efficient at all !");
-				} else if (weakness >= 0.5f && weakness < 1.0f) {
-					System.out.println("It isn't very efficient.");
-				} else if (weakness >= 1.0f && weakness < 1.5f) {
-					System.out.println("It is efficient.");
-				} else if (weakness >= 1.5f) {
-					System.out.println("It is very efficient !");
+				if (weakness == 0.25f) {
+					System.out.println("It is not effective at all!");
+				} else if (weakness == 0.5f) {
+					System.out.println("It is not very effective.");
+				} else if (weakness == 1.0f) {
+					System.out.println("It is normally effective.");
+				} else if (weakness == 2.0f) {
+					System.out.println("It is super effective!");
+				} else if (weakness == 4.0f) {
+					System.out.println("It is really super effective!");
+				} else if (weakness == 0.0f){
+					System.out.println("It has no effect!");
 				}
 				CM *= weakness;
+				
+				double rcrit = Math.floor(Math.random()*24+1); //lancer de dé a 24 faces
+				if(rcrit == 1 && CM != 0) {
+					System.out.println("A critical hit!");
+					CM *= 1;
+				}
+				System.out.println(CM);
 				
 				// Damage formula
 				int finalDamage = (int)Math.floor((((attacker.getLevel()*0.4+2)*attacker.getAtk()*attack.getPower())/(attacked.getDef()*50)+2)*CM);

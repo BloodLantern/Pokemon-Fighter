@@ -25,14 +25,14 @@ import pokemons.water.*;
 class Main {
 	
 	public static void main(String[] args) {
-		Pokemon geodude = new Geodude(100);
-		Pokemon pika = new Pikachu(100);
+		Pokemon ronflex = new Froslass(100);
+		Pokemon pika = new Raichu(100);
 		pika.addAttack(Attack_Physical.BOLT_BEAK);
 		pika.addAttack(Attack_Physical.BOLT_STRIKE);
 		pika.addAttack(Attack_Physical.FUSION_BOLT);
 		pika.addAttack(Attack_Physical.WILD_CHARGE);
-		geodude.addAttack(Attack_Physical.BOLT_BEAK);
-		Fight f = new Fight(geodude, pika);
+		ronflex.addAttack(Attack_Physical.BOLT_BEAK);
+		Fight f = new Fight(ronflex, pika);
 		f.begin();
 	}
 	
