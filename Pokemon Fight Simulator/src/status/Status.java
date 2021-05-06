@@ -1,5 +1,9 @@
 package status;
 
-public interface Status {
+import pokemons.Pokemon;
 
+public interface Status {
+	
+	public abstract void effect(Pokemon affected);
+	
 }

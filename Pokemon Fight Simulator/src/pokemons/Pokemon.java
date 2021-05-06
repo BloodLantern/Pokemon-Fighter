@@ -74,6 +74,7 @@ public abstract class Pokemon {
 	}
 	
 	private int calculateStat(int baseStat, String baseStatName) {
+		
 		float nature = 1.0f;
 		
 		if (this.getNature().getPlus() == baseStatName) {
@@ -82,7 +83,15 @@ public abstract class Pokemon {
 			nature = 0.9f;
 		}
 		
-		return (int)Math.floor((int)Math.floor((((2*baseStat+this.getIV(baseStatName)+(int)Math.floor(this.getEV(baseStatName)/4))*this.getLevel())/100)+5)*nature);
+		if (baseStatName.equals("HP")) {
+			
+			return (int)Math.floor(((2*baseStat+this.getIV(baseStatName)+(int)Math.floor(this.getEV(baseStatName)/4))*this.getLevel())/100)+this.getLevel()+10;
+			
+		} else {
+			
+			return (int)Math.floor(((int)Math.floor(((2*baseStat+this.getIV(baseStatName)+(int)Math.floor(this.getEV(baseStatName)/4))*this.getLevel())/100)+5)*nature);
+			
+		}
 	}
 	
 	protected void generateNature() {
