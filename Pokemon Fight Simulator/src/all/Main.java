@@ -27,7 +27,7 @@ import pokemons.water.*;
 class Main {
 	
 	public static void main(String[] args) {
-		/*Pokemon ty = new Tyranitar(100);
+		Pokemon ty = new Tyranitar(100);
 		Pokemon dr = new Dragonite(100);
 		ty.addAttack(Attack_Physical.DARKEST_LARIAT);
 		ty.addAttack(Attack_Physical.ROCK_SLIDE);
@@ -38,8 +38,7 @@ class Main {
 		dr.addAttack(Attack_Physical.BODY_SLAM);
 		dr.addAttack(Attack_Physical.DRAGON_CLAW);
 		Fight f = new Fight(ty, dr);
-		f.begin();*/
-		Add_Pokemon.generate();
+		f.begin();
 	}
 	
 }
