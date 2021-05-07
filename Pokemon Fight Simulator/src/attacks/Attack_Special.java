@@ -14,7 +14,8 @@ public enum Attack_Special implements Attacks {
 	FOCUS_BLAST(Types.FIGHTING, 120, 70, 5, "10% lowers foe's spDef by 1 stage", "Focus Blast"), AURA_SPHERE(Types.FIGHTING, 80, 1000, 10, "", "Aura sphere"),
 	EARTH_POWER(Types.GROUND, 90, 100, 10, "10% lowers foe's spDef by 1 stage", "Earth power"), BUG_BUZZ(Types.BUG, 90, 100, 10, "10% lowers foe's spDef by 1 stage", "Bug buzz"),
 	DARK_PULSE(Types.DARK, 80, 100, 15, "20% flinch", "Dark pulse"), DRAGON_BREATH(Types.DRAGON, 60, 100, 20, "30% paralysis", "Dragon Breath"),
-	LEAF_STORM(Types.GRASS, 130, 90, 5, "lowers user's spAtk by 2 stages", "Leaf storm"), HURRICANE(Types.FLYING, 110, 70, 10, "30% confusion", "Hurricane");
+	LEAF_STORM(Types.GRASS, 130, 90, 5, "lowers user's spAtk by 2 stages", "Leaf storm"), HURRICANE(Types.FLYING, 110, 70, 10, "30% confusion", "Hurricane"),
+	ENERGY_BALL(Types.GRASS, 90, 100, 10, "10% lowers foe's spDef by 1 stage", "Energy ball");
 	
 	private final Types type;
 	private final int power;

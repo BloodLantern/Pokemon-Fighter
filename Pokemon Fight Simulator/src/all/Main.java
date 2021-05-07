@@ -27,17 +27,17 @@ import pokemons.water.*;
 class Main {
 	
 	public static void main(String[] args) {
-		Pokemon ty = new Tyranitar(100);
-		Pokemon dr = new Dragonite(100);
-		ty.addAttack(Attack_Physical.DARKEST_LARIAT);
-		ty.addAttack(Attack_Physical.ROCK_SLIDE);
-		ty.addAttack(Attack_Physical.EARTHQUAKE);
-		ty.addAttack(Attack_Physical.ICE_PUNCH);
-		dr.addAttack(Attack_Physical.ACROBATICS);
-		dr.addAttack(Attack_Physical.EARTHQUAKE);
-		dr.addAttack(Attack_Physical.BODY_SLAM);
-		dr.addAttack(Attack_Physical.DRAGON_CLAW);
-		Fight f = new Fight(ty, dr);
+		Pokemon go = new Golem(100);
+		Pokemon al = new Alakazam(100);
+		go.addAttack(Attack_Physical.EARTHQUAKE);
+		go.addAttack(Attack_Physical.STONE_EDGE);
+		go.addAttack(Attack_Physical.BODY_SLAM);
+		go.addAttack(Attack_Physical.KNOCK_OFF);
+		al.addAttack(Attack_Special.FOCUS_BLAST);
+		al.addAttack(Attack_Special.PSYCHIC);
+		al.addAttack(Attack_Special.SHADOW_BALL);
+		al.addAttack(Attack_Special.ENERGY_BALL);
+		Fight f = new Fight(go, al);
 		f.begin();
 	}
 	

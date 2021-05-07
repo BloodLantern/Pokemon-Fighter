@@ -21,8 +21,7 @@ public enum Attack_Physical implements Attacks {
 	ZEN_HEADBUTT(Types.PSYCHIC, 80, 90, 15, "20% flinch", "Zen headbutt"), LIQUIDATION(Types.WATER, 85, 100, 10, "10% lowers foe's Def by 1 stage", "Liquidation"),
 	KNOCK_OFF(Types.DARK, 65, 100, 20, "if foe has an item: removes it + power*1.5", "Knock Off"), DARKEST_LARIAT(Types.DARK, 85, 100, 10, "ignores foe's stats changes", "Darkest Lariat"),
 	DRAGON_CLAW(Types.DRAGON, 80, 100, 15, "", "Dragon claw"), ACROBATICS(Types.FLYING, 55, 100, 15, "power*2 if user has no item", "Acrobatics"),
-	VINE_WHIP(Types.GRASS, 45, 100, 25, "", "Vine whip");
-
+	VINE_WHIP(Types.GRASS, 45, 100, 25, "", "Vine whip"), STONE_EDGE(Types.ROCK, 100, 80, 5, "", "Stone Edge");
 	private final Types type;
 	private final int power;
 	private final int accuracy;
