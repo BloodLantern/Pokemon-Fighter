@@ -123,11 +123,6 @@ public enum Attack_Physical implements Attacks {
 	public int getPp() {
 		return pp;
 	}
-	
-	public void setPp(int pp) {
-		this.pp = pp;
-	}
-
 
 	public String getSecondaryEffect() {
 		return secondaryEffect;
@@ -136,6 +131,12 @@ public enum Attack_Physical implements Attacks {
 
 	public String getTextName() {
 		return textName;
+	}
+
+
+	public void setPp(int pp) {
+		this.pp = pp;
+		
 	}
 	
 }
