@@ -1,7 +1,10 @@
 package all;
 
+import java.awt.EventQueue;
+
 import attacks.Attack_Physical;
 import attacks.Attack_Special;
+import gui.AddPokemonWindow;
 import io.Add_Pokemon;
 import pokemons.Pokemon;
 import pokemons.electric.*;
@@ -27,6 +30,24 @@ import pokemons.water.*;
 class Main {
 	
 	public static void main(String[] args) {
+		createAddPokemonWindow();
+	}
+	
+	private static void createAddPokemonWindow() {
+		EventQueue.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					AddPokemonWindow window = new AddPokemonWindow();
+					window.getFrame().setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	private static void createFight() {
 		Pokemon go = new Golem(100);
 		Pokemon al = new Alakazam(100);
 		go.addAttack(Attack_Physical.EARTHQUAKE);

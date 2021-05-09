@@ -14,5 +14,11 @@ public enum Types {
 	public int getIndex() {
 		return this.index;
 	}
+	
+	public static Types[] getTypesList() {
+		Types[] list = {Types.BUG, Types.DARK, Types.DRAGON, Types.ELECTRIC, Types.FAIRY, Types.FIGHTING, Types.FIRE, Types.FLYING, Types.GHOST,
+				Types.GRASS, Types.GROUND, Types.ICE, Types.NORMAL, Types.POISON, Types.PSYCHIC, Types.ROCK, Types.STEEL, Types.WATER};
+		return list;
+	}
 
 }

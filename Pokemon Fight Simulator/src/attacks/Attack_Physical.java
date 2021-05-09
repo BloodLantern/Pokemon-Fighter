@@ -100,11 +100,10 @@ public enum Attack_Physical implements Attacks {
 				
 				return finalDamage;
 				} else {
+					System.err.println("You don't have enough PP to use " + attack.getTextName() + "!");
 					return -1;
 				}
-			}
-			else {
-				System.err.println("You don't have enough PP to use " + attack.getTextName() + "!");
+			} else {
 				return -1;
 			}
 	}
