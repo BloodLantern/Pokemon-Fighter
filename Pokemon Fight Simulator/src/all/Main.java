@@ -29,6 +29,7 @@ class Main {
 	public static void main(String[] args) {
 		Pokemon go = new Golem(100);
 		Pokemon al = new Alakazam(100);
+		Pokemon ty = new Tyranitar(100);
 		go.addAttack(Attack_Physical.EARTHQUAKE);
 		go.addAttack(Attack_Physical.STONE_EDGE);
 		go.addAttack(Attack_Physical.BODY_SLAM);
@@ -37,7 +38,11 @@ class Main {
 		al.addAttack(Attack_Special.PSYCHIC);
 		al.addAttack(Attack_Special.SHADOW_BALL);
 		al.addAttack(Attack_Special.ENERGY_BALL);
-		Fight f = new Fight(go, al);
+		ty.addAttack(Attack_Physical.EARTHQUAKE);
+		ty.addAttack(Attack_Physical.KNOCK_OFF);
+		ty.addAttack(Attack_Physical.STONE_EDGE);
+		ty.addAttack(Attack_Physical.ICE_PUNCH);
+		Fight f = new Fight(al, ty);
 		f.begin();
 	}
 	

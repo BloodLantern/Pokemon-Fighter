@@ -78,13 +78,13 @@ public class Fight {
 		int answer = sc.nextInt();
 		if (answer == 1) {
 			
-			System.out.println("Choose an attack to use:\n1 - " + ((Attack_Physical) pokemon.getAttacks()[0]).getTextName());
+			System.out.println("Choose an attack to use:\n1 - " + (pokemon.getAttacks()[0]).getTextName());
 			if (pokemon.getAttacksLength() > 1) {
-				System.out.println("2 - " + ((Attack_Physical) pokemon.getAttacks()[1]).getTextName());
+				System.out.println("2 - " + (pokemon.getAttacks()[1]).getTextName());
 				if (pokemon.getAttacksLength() > 2) {
-					System.out.println("3 - " + ((Attack_Physical) pokemon.getAttacks()[2]).getTextName());
+					System.out.println("3 - " + (pokemon.getAttacks()[2]).getTextName());
 					if (pokemon.getAttacksLength() > 3) {
-						System.out.println("4 - " + ((Attack_Physical) pokemon.getAttacks()[3]).getTextName());
+						System.out.println("4 - " + (pokemon.getAttacks()[3]).getTextName());
 					}
 				}
 			}
