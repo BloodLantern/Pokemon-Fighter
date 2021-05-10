@@ -4,11 +4,11 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.file.Paths;
-import java.text.ParseException;
 import java.util.Arrays;
 import java.util.concurrent.ForkJoinPool;
 
@@ -17,14 +17,11 @@ import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.text.MaskFormatter;
+import javax.swing.JPanel;
 
 import io.Add_Pokemon;
 import io.FolderScanner;
 import pokemons.Types;
-import javax.swing.JPanel;
-import javax.swing.BoxLayout;
-import java.awt.GridLayout;
 
 public class AddPokemonWindow {
 
@@ -282,6 +279,93 @@ public class AddPokemonWindow {
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton = new JButton("Confirm");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblNewLabel_1.setForeground(Color.BLACK);
+				lblNewLabel_4.setForeground(Color.BLACK);
+				lblNewLabel_5.setForeground(Color.BLACK);
+				lblNewLabel_6.setForeground(Color.BLACK);
+				lblNewLabel_7.setForeground(Color.BLACK);
+				lblNewLabel_8.setForeground(Color.BLACK);
+				lblNewLabel_9.setForeground(Color.BLACK);
+				
+				int answered = 0;
+				// If all fields changed
+				if (frmtdtxtfldTest.getText().equals(""))
+					answered++;
+				if (formattedTextField_2.getText().equals(""))
+					answered++;
+				if (formattedTextField.getText().equals(""))
+					answered++;
+				if (formattedTextField_3.getText().equals(""))
+					answered++;
+				if (formattedTextField_4.getText().equals(""))
+					answered++;
+				if (formattedTextField_5.getText().equals(""))
+					answered++;
+				if (formattedTextField_6.getText().equals(""))
+					answered++;
+				
+				// If user filled all fields
+				if (answered == 0) {
+					
+					System.out.println("\n------- All fields has been filled -------\n\nBeginning Pokemon file writing...");
+					if (formattedTextField.getText() != "") {
+						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types)comboBox_1.getSelectedItem(), (Types)comboBox.getSelectedItem(), Integer.parseInt(formattedTextField_2.getText()), Integer.parseInt(formattedTextField.getText()), Integer.parseInt(formattedTextField_3.getText()), Integer.parseInt(formattedTextField_4.getText()), Integer.parseInt(formattedTextField_5.getText()), Integer.parseInt(formattedTextField_6.getText()), comboBox_2.getSelectedItem().toString());
+					} else {
+						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types)comboBox_1.getSelectedItem(), null, Integer.parseInt(formattedTextField_2.getText()), Integer.parseInt(formattedTextField.getText()), Integer.parseInt(formattedTextField_3.getText()), Integer.parseInt(formattedTextField_4.getText()), Integer.parseInt(formattedTextField_5.getText()), Integer.parseInt(formattedTextField_6.getText()), comboBox_2.getSelectedItem().toString());
+					}
+					System.out.println("\n------- Pokemon file writing finished -------\n\nInitiate shutdown...");
+					System.exit(0);
+					
+				} else {
+					
+					String[] memory = new String[7];
+					memory[0] = frmtdtxtfldTest.getText();
+					memory[1] = formattedTextField_2.getText();
+					memory[2] = formattedTextField.getText();
+					memory[3] = formattedTextField_3.getText();
+					memory[4] = formattedTextField_4.getText();
+					memory[5] = formattedTextField_5.getText();
+					memory[6] = formattedTextField_6.getText();
+					
+					for (;answered > 0; answered--) {
+						if (frmtdtxtfldTest.getText().equals("")) {
+							lblNewLabel_1.setForeground(Color.RED);
+							frmtdtxtfldTest.setText("Temp");
+						} else if (formattedTextField_2.getText().equals("")) {
+							lblNewLabel_4.setForeground(Color.RED);
+							formattedTextField_2.setText("Temp");
+						} else if (formattedTextField.getText().equals("")) {
+							lblNewLabel_5.setForeground(Color.RED);
+							formattedTextField.setText("Temp");
+						} else if (formattedTextField_3.getText().equals("")) {
+							lblNewLabel_6.setForeground(Color.RED);
+							formattedTextField_3.setText("Temp");
+						} else if (formattedTextField_4.getText().equals("")) {
+							lblNewLabel_7.setForeground(Color.RED);
+							formattedTextField_4.setText("Temp");
+						} else if (formattedTextField_5.getText().equals("")) {
+							lblNewLabel_8.setForeground(Color.RED);
+							formattedTextField_5.setText("Temp");
+						} else if (formattedTextField_6.getText().equals("")) {
+							lblNewLabel_9.setForeground(Color.RED);
+							formattedTextField_6.setText("Temp");
+						}
+					}
+					
+					frmtdtxtfldTest.setText(memory[0]);
+					formattedTextField_2.setText(memory[1]);
+					formattedTextField.setText(memory[2]);
+					formattedTextField_3.setText(memory[3]);
+					formattedTextField_4.setText(memory[4]);
+					formattedTextField_5.setText(memory[5]);
+					formattedTextField_6.setText(memory[6]);
+					
+				}
+			}
+		});
 		btnNewButton.setToolTipText("Add this Pokemon to database");
 		btnNewButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 		panel.add(btnNewButton);
