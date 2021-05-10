@@ -63,7 +63,7 @@ class Main {
 		ty.addAttack(Attack_Physical.KNOCK_OFF);
 		ty.addAttack(Attack_Physical.STONE_EDGE);
 		ty.addAttack(Attack_Physical.ICE_PUNCH);
-		Fight f = new Fight(al, go);
+		Fight f = new Fight(al, ty);
 		f.begin();
 	}
 	
