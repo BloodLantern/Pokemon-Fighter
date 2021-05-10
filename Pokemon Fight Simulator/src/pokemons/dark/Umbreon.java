@@ -3,8 +3,9 @@ package pokemons.dark;
 import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
+import pokemons.normal.Eevee;
 
-public class Umbreon extends Pokemon {
+public class Umbreon extends Eevee {
 
 public Umbreon() {
 		
@@ -52,5 +53,4 @@ public Umbreon() {
 		this.setNature(Natures.randomNature());
 		this.calculateStats();
 	}
-
 }
