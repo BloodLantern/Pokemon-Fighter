@@ -47,13 +47,13 @@ public class AddPokemonWindow {
 		getFrame().setLocationRelativeTo(null);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 88, 394, 38, 0 };
-		gridBagLayout.rowHeights = new int[] { 35, 24, 22, 22, 24, 20, 24, 24, 24, 24, 24, 23, 7, 0 };
+		gridBagLayout.rowHeights = new int[] { 35, 24, 22, 22, 24, 20, 24, 24, 24, 24, 24, 34, 14, 0 };
 		gridBagLayout.columnWeights = new double[] { 0.0, 1.0, 0.0, Double.MIN_VALUE };
-		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0,
+		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 				Double.MIN_VALUE };
 		frmAddNewPokemon.getContentPane().setLayout(gridBagLayout);
 
-		JComboBox<Types> comboBox_1 = new JComboBox<Types>();
+		JComboBox<Types> comboBox_1 = new JComboBox<Types>(Types.getTypesList());
 		comboBox_1.setMaximumRowCount(18);
 		comboBox_1.setToolTipText("New Pokemon's Primary Type");
 
@@ -111,7 +111,7 @@ public class AddPokemonWindow {
 		gbc_lblNewLabel_3.gridy = 3;
 		frmAddNewPokemon.getContentPane().add(lblNewLabel_3, gbc_lblNewLabel_3);
 
-		JComboBox<Types> comboBox = new JComboBox<Types>();
+		JComboBox<Types> comboBox = new JComboBox<Types>(Types.getTypesList());
 		comboBox.addItem(null);
 		comboBox.setSelectedItem(null);
 		comboBox.setMaximumRowCount(19);

@@ -29,8 +29,8 @@ import pokemons.water.*;
 class Main {
 	
 	public static void main(String[] args) {
-		//createAddPokemonWindow();
-		createFight();
+		createAddPokemonWindow();
+		//createFight();
 	}
 	
 	private static void createAddPokemonWindow() {
