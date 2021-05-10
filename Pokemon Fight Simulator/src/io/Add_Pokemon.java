@@ -12,50 +12,12 @@ public abstract class Add_Pokemon {
 	
 	private static File file = null;
 
-	public static void generate() {
+	public static void generate(String name, Types type, Types type2, int hp, int atk, int def, int spatk, int spdef, int speed, String evolve) {
 
 		boolean operationSuccess = true;
 		FileWriter writer = null;
-		Scanner params = new Scanner(System.in);
 		
-		String name;
-		Types type;
-		Types type2 = null;
-		int hp;
-		int atk;
-		int def;
-		int spatk;
-		int spdef;
-		int speed;
-		String evolve;
-		
-		System.out.print("Please input the following parameter:\nName: ");
-		name = params.nextLine();
-		System.out.print("\nType: ");
-		type = Types.valueOf(params.nextLine().toUpperCase());
-		System.out.print("\nType 2 (leave blank if not): ");
-		String temp = params.nextLine();
-		if (temp != "")
-			type2 = Types.valueOf(temp.toUpperCase());
-		System.out.print("\nHPs: ");
-		hp = params.nextInt();
-		System.out.print("\nAtk: ");
-		atk = params.nextInt();
-		System.out.print("\nDef: ");
-		def = params.nextInt();
-		System.out.print("\nSpAtk: ");
-		spatk = params.nextInt();
-		System.out.print("\nSpDef: ");
-		spdef = params.nextInt();
-		System.out.print("\nSpeed: ");
-		speed = params.nextInt();
-		System.out.print("\nEvolves from (write 'Pokemon' if not): ");
-		params.nextLine();
-		evolve = params.nextLine();
-
-		params.close();
-		
-		if (temp != "") {
+		if (type2 != null) {
 			System.out.println("\nCreating new Pokemon " + name + " of type " + type.toString() + "-" + type2.toString() + " evolving from " + evolve + " with stats:\nHPs: " + hp + "\nAtk: " + atk + "\nDef: " + def + "\nSpAtk: " + spatk + "\nSpDef: " + spdef + "\nSpeed: " + speed);
 		} else {
 			System.out.println("\nCreating new Pokemon " + name + " of type " + type.toString() + " evolving from " + evolve + " with stats:\nHPs: " + hp + "\nAtk: " + atk + "\nDef: " + def + "\nSpAtk: " + spatk + "\nSpDef: " + spdef + "\nSpeed: " + speed);
@@ -122,7 +84,7 @@ public abstract class Add_Pokemon {
 					+ "	@Override\r\n"
 					+ "	protected void initStats() {\r\n"
 					+ "		this.setType(Types." + type + ");\r\n");
-			if (temp != "")
+			if (type2 != null)
 				writer.write("		this.setType2(Types." + type2 + ");\r\n");
 			writer.write("		this.setBaseHP(" + hp + ");\r\n"
 					+ "		this.setBaseAtk(" + atk + ");\r\n"
