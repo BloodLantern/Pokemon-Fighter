@@ -4,26 +4,26 @@ import pokemons.Natures;
 import pokemons.Pokemon;
 import pokemons.Types;
 
-public class Politoed extends Poliwhirl {
+public class Poliwhirl extends Poliwag {
 
-public Politoed() {
+public Poliwhirl() {
 		
-		this.setName("Politoed");
+		this.setName("Poliwhirl");
 		this.generateIVs();
 		initStats();
 		
 	}
 	
-	public Politoed(int level) {
+	public Poliwhirl(int level) {
 		
-		this.setName("Politoed");
+		this.setName("Poliwhirl");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
 		
 	}
 	
-	public Politoed(String name) {
+	public Poliwhirl(String name) {
 		
 		this.setName(name);
 		this.generateIVs();
@@ -31,7 +31,7 @@ public Politoed() {
 		
 	}
 	
-	public Politoed(String name, int level) {
+	public Poliwhirl(String name, int level) {
 		
 		this.setName(name);
 		this.setLevel(level);
@@ -43,12 +43,12 @@ public Politoed() {
 	@Override
 	protected void initStats() {
 		this.setType(Types.WATER);
-		this.setBaseHP(90);
-		this.setBaseAtk(75);
-		this.setBaseDef(75);
-		this.setBaseSpAtk(90);
-		this.setBaseSpDef(100);
-		this.setBaseSpeed(70);
+		this.setBaseHP(65);
+		this.setBaseAtk(65);
+		this.setBaseDef(65);
+		this.setBaseSpAtk(50);
+		this.setBaseSpDef(50);
+		this.setBaseSpeed(90);
 		this.setNature(Natures.randomNature());
 		this.calculateStats();
 	}
