@@ -4,8 +4,7 @@ import java.awt.EventQueue;
 
 import attacks.Attack_Physical;
 import attacks.Attack_Special;
-import gui.AddPokemonWindow;
-import io.Add_Pokemon;
+import gui.MainWindow;
 import pokemons.Pokemon;
 import pokemons.electric.*;
 import pokemons.bug.*;
@@ -39,7 +38,7 @@ class Main {
 			@Override
 			public void run() {
 				try {
-					AddPokemonWindow window = new AddPokemonWindow();
+					MainWindow window = new MainWindow();
 					window.getFrame().setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

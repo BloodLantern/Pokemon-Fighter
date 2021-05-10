@@ -22,6 +22,9 @@ import javax.swing.text.MaskFormatter;
 import io.Add_Pokemon;
 import io.FolderScanner;
 import pokemons.Types;
+import javax.swing.JPanel;
+import javax.swing.BoxLayout;
+import java.awt.GridLayout;
 
 public class AddPokemonWindow {
 
@@ -30,26 +33,27 @@ public class AddPokemonWindow {
 	/**
 	 * Create the application.
 	 */
-	public AddPokemonWindow() {
-		initialize();
+	public AddPokemonWindow(JFrame launcher) {
+		initialize(launcher);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(JFrame launcher) {
 		setFrame(new JFrame());
 		getFrame().setBounds(100, 100, 513, 365);
-		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		getFrame().setLocationRelativeTo(null);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 88, 394, 38, 0 };
 		gridBagLayout.rowHeights = new int[] { 35, 24, 22, 22, 24, 20, 24, 24, 24, 24, 24, 23, 7, 0 };
 		gridBagLayout.columnWeights = new double[] { 0.0, 1.0, 0.0, Double.MIN_VALUE };
-		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0,
 				Double.MIN_VALUE };
 		frmAddNewPokemon.getContentPane().setLayout(gridBagLayout);
 
-		JComboBox<Types> comboBox_1 = new JComboBox<Types>(Types.getTypesList());
+		JComboBox<Types> comboBox_1 = new JComboBox<Types>();
 		comboBox_1.setMaximumRowCount(18);
 		comboBox_1.setToolTipText("New Pokemon's Primary Type");
 
@@ -107,7 +111,7 @@ public class AddPokemonWindow {
 		gbc_lblNewLabel_3.gridy = 3;
 		frmAddNewPokemon.getContentPane().add(lblNewLabel_3, gbc_lblNewLabel_3);
 
-		JComboBox<Types> comboBox = new JComboBox<Types>(Types.getTypesList());
+		JComboBox<Types> comboBox = new JComboBox<Types>();
 		comboBox.addItem(null);
 		comboBox.setSelectedItem(null);
 		comboBox.setMaximumRowCount(19);
@@ -252,110 +256,35 @@ public class AddPokemonWindow {
 		}
 		comboBox_2.setSelectedItem("Pokemon");
 
-		JButton btnNewButton = new JButton("Confirm");
-		btnNewButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				lblNewLabel_1.setForeground(Color.BLACK);
-				lblNewLabel_4.setForeground(Color.BLACK);
-				lblNewLabel_5.setForeground(Color.BLACK);
-				lblNewLabel_6.setForeground(Color.BLACK);
-				lblNewLabel_7.setForeground(Color.BLACK);
-				lblNewLabel_8.setForeground(Color.BLACK);
-				lblNewLabel_9.setForeground(Color.BLACK);
-				
-				int answered = 0;
-				// If all fields changed
-				if (frmtdtxtfldTest.getText().equals(""))
-					answered++;
-				if (formattedTextField_2.getText().equals(""))
-					answered++;
-				if (formattedTextField.getText().equals(""))
-					answered++;
-				if (formattedTextField_3.getText().equals(""))
-					answered++;
-				if (formattedTextField_4.getText().equals(""))
-					answered++;
-				if (formattedTextField_5.getText().equals(""))
-					answered++;
-				if (formattedTextField_6.getText().equals(""))
-					answered++;
-				
-				// If user filled all fields
-				if (answered == 0) {
-					
-					System.out.println("\n------- All fields has been filled -------\n\nBeginning Pokemon file writing...");
-					if (formattedTextField.getText() != "") {
-						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types)comboBox_1.getSelectedItem(), (Types)comboBox.getSelectedItem(), Integer.parseInt(formattedTextField_2.getText()), Integer.parseInt(formattedTextField.getText()), Integer.parseInt(formattedTextField_3.getText()), Integer.parseInt(formattedTextField_4.getText()), Integer.parseInt(formattedTextField_5.getText()), Integer.parseInt(formattedTextField_6.getText()), comboBox_2.getSelectedItem().toString());
-					} else {
-						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types)comboBox_1.getSelectedItem(), null, Integer.parseInt(formattedTextField_2.getText()), Integer.parseInt(formattedTextField.getText()), Integer.parseInt(formattedTextField_3.getText()), Integer.parseInt(formattedTextField_4.getText()), Integer.parseInt(formattedTextField_5.getText()), Integer.parseInt(formattedTextField_6.getText()), comboBox_2.getSelectedItem().toString());
-					}
-					System.out.println("\n------- Pokemon file writing finished -------\n\nInitiate shutdown...");
-					System.exit(0);
-					
-				} else {
-					
-					String[] memory = new String[7];
-					memory[0] = frmtdtxtfldTest.getText();
-					memory[1] = formattedTextField_2.getText();
-					memory[2] = formattedTextField.getText();
-					memory[3] = formattedTextField_3.getText();
-					memory[4] = formattedTextField_4.getText();
-					memory[5] = formattedTextField_5.getText();
-					memory[6] = formattedTextField_6.getText();
-					
-					for (;answered > 0; answered--) {
-						if (frmtdtxtfldTest.getText().equals("")) {
-							lblNewLabel_1.setForeground(Color.RED);
-							frmtdtxtfldTest.setText("Temp");
-						} else if (formattedTextField_2.getText().equals("")) {
-							lblNewLabel_4.setForeground(Color.RED);
-							formattedTextField_2.setText("Temp");
-						} else if (formattedTextField.getText().equals("")) {
-							lblNewLabel_5.setForeground(Color.RED);
-							formattedTextField.setText("Temp");
-						} else if (formattedTextField_3.getText().equals("")) {
-							lblNewLabel_6.setForeground(Color.RED);
-							formattedTextField_3.setText("Temp");
-						} else if (formattedTextField_4.getText().equals("")) {
-							lblNewLabel_7.setForeground(Color.RED);
-							formattedTextField_4.setText("Temp");
-						} else if (formattedTextField_5.getText().equals("")) {
-							lblNewLabel_8.setForeground(Color.RED);
-							formattedTextField_5.setText("Temp");
-						} else if (formattedTextField_6.getText().equals("")) {
-							lblNewLabel_9.setForeground(Color.RED);
-							formattedTextField_6.setText("Temp");
-						}
-					}
-					
-					frmtdtxtfldTest.setText(memory[0]);
-					formattedTextField_2.setText(memory[1]);
-					formattedTextField.setText(memory[2]);
-					formattedTextField_3.setText(memory[3]);
-					formattedTextField_4.setText(memory[4]);
-					formattedTextField_5.setText(memory[5]);
-					formattedTextField_6.setText(memory[6]);
-					
-				}
-			}
-		});
-
 		GridBagConstraints gbc_comboBox_2 = new GridBagConstraints();
 		gbc_comboBox_2.insets = new Insets(0, 0, 5, 5);
 		gbc_comboBox_2.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox_2.gridx = 1;
 		gbc_comboBox_2.gridy = 10;
 		frmAddNewPokemon.getContentPane().add(comboBox_2, gbc_comboBox_2);
-
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.anchor = GridBagConstraints.NORTH;
-		gbc_btnNewButton.fill = GridBagConstraints.HORIZONTAL;
-		gbc_btnNewButton.gridx = 1;
-		gbc_btnNewButton.gridy = 11;
-		frmAddNewPokemon.getContentPane().add(btnNewButton, gbc_btnNewButton);
+		
+		JPanel panel = new JPanel();
+		GridBagConstraints gbc_panel = new GridBagConstraints();
+		gbc_panel.insets = new Insets(0, 0, 5, 5);
+		gbc_panel.fill = GridBagConstraints.BOTH;
+		gbc_panel.gridx = 1;
+		gbc_panel.gridy = 11;
+		frmAddNewPokemon.getContentPane().add(panel, gbc_panel);
+		panel.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				launcher.setVisible(true);
+				getFrame().dispose();
+			}
+		});
+		panel.add(btnNewButton_1);
+		
+		JButton btnNewButton = new JButton("Confirm");
+		btnNewButton.setToolTipText("Add this Pokemon to database");
+		btnNewButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(btnNewButton);
 	}
 
 	public JFrame getFrame() {
