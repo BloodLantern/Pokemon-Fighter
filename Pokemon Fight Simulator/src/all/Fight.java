@@ -96,10 +96,14 @@ public class Fight {
 				int HPBefore = this.slowest.getHP();
 				
 				if (pokemon.getAttacks()[answer - 1].getClass().getSimpleName().equals("Attack_Physical")) {
-					Attack_Physical.use((Attack_Physical) pokemon.getAttacks()[answer - 1], pokemon, this.slowest);
+					if (Attack_Physical.use((Attack_Physical) pokemon.getAttacks()[answer - 1], pokemon, this.slowest) == -1) {
+						System.err.println("There was a problem using this attack :(");
+					}
 					System.out.println(this.slowest.getName() + "'s HPs: " + HPBefore + " -> " + this.slowest.getHP());
 				} else {
-					Attack_Special.use((Attack_Special) pokemon.getAttacks()[answer - 1], pokemon, this.slowest);
+					if (Attack_Special.use((Attack_Special) pokemon.getAttacks()[answer - 1], pokemon, this.slowest) == -1) {
+						System.err.println("There was a problem using this attack :(");
+					}
 					System.out.println(this.slowest.getName() + "'s HPs: " + HPBefore + " -> " + this.slowest.getHP());
 				}
 				
@@ -108,10 +112,14 @@ public class Fight {
 				int HPBefore = this.fastest.getHP();
 				
 				if (pokemon.getAttacks()[answer - 1].getClass().getSimpleName().equals("Attack_Physical")) {
-					Attack_Physical.use((Attack_Physical) pokemon.getAttacks()[answer - 1], pokemon, this.fastest);
+					if (Attack_Physical.use((Attack_Physical) pokemon.getAttacks()[answer - 1], pokemon, this.slowest) == -1) {
+						System.err.println("There was a problem using this attack :(");
+					}
 					System.out.println(this.fastest.getName() + "'s HPs: " + HPBefore + " -> " + this.fastest.getHP());
 				} else {
-					Attack_Special.use((Attack_Special) pokemon.getAttacks()[answer - 1], pokemon, this.fastest);
+					if (Attack_Special.use((Attack_Special) pokemon.getAttacks()[answer - 1], pokemon, this.slowest) == -1) {
+						System.err.println("There was a problem using this attack :(");
+					}
 					System.out.println(this.fastest.getName() + "'s HPs: " + HPBefore + " -> " + this.fastest.getHP());
 				}
 				
