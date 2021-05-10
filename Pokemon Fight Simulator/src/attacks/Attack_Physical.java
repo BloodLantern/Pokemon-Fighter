@@ -71,9 +71,10 @@ public enum Attack_Physical implements Attacks {
 				
 				float weakness = 1.0f;
 				weakness *= Pokemon.weakness(attacked.getType(), attack.getType());
+				System.out.println(weakness + " " + Pokemon.weakness(attacked.getType(), attack.getType()));
 				if (attacked.getType2() != null)
 					weakness *= Pokemon.weakness(attacked.getType2(), attack.getType());
-			
+				System.out.println(weakness + " " + Pokemon.weakness(attacked.getType2(), attack.getType()));
 				if (weakness == 0.25f) {
 					System.out.println("It is not effective at all!");
 				} else if (weakness == 0.5f) {
@@ -96,6 +97,7 @@ public enum Attack_Physical implements Attacks {
 				}
 				
 				// Damage calc
+				System.out.println(CM);
 				int finalDamage = (int)Math.floor((((attacker.getLevel()*0.4+2)*attacker.getAtk()*attack.getPower())/(attacked.getDef()*50)+2)*CM);
 				
 				attacked.setHP(Math.max(attacked.getHP() - finalDamage, 0));

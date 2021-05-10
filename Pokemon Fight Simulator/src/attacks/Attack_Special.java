@@ -69,7 +69,7 @@ public enum Attack_Special implements Attacks {
 				weakness *= Pokemon.weakness(attacked.getType(), attack.getType());
 				if (attacked.getType2() != null)
 					weakness *= Pokemon.weakness(attacked.getType2(), attack.getType());
-			
+				
 				if (weakness == 0.25f) {
 					System.out.println("It is not effective at all!");
 				} else if (weakness == 0.5f) {

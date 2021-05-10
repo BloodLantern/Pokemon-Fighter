@@ -30,7 +30,8 @@ import pokemons.water.*;
 class Main {
 	
 	public static void main(String[] args) {
-		createAddPokemonWindow();
+		//createAddPokemonWindow();
+		createFight();
 	}
 	
 	private static void createAddPokemonWindow() {
@@ -63,7 +64,7 @@ class Main {
 		ty.addAttack(Attack_Physical.KNOCK_OFF);
 		ty.addAttack(Attack_Physical.STONE_EDGE);
 		ty.addAttack(Attack_Physical.ICE_PUNCH);
-		Fight f = new Fight(al, ty);
+		Fight f = new Fight(al, go);
 		f.begin();
 	}
 	
