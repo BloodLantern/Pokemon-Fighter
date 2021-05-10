@@ -112,12 +112,12 @@ public class Fight {
 				int HPBefore = this.fastest.getHP();
 				
 				if (pokemon.getAttacks()[answer - 1].getClass().getSimpleName().equals("Attack_Physical")) {
-					if (Attack_Physical.use((Attack_Physical) pokemon.getAttacks()[answer - 1], pokemon, this.slowest) == -1) {
+					if (Attack_Physical.use((Attack_Physical) pokemon.getAttacks()[answer - 1], pokemon, this.fastest) == -1) {
 						System.err.println("There was a problem using this attack :(");
 					}
 					System.out.println(this.fastest.getName() + "'s HPs: " + HPBefore + " -> " + this.fastest.getHP());
 				} else {
-					if (Attack_Special.use((Attack_Special) pokemon.getAttacks()[answer - 1], pokemon, this.slowest) == -1) {
+					if (Attack_Special.use((Attack_Special) pokemon.getAttacks()[answer - 1], pokemon, this.fastest) == -1) {
 						System.err.println("There was a problem using this attack :(");
 					}
 					System.out.println(this.fastest.getName() + "'s HPs: " + HPBefore + " -> " + this.fastest.getHP());
