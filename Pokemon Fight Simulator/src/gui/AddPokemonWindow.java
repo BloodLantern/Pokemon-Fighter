@@ -317,7 +317,8 @@ public class AddPokemonWindow {
 						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types)comboBox_1.getSelectedItem(), null, Integer.parseInt(formattedTextField_2.getText()), Integer.parseInt(formattedTextField.getText()), Integer.parseInt(formattedTextField_3.getText()), Integer.parseInt(formattedTextField_4.getText()), Integer.parseInt(formattedTextField_5.getText()), Integer.parseInt(formattedTextField_6.getText()), comboBox_2.getSelectedItem().toString());
 					}
 					System.out.println("\n------- Pokemon file writing finished -------\n\nInitiate shutdown...");
-					System.exit(0);
+					launcher.setVisible(true);
+					getFrame().dispose();
 					
 				} else {
 					
