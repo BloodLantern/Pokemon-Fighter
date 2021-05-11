@@ -22,32 +22,59 @@ public abstract class Add_Pokemon {
 		FileWriter writer = null;
 		Types evolveType = null;
 		
-		// Getting evolve's type
-		System.out.println("Scanning for " + evolve + "'s type equivalence...");
-		FolderScanner fs = new FolderScanner(Paths.get("src\\pokemons"), evolve + ".java");
-		int processors = Runtime.getRuntime().availableProcessors();
-		ForkJoinPool pool = new ForkJoinPool(processors);
-		long start = System.currentTimeMillis();
-		pool.invoke(fs);
-		Scanner sc = null;
-		if (fs.getResult() == 1) {
-			System.out.println("File found !\nTime spent: " + (System.currentTimeMillis() - start) + "ms\n\nReading file...");
-			try {
-				sc = new Scanner(fs.getFilesList().get(0));
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
-			for (int i = 0; i < 44; i++)
-				sc.nextLine();
-			String found = sc.nextLine();
-			found = found.replaceAll("		this.setType\\(Types.", "");
-			found = found.replaceAll("\\);", "");
-			System.out.println("Type found -> " + found + "\n\nLooking for this type in Type enum...");
+		if (!evolve.equals("Pokemon")) {
 			
-			evolveType = Types.valueOf(found);
-			System.out.println("Type found !");
-		} else {
-			System.out.println("There was an error during process ! :(");
+			// Getting evolve's type
+			System.out.println("Scanning for " + evolve + "'s type equivalence...");
+			FolderScanner fs = new FolderScanner(Paths.get("src\\pokemons"), evolve + ".java");
+			int processors = Runtime.getRuntime().availableProcessors();
+			ForkJoinPool pool = new ForkJoinPool(processors);
+			long start = System.currentTimeMillis();
+			pool.invoke(fs);
+			Scanner sc = null;
+			if (fs.getResult() == 1) {
+				System.out.println("File found !\nTime spent: " + (System.currentTimeMillis() - start) + "ms\n\nReading file...");
+				try {
+					sc = new Scanner(fs.getFilesList().get(0));
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				}
+				for (int i = 0; i < 44; i++)
+					sc.nextLine();
+				String found = sc.nextLine();
+				found = found.replaceAll("		this.setType\\(Types.", "");
+				found = found.replaceAll("\\);", "");
+				System.out.println("Type found -> " + found + "\n\nLooking for this type in Type enum...");
+				boolean redo = false;
+				
+				do {
+					try {
+						evolveType = Types.valueOf(found);
+						System.out.println("Type found !");
+						redo = false;
+					} catch (java.lang.IllegalArgumentException e) {
+						redo = true;
+						System.err.println("Illegal argument -> " + found + "\nThis isn't a valid Pokemon type !");
+						System.out.println("Wondering for the true type...");
+						sc.close();
+						Scanner sc_ = null;
+						try {
+							sc_ = new Scanner(fs.getFilesList().get(0));
+						} catch (FileNotFoundException a) {
+							a.printStackTrace();
+						}
+						for (int i = 0; i < 43; i++)
+							sc_.nextLine();
+						found = sc_.nextLine();
+						found = found.replaceAll("		this.setType\\(Types.", "");
+						found = found.replaceAll("\\);", "");
+						System.out.println("Type found -> " + found + "\n\nLooking for this type in Type enum...");
+					}
+				} while (redo);
+			} else {
+				System.out.println("There was an error during process ! :(");
+			}
+			
 		}
 		
 		if (type2 != null) {
