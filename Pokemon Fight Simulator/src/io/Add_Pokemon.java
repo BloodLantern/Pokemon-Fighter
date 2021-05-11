@@ -179,6 +179,7 @@ public abstract class Add_Pokemon {
 				
 			} else {
 				System.err.println("Pokemon file '" + name + "' does already exists !\nStopping the process.");
+				operationSuccess = false;
 			}
 			
 		} catch (IOException e) {
