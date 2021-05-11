@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 
 import io.Add_Pokemon;
 import io.FolderScanner;
+import pokemons.Pokemon;
 import pokemons.Types;
 
 public class AddPokemonWindow {
