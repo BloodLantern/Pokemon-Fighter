@@ -1,10 +1,11 @@
 package pokemons;
 
 import attacks.Attacks;
+import status.*;
 
 /**
- * This is the superclass for all pokemons. It contains all the common variables
- * and methods.
+ * This is the abstract superclass for all pokemons.
+ * <p>It contains all the common variables and methods.
  */
 public abstract class Pokemon {
 
@@ -13,15 +14,42 @@ public abstract class Pokemon {
 	private Natures nature;
 	private String name;
 	private int level = 1;
-	private int HP;
-	private int Atk;
-	private int Def;
-	private int SpAtk;
-	private int SpDef;
-	private int Speed;
 	private int experience = 0;
+	/**
+	 * Final HP stat for this child Pokemon instance.
+	 * <p>HP is for Health Points by the way.
+	 */
+	private int HP;
+	/**
+	 * Final Attack stat for this child Pokemon instance.
+	 */
+	private int Atk;
+	/**
+	 * Final Defense stat for this child Pokemon instance.
+	 */
+	private int Def;
+	/**
+	 * Final Special Attack stat for this child Pokemon instance.
+	 */
+	private int SpAtk;
+	/**
+	 * Final Special Defense stat for this child Pokemon instance.
+	 */
+	private int SpDef;
+	/**
+	 * Final Speed stat for this child Pokemon instance.
+	 */
+	private int Speed;
+	// In-fight modifiers
 	private int accuracy = 100;
 	private int dodge = 0;
+	/**
+	 * Actual status for this child Pokemon instance.
+	 */
+	private Status status = new Status_Normal(this);
+	/**
+	 * Attacks array containing all actually learned and usable attack.
+	 */
 	private Attacks[] attacks = new Attacks[4];
 	
 	// EV Stats
@@ -64,6 +92,10 @@ public abstract class Pokemon {
 	
 	protected abstract void initStats();
 	
+	/**
+	 * Used to recalculate all final statistics of this child Pokemon instance.
+	 * It is basically used in their constructor.
+	 */
 	public void calculateStats() {
 		this.setHP(calculateStat(this.getBaseHP(), "HP"));
 		this.setAtk(calculateStat(this.getBaseAtk(), "Atk"));
@@ -73,6 +105,12 @@ public abstract class Pokemon {
 		this.setSpeed(calculateStat(this.getBaseSpeed(), "Speed"));
 	}
 	
+	/**
+	 * Used to recalculate one statistic of this child Pokemon instance.
+	 * @param baseStat is this child Pokemon's base stat.
+	 * @param baseStatName is the name of the stat to recalculate.
+	 * @return
+	 */
 	private int calculateStat(int baseStat, String baseStatName) {
 		
 		float nature = 1.0f;
@@ -94,10 +132,22 @@ public abstract class Pokemon {
 		}
 	}
 	
+	/**
+	 * Basically generates a random Nature for this
+	 * Pokemon by using {@link Natures.randomNature()}
+	 * method and setting it to this instance.
+	 */
 	protected void generateNature() {
 		this.setNature(Natures.randomNature());
 	}
-
+	
+	/**
+	 * Basically used to level up a Pokemon instance.
+	 * When reaching a certain experience level, may also
+	 * evolve into another Pokemon.
+	 * 
+	 * @see pokemons.Pokemon#evolve()
+	 */
 	public void levelUp() {
 		this.setLevel(this.getLevel() + 1);
 		
@@ -105,7 +155,16 @@ public abstract class Pokemon {
 			
 		}
 	}
-
+	
+	/**
+	 * Used when reaching a certain experience level.
+	 * Creates a instance of this child Pokemon's evolution
+	 * and assigning all its statistics from it.
+	 * If a Pokemon A is evolving into a Pokemon B, then B
+	 * extends A.
+	 * 
+	 * @see pokemons.Pokemon#levelUp()
+	 */
 	public void evolve() {}
 	
 	/**
@@ -118,7 +177,14 @@ public abstract class Pokemon {
 		weakness = Weaknesses.getWeaknessesList()[attacker.getIndex()][attacked.getIndex()];
 		return weakness;
 	}
-
+	
+	/**
+	 * Basically used to generate all IV Stat for this
+	 * Pokemon by using the following code:
+	 * <p><ul>{@code this.setHPIV((int) Math.round(Math.random() * 31))}
+	 * </ul><p>This is for HP IVs but it is quite the same for
+	 * all other IVs.
+	 */
 	public void generateIVs() {
 		this.setHPIV((int)Math.round(Math.random() * 31));
 		this.setAtkIV((int)Math.round(Math.random() * 31));
@@ -288,6 +354,20 @@ public abstract class Pokemon {
 		this.baseSpeed = baseSpeed;
 	}
 	
+	/**
+	 * This method is an "advanced" getter because it
+	 * takes the requested IV string name in parameter and
+	 * returns the linked IV.
+	 * <p>The different parameters are:
+	 * <ul><li>{@code HP} for HP IV
+	 * <li>{@code Atk} for Attack IV
+	 * <li>{@code Def} for Defense IV
+	 * <li>{@code SpAtk} for Special Attack IV
+	 * <li>{@code SpDef} for Special Defense IV
+	 * <li>{@code Speed} for Speed IV</ul>
+	 * @param IVName is the requested IV's name
+	 * @return The requested IV or -1 if incorrect parameter
+	 */
 	public int getIV(String IVName) {
 		if (IVName.equals("HP")) {
 			return this.getHPIV();
@@ -358,6 +438,20 @@ public abstract class Pokemon {
 		return totalEV;
 	}
 	
+	/**
+	 * This method is an "advanced" getter because it
+	 * takes the requested IV string name in parameter and
+	 * returns the linked EV.
+	 * <p>The different parameters are:
+	 * <ul><li>{@code HP} for HP EV
+	 * <li>{@code Atk} for Attack EV
+	 * <li>{@code Def} for Defense EV
+	 * <li>{@code SpAtk} for Special Attack EV
+	 * <li>{@code SpDef} for Special Defense EV
+	 * <li>{@code Speed} for Speed EV</ul>
+	 * @param EVName is the requested EV's name
+	 * @return The requested EV or -1 if incorrect parameter
+	 */
 	public int getEV(String EVName) {
 		if (EVName == "HP") {
 			return this.getHPEV();
@@ -375,7 +469,15 @@ public abstract class Pokemon {
 			return -1;
 		}
 	}
-
+	
+	/**
+	 * This method is used when setting EVs or adding some.
+	 * It is {@code public} so that it may be called if 
+	 * needed.
+	 * <p>It basically recalculate {@link pokemons.Pokemon#totalEV}
+	 * by adding all EVs to each other. This field shouldn't be
+	 * greater than 512.
+	 */
 	public void refreshTotalEV() {
 		this.totalEV = this.getHPEV() + this.getAtkEV() + this.getDefEV() + this.getSpAtkEV() + this.getSpDefEV() + this.getSpeedEV();
 	}
@@ -383,7 +485,7 @@ public abstract class Pokemon {
 	public int getHPEV() {
 		return HPEV;
 	}
-
+	
 	public void setHPEV(int HPEV) {
 		if (HPEV > this.getHPEV()) {
 			if (this.getTotalEV() < 512) {
@@ -580,6 +682,9 @@ public abstract class Pokemon {
 		this.attacks[index] = attack;
 	}
 	
+	/**
+	 * @return This Pokemon's learned attack count
+	 */
 	public int getAttacksLength() {
 		int count = 0;
 		try {
@@ -591,17 +696,41 @@ public abstract class Pokemon {
 		} catch (Exception e) {}
 		return count;
 	}
-
-	public void addAttack(Attacks attack) {
+	
+	/**
+	 * Used to add a new Attack to this Pokemon.
+	 * Remember to place this method in a if statement and to use
+	 * a {@link pokemons.Pokemon#setAttacks(Attacks, int)} if
+	 * this method returns false.
+	 * 
+	 * @param attack is the attack to be added
+	 * @return True if it can add a new attack.
+	 * <p>False if this Pokemon has already learn 4 different
+	 * attacks.
+	 */
+	public boolean addAttack(Attacks attack) {
 		if (this.getAttacksLength() < 4) {
 			this.setAttacks(attack, this.getAttacksLength());
+			return true;
 		} else {
-			this.setAttacks(attack, 3);
+			return false;
 		}
 	}
 	
+	/**
+	 * This method is used to send all of this Pokemon's statistics
+	 * in the console output.
+	 */
 	public void describe() {
-		System.out.println(this.getHP() + "\n" + this.getAtk() + "\n" + this.getDef() + "\n" + this.getSpAtk() + "\n" + this.getSpDef() + "\n" + this.getSpeed() + "\n" + this.getNature() + "\n" + this.getType() + "\n" + this.getType2() + "\n" + this.getName());
+		System.out.println(this.getName() + "'s statistics are:\nType: " + this.getType() + "-" + this.getType2() + "\nHPs: " + this.getHP() + "\nAttack: " + this.getAtk() + "\nDefense: " + this.getDef() + "\nSpecial Attack: " + this.getSpAtk() + "\nSpecial Defense: " + this.getSpDef() + "\nSpeed: " + this.getSpeed() + "\nNature: " + this.getNature());
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 	
 }
