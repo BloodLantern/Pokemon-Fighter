@@ -49,6 +49,9 @@ class Main {
 	}
 
 	private static void createFight() {
+		Player player1 = new Player(new Pokemon[] {});
+		Player player2 = new Player();
+		
 		Pokemon go = new Golem(100);
 		Pokemon al = new Alakazam(100);
 		Pokemon ty = new Tyranitar(100);
@@ -64,7 +67,7 @@ class Main {
 		ty.addAttack(Attack_Physical.KNOCK_OFF);
 		ty.addAttack(Attack_Physical.STONE_EDGE);
 		ty.addAttack(Attack_Physical.ICE_PUNCH);
-		Fight f = new Fight(al, ty);
+		Fight f = new Fight(player1, player2);
 		f.begin();
 	}
 

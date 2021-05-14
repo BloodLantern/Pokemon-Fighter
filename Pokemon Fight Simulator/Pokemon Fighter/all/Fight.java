@@ -6,17 +6,22 @@ import attacks.*;
 import pokemons.Pokemon;
 
 public class Fight {
-
+	
+	Player player1;
+	Player player2;
 	Pokemon pokemon1;
 	Pokemon pokemon2;
 	Pokemon fastest;
 	Pokemon slowest;
-	Scanner sc = new Scanner(System.in);
+	Scanner sc;
 
-	public Fight(Pokemon pokemon1, Pokemon pokemon2) {
-
-		this.pokemon1 = pokemon1;
-		this.pokemon2 = pokemon2;
+	public Fight(Player player1, Player player2) {
+		
+		this.player1 = player1;
+		this.player2 = player2;
+		this.pokemon1 = player1.getDefaultSelected();
+		this.pokemon2 = player2.getDefaultSelected();
+		sc = new Scanner(System.in);
 
 		System.out.println(
 				"Preparing a new fight between " + this.pokemon1.getName() + " and " + this.pokemon2.getName());
@@ -42,11 +47,6 @@ public class Fight {
 	}
 
 	private void turn(Pokemon pokemon) {
-		try {
-			Thread.sleep(2500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 		if (pokemon.equals(fastest)) {
 			System.out.println(pokemon.getName() + " plays first !");
 		} else {
@@ -73,7 +73,7 @@ public class Fight {
 		}
 	}
 
-	private void chooseAction(Pokemon pokemon) {
+	private void chooseAction(Player player, Pokemon pokemon) {
 
 		System.out.println("Choose an action to do:\n1 - Attack\n2 - Switch");
 		int answer = sc.nextInt();
@@ -89,6 +89,7 @@ public class Fight {
 					}
 				}
 			}
+			System.out.println("\n0 - Choose another action");
 
 			answer = sc.nextInt();
 
@@ -130,6 +131,17 @@ public class Fight {
 
 			}
 
+		} else if (answer == 2) {
+			
+			System.out.println("Choose a Pokemon to switch with:");
+			int i = 1;
+			for (Pokemon p : player.getTeam()) {
+				if (!p.equals(pokemon)) {
+					System.out.println(i + " - " + p.getName());
+					i++;
+				}
+			}
+			
 		}
 
 	}

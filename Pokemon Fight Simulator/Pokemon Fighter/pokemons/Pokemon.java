@@ -1,5 +1,6 @@
 package pokemons;
 
+import all.Player;
 import attacks.Attacks;
 import status.Status;
 
@@ -9,7 +10,8 @@ import status.Status;
  * It contains all the common variables and methods.
  */
 public abstract class Pokemon {
-
+	
+	private Player owner;
 	private Types type;
 	private Types type2;
 	private Natures nature;
@@ -797,6 +799,14 @@ public abstract class Pokemon {
 
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+
+	public Player getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Player owner) {
+		this.owner = owner;
 	}
 
 }
