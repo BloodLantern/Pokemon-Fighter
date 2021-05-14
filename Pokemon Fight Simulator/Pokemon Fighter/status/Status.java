@@ -1,5 +1,7 @@
 package status;
 
+import pokemons.Pokemon;
+
 /**
  * This is the interface implemented by all different Status.
  * <p>
@@ -22,6 +24,6 @@ public interface Status {
 	 * 
 	 * @param status is the status' effect you want to apply.
 	 */
-	public void effect(Status status);
+	public void effect(Pokemon affected, Status status);
 
 }

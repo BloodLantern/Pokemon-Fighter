@@ -1,7 +1,7 @@
 package pokemons;
 
 import attacks.Attacks;
-import status.Status_Volatile;
+import status.Status;
 
 /**
  * This is the abstract superclass for all pokemons.
@@ -48,7 +48,7 @@ public abstract class Pokemon {
 	/**
 	 * Actual status for this child Pokemon instance.
 	 */
-	private Status_Volatile status = null;
+	private Status status = null;
 	/**
 	 * Attacks array containing all actually learned and usable attack.
 	 */
@@ -791,11 +791,11 @@ public abstract class Pokemon {
 				+ this.getSpeed() + "\nNature: " + this.getNature());
 	}
 
-	public Status_Volatile getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(Status_Volatile status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 
