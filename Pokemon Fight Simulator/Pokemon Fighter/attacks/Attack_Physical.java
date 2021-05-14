@@ -130,31 +130,38 @@ public enum Attack_Physical implements Attacks {
 			return -1;
 		}
 	}
-
+	
+	@Override
 	public Types getType() {
 		return type;
 	}
 
+	@Override
 	public int getPower() {
 		return power;
 	}
 
+	@Override
 	public int getAccuracy() {
 		return accuracy;
 	}
 
+	@Override
 	public int getPp() {
 		return pp;
 	}
 
+	@Override
 	public String getSecondaryEffect() {
 		return secondaryEffect;
 	}
 
+	@Override
 	public String getTextName() {
 		return textName;
 	}
 
+	@Override
 	public void setPp(int pp) {
 		this.pp = pp;
 
