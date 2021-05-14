@@ -5,8 +5,15 @@ import java.util.Scanner;
 import attacks.*;
 import pokemons.Pokemon;
 
+/**
+ * This is the class where the fight working takes place.
+ * 
+ * @author BloodLantern
+ * @author knackiball
+ * @see all.Main
+ */
 public class Fight {
-	
+
 	Player player1;
 	Player player2;
 	Pokemon pokemon1;
@@ -16,7 +23,7 @@ public class Fight {
 	Scanner sc;
 
 	public Fight(Player player1, Player player2) {
-		
+
 		this.player1 = player1;
 		this.player2 = player2;
 		this.pokemon1 = player1.getDefaultSelected();
@@ -52,7 +59,7 @@ public class Fight {
 		} else {
 			System.out.println(pokemon.getName() + " plays !");
 		}
-		chooseAction(pokemon);
+		chooseAction(pokemon.getOwner(), pokemon);
 	}
 
 	private void fastest(Pokemon pokemon1, Pokemon pokemon2) {
@@ -132,7 +139,7 @@ public class Fight {
 			}
 
 		} else if (answer == 2) {
-			
+
 			System.out.println("Choose a Pokemon to switch with:");
 			int i = 1;
 			for (Pokemon p : player.getTeam()) {
@@ -141,7 +148,9 @@ public class Fight {
 					i++;
 				}
 			}
-			
+
+		} else {
+			System.err.println("Invalid answer !");
 		}
 
 	}
