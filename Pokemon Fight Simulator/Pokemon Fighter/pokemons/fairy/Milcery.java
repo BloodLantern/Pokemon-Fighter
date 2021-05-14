@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Milcery extends Pokemon {
 
-public Milcery() {
-		
+	public Milcery() {
+
 		this.setName("Milcery");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Milcery(int level) {
-		
+
 		this.setName("Milcery");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Milcery(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Milcery(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

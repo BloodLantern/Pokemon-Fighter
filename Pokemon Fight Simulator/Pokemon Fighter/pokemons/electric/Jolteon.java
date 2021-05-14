@@ -7,40 +7,40 @@ import pokemons.normal.Eevee;
 
 public class Jolteon extends Eevee {
 
-public Jolteon() {
-		
+	public Jolteon() {
+
 		this.setName("Jolteon");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Jolteon(int level) {
-		
+
 		this.setName("Jolteon");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Jolteon(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Jolteon(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.ELECTRIC);

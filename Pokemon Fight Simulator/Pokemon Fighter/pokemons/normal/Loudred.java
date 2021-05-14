@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Loudred extends Whismur {
 
-public Loudred() {
-		
+	public Loudred() {
+
 		this.setName("Loudred");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Loudred(int level) {
-		
+
 		this.setName("Loudred");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Loudred(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Loudred(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

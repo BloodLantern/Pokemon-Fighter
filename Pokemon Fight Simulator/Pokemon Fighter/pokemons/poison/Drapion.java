@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Drapion extends Skorupi {
 
-public Drapion() {
-		
+	public Drapion() {
+
 		this.setName("Drapion");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Drapion(int level) {
-		
+
 		this.setName("Drapion");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Drapion(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Drapion(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.POISON);

@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Caterpie extends Pokemon {
 
-public Caterpie() {
-		
+	public Caterpie() {
+
 		this.setName("Caterpie");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Caterpie(int level) {
-		
+
 		this.setName("Caterpie");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Caterpie(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Caterpie(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.BUG);

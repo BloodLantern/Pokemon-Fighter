@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Grubbin extends Pokemon {
 
-public Grubbin() {
-		
+	public Grubbin() {
+
 		this.setName("Grubbin");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Grubbin(int level) {
-		
+
 		this.setName("Grubbin");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Grubbin(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Grubbin(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.BUG);

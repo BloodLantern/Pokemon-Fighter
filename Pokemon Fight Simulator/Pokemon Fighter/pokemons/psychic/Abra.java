@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Abra extends Pokemon {
 
-public Abra() {
-		
+	public Abra() {
+
 		this.setName("Abra");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Abra(int level) {
-		
+
 		this.setName("Abra");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Abra(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Abra(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.PSYCHIC);

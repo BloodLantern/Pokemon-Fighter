@@ -4,41 +4,41 @@ import pokemons.Natures;
 import pokemons.Types;
 
 public class Aloan_Raichu extends Pikachu {
-	
-public Aloan_Raichu() {
-		
+
+	public Aloan_Raichu() {
+
 		this.setName("Raichu");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Aloan_Raichu(int level) {
-		
+
 		this.setName("Raichu");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Aloan_Raichu(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Aloan_Raichu(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.ELECTRIC);
@@ -52,5 +52,5 @@ public Aloan_Raichu() {
 		this.setNature(Natures.randomNature());
 		this.calculateStats();
 	}
-	
+
 }

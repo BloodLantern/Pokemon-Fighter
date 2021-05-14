@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Stufful extends Pokemon {
 
-public Stufful() {
-		
+	public Stufful() {
+
 		this.setName("Stufful");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Stufful(int level) {
-		
+
 		this.setName("Stufful");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Stufful(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Stufful(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

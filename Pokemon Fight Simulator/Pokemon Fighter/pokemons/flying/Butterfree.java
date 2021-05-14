@@ -6,40 +6,40 @@ import pokemons.bug.Metapod;
 
 public class Butterfree extends Metapod {
 
-public Butterfree() {
-		
+	public Butterfree() {
+
 		this.setName("Butterfree");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Butterfree(int level) {
-		
+
 		this.setName("Butterfree");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Butterfree(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Butterfree(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FLYING);

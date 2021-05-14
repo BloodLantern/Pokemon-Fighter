@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Snorunt extends Pokemon {
 
-public Snorunt() {
-		
+	public Snorunt() {
+
 		this.setName("Snorunt");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Snorunt(int level) {
-		
+
 		this.setName("Snorunt");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Snorunt(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Snorunt(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.ICE);

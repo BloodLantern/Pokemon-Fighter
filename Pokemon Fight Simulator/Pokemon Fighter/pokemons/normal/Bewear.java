@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Bewear extends Stufful {
 
-public Bewear() {
-		
+	public Bewear() {
+
 		this.setName("Bewear");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Bewear(int level) {
-		
+
 		this.setName("Bewear");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Bewear(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Bewear(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

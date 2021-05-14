@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Rufflet extends Pokemon {
 
-public Rufflet() {
-		
+	public Rufflet() {
+
 		this.setName("Rufflet");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Rufflet(int level) {
-		
+
 		this.setName("Rufflet");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Rufflet(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Rufflet(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

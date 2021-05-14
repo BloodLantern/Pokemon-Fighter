@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Azurill extends Pokemon {
 
-public Azurill() {
-		
+	public Azurill() {
+
 		this.setName("Azurill");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Azurill(int level) {
-		
+
 		this.setName("Azurill");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Azurill(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Azurill(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

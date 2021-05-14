@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Togekiss extends Togetic {
 
-public Togekiss() {
-		
+	public Togekiss() {
+
 		this.setName("Togekiss");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Togekiss(int level) {
-		
+
 		this.setName("Togekiss");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Togekiss(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Togekiss(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FLYING);

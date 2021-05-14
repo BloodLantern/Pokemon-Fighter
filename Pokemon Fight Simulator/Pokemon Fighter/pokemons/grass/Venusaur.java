@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Venusaur extends Ivysaur {
 
-public Venusaur() {
-		
+	public Venusaur() {
+
 		this.setName("Venusaur");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Venusaur(int level) {
-		
+
 		this.setName("Venusaur");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Venusaur(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Venusaur(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.GRASS);

@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Urshifu_Dark extends Kubfu {
 
-public Urshifu_Dark() {
-		
+	public Urshifu_Dark() {
+
 		this.setName("Urshifu");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Urshifu_Dark(int level) {
-		
+
 		this.setName("Urshifu");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Urshifu_Dark(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Urshifu_Dark(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FIGHTING);

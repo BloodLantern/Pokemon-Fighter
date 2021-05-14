@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Cinccino extends Minccino {
 
-public Cinccino() {
-		
+	public Cinccino() {
+
 		this.setName("Cinccino");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Cinccino(int level) {
-		
+
 		this.setName("Cinccino");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Cinccino(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Cinccino(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

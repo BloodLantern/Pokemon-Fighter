@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Sableye extends Pokemon {
 
-public Sableye() {
-		
+	public Sableye() {
+
 		this.setName("Sableye");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Sableye(int level) {
-		
+
 		this.setName("Sableye");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Sableye(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Sableye(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.GHOST);

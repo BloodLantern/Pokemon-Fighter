@@ -8,9 +8,12 @@ import status.Status;
  * This is the abstract superclass for all pokemons.
  * <p>
  * It contains all the common variables and methods.
+ * 
+ * @author BloodLantern
+ * @author knackiball
  */
 public abstract class Pokemon {
-	
+
 	private Player owner;
 	private Types type;
 	private Types type2;

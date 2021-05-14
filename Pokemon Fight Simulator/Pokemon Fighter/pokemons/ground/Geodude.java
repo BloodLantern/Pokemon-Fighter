@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Geodude extends Pokemon {
 
-public Geodude() {
-		
+	public Geodude() {
+
 		this.setName("Geodude");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Geodude(int level) {
-		
+
 		this.setName("Geodude");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Geodude(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Geodude(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.GROUND);

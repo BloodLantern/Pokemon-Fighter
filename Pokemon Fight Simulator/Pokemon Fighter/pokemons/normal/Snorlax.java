@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Snorlax extends Munchlax {
 
-public Snorlax() {
-		
+	public Snorlax() {
+
 		this.setName("Snorlax");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Snorlax(int level) {
-		
+
 		this.setName("Snorlax");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Snorlax(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Snorlax(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

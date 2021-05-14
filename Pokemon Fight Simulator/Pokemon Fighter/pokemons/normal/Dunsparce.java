@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Dunsparce extends Pokemon {
 
-public Dunsparce() {
-		
+	public Dunsparce() {
+
 		this.setName("Dunsparce");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Dunsparce(int level) {
-		
+
 		this.setName("Dunsparce");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Dunsparce(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Dunsparce(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

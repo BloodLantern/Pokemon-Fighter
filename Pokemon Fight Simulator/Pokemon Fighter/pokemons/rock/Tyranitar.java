@@ -6,40 +6,40 @@ import pokemons.ground.Pupitar;
 
 public class Tyranitar extends Pupitar {
 
-public Tyranitar() {
-		
+	public Tyranitar() {
+
 		this.setName("Tyranitar");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Tyranitar(int level) {
-		
+
 		this.setName("Tyranitar");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Tyranitar(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Tyranitar(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.ROCK);

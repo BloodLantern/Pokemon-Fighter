@@ -67,7 +67,7 @@ public enum Status_NonVolatile implements Status {
 			break;
 		case BURN:
 			System.out.println(affected.getName() + " is burning !");
-			System.out.print(affected.getName() + "'s HPs" +  affected.getHP() + " -> ");
+			System.out.print(affected.getName() + "'s HPs" + affected.getHP() + " -> ");
 			affected.setHP(affected.getHP() - Math.round(affected.getHP() / 16));
 			System.out.println(affected.getHP());
 			break;

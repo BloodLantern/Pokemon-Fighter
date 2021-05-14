@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Munchlax extends Pokemon {
 
-public Munchlax() {
-		
+	public Munchlax() {
+
 		this.setName("Munchlax");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Munchlax(int level) {
-		
+
 		this.setName("Munchlax");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Munchlax(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Munchlax(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

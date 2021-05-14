@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Wartortle extends Squirtle {
 
-public Wartortle() {
-		
+	public Wartortle() {
+
 		this.setName("Wartortle");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Wartortle(int level) {
-		
+
 		this.setName("Wartortle");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Wartortle(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Wartortle(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.WATER);

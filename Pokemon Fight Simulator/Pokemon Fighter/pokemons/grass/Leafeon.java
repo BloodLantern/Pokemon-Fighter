@@ -7,40 +7,40 @@ import pokemons.normal.Eevee;
 
 public class Leafeon extends Eevee {
 
-public Leafeon() {
-		
+	public Leafeon() {
+
 		this.setName("Leafeon");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Leafeon(int level) {
-		
+
 		this.setName("Leafeon");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Leafeon(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Leafeon(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.GRASS);

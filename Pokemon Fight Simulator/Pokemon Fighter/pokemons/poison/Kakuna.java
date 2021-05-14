@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Kakuna extends Weedle {
 
-public Kakuna() {
-		
+	public Kakuna() {
+
 		this.setName("Kakuna");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Kakuna(int level) {
-		
+
 		this.setName("Kakuna");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Kakuna(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Kakuna(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.POISON);

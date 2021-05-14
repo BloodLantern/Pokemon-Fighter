@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Flygon extends Vibrava {
 
-public Flygon() {
-		
+	public Flygon() {
+
 		this.setName("Flygon");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Flygon(int level) {
-		
+
 		this.setName("Flygon");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Flygon(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Flygon(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.GROUND);

@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Dubwool extends Wooloo {
 
-public Dubwool() {
-		
+	public Dubwool() {
+
 		this.setName("Dubwool");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Dubwool(int level) {
-		
+
 		this.setName("Dubwool");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Dubwool(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Dubwool(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

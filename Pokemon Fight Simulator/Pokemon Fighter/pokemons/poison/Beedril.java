@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Beedril extends Kakuna {
 
-public Beedril() {
-		
+	public Beedril() {
+
 		this.setName("Beedril");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Beedril(int level) {
-		
+
 		this.setName("Beedril");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Beedril(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Beedril(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.POISON);

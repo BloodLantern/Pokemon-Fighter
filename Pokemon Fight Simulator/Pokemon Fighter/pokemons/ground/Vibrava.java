@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Vibrava extends Trapinch {
 
-public Vibrava() {
-		
+	public Vibrava() {
+
 		this.setName("Vibrava");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Vibrava(int level) {
-		
+
 		this.setName("Vibrava");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Vibrava(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Vibrava(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.GROUND);

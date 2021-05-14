@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Alcremie extends Milcery {
 
-public Alcremie() {
-		
+	public Alcremie() {
+
 		this.setName("Alcremie");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Alcremie(int level) {
-		
+
 		this.setName("Alcremie");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Alcremie(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Alcremie(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

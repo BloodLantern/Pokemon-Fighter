@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Yveltal extends Pokemon {
 
-public Yveltal() {
-		
+	public Yveltal() {
+
 		this.setName("Yveltal");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Yveltal(int level) {
-		
+
 		this.setName("Yveltal");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Yveltal(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Yveltal(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FLYING);

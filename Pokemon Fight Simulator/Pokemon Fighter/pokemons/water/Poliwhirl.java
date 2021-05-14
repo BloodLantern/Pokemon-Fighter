@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Poliwhirl extends Poliwag {
 
-public Poliwhirl() {
-		
+	public Poliwhirl() {
+
 		this.setName("Poliwhirl");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Poliwhirl(int level) {
-		
+
 		this.setName("Poliwhirl");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Poliwhirl(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Poliwhirl(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.WATER);

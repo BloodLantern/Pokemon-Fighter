@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Slurpuff extends Swirlix {
 
-public Slurpuff() {
-		
+	public Slurpuff() {
+
 		this.setName("Slurpuff");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Slurpuff(int level) {
-		
+
 		this.setName("Slurpuff");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Slurpuff(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Slurpuff(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

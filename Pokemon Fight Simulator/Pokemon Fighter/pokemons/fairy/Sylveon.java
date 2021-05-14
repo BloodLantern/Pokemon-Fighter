@@ -7,40 +7,40 @@ import pokemons.normal.Eevee;
 
 public class Sylveon extends Eevee {
 
-public Sylveon() {
-		
+	public Sylveon() {
+
 		this.setName("Sylveon");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Sylveon(int level) {
-		
+
 		this.setName("Sylveon");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Sylveon(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Sylveon(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

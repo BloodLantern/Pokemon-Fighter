@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Xerneas extends Pokemon {
 
-public Xerneas() {
-		
+	public Xerneas() {
+
 		this.setName("Xerneas");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Xerneas(int level) {
-		
+
 		this.setName("Xerneas");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Xerneas(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Xerneas(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

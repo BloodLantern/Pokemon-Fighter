@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Weedle extends Pokemon {
 
-public Weedle() {
-		
+	public Weedle() {
+
 		this.setName("Weedle");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Weedle(int level) {
-		
+
 		this.setName("Weedle");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Weedle(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Weedle(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.POISON);

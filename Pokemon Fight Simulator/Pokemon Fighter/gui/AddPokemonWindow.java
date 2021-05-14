@@ -70,13 +70,9 @@ public class AddPokemonWindow {
 		gbc_lblNewLabel_1.gridy = 1;
 		frmAddNewPokemon.getContentPane().add(lblNewLabel_1, gbc_lblNewLabel_1);
 		/*
-		MaskFormatter numbers = null;
-		try {
-			numbers = new MaskFormatter("#####");
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		*/
+		 * MaskFormatter numbers = null; try { numbers = new MaskFormatter("#####"); }
+		 * catch (ParseException e) { e.printStackTrace(); }
+		 */
 		JFormattedTextField frmtdtxtfldTest = new JFormattedTextField();
 		frmtdtxtfldTest.setToolTipText("New Pokemon's name");
 		GridBagConstraints gbc_frmtdtxtfldTest = new GridBagConstraints();
@@ -129,7 +125,7 @@ public class AddPokemonWindow {
 		gbc_lblNewLabel_4.gridy = 4;
 		frmAddNewPokemon.getContentPane().add(lblNewLabel_4, gbc_lblNewLabel_4);
 
-		JFormattedTextField formattedTextField_2 = new JFormattedTextField(/*numbers*/);
+		JFormattedTextField formattedTextField_2 = new JFormattedTextField(/* numbers */);
 		formattedTextField_2.setToolTipText("New Pokemon's Base Health Points");
 		GridBagConstraints gbc_formattedTextField_2 = new GridBagConstraints();
 		gbc_formattedTextField_2.fill = GridBagConstraints.BOTH;
@@ -145,7 +141,7 @@ public class AddPokemonWindow {
 		gbc_lblNewLabel_5.gridy = 5;
 		frmAddNewPokemon.getContentPane().add(lblNewLabel_5, gbc_lblNewLabel_5);
 
-		JFormattedTextField formattedTextField = new JFormattedTextField(/*numbers*/);
+		JFormattedTextField formattedTextField = new JFormattedTextField(/* numbers */);
 		formattedTextField.setToolTipText("New Pokemon's Base Attack");
 		GridBagConstraints gbc_formattedTextField = new GridBagConstraints();
 		gbc_formattedTextField.anchor = GridBagConstraints.NORTH;
@@ -162,7 +158,7 @@ public class AddPokemonWindow {
 		gbc_lblNewLabel_6.gridy = 6;
 		frmAddNewPokemon.getContentPane().add(lblNewLabel_6, gbc_lblNewLabel_6);
 
-		JFormattedTextField formattedTextField_3 = new JFormattedTextField(/*numbers*/);
+		JFormattedTextField formattedTextField_3 = new JFormattedTextField(/* numbers */);
 		formattedTextField_3.setToolTipText("New Pokemon's Base Defense");
 		GridBagConstraints gbc_formattedTextField_3 = new GridBagConstraints();
 		gbc_formattedTextField_3.fill = GridBagConstraints.BOTH;
@@ -178,7 +174,7 @@ public class AddPokemonWindow {
 		gbc_lblNewLabel_7.gridy = 7;
 		frmAddNewPokemon.getContentPane().add(lblNewLabel_7, gbc_lblNewLabel_7);
 
-		JFormattedTextField formattedTextField_4 = new JFormattedTextField(/*numbers*/);
+		JFormattedTextField formattedTextField_4 = new JFormattedTextField(/* numbers */);
 		formattedTextField_4.setToolTipText("New Pokemon's Base Special Attack");
 		GridBagConstraints gbc_formattedTextField_4 = new GridBagConstraints();
 		gbc_formattedTextField_4.fill = GridBagConstraints.BOTH;
@@ -194,7 +190,7 @@ public class AddPokemonWindow {
 		gbc_lblNewLabel_8.gridy = 8;
 		frmAddNewPokemon.getContentPane().add(lblNewLabel_8, gbc_lblNewLabel_8);
 
-		JFormattedTextField formattedTextField_5 = new JFormattedTextField(/*numbers*/);
+		JFormattedTextField formattedTextField_5 = new JFormattedTextField(/* numbers */);
 		formattedTextField_5.setToolTipText("New Pokemon's Base Special Defense");
 		GridBagConstraints gbc_formattedTextField_5 = new GridBagConstraints();
 		gbc_formattedTextField_5.fill = GridBagConstraints.BOTH;
@@ -210,7 +206,7 @@ public class AddPokemonWindow {
 		gbc_lblNewLabel_9.gridy = 9;
 		frmAddNewPokemon.getContentPane().add(lblNewLabel_9, gbc_lblNewLabel_9);
 
-		JFormattedTextField formattedTextField_6 = new JFormattedTextField(/*numbers*/);
+		JFormattedTextField formattedTextField_6 = new JFormattedTextField(/* numbers */);
 		formattedTextField_6.setToolTipText("New Pokemon's Base Speed");
 		GridBagConstraints gbc_formattedTextField_6 = new GridBagConstraints();
 		gbc_formattedTextField_6.fill = GridBagConstraints.BOTH;
@@ -230,7 +226,7 @@ public class AddPokemonWindow {
 		JComboBox<String> comboBox_2 = new JComboBox<String>();
 		comboBox_2.setToolTipText("Who this new Pokemon should evolve from (Leave Pokemon if none)");
 		comboBox_2.addItem("Pokemon");
-		
+
 		// Scanning for all Pokemon files actually existing
 		System.out.println("-----------------------------\nSCANNING FOR POKEMON FILES\n-----------------------------");
 		FolderScanner fs = new FolderScanner(Paths.get("Pokemon Fighter\\pokemons"), "*.java");
@@ -242,7 +238,8 @@ public class AddPokemonWindow {
 		ForkJoinPool pool = new ForkJoinPool(processors);
 		long start = System.currentTimeMillis();
 		pool.invoke(fs);
-		System.out.println("There is/are " + fs.getResult() + " file(s) of type Pokemon\nTime spent: " + (System.currentTimeMillis() - start) + "ms");
+		System.out.println("There is/are " + fs.getResult() + " file(s) of type Pokemon\nTime spent: "
+				+ (System.currentTimeMillis() - start) + "ms");
 		String[] s = new String[fs.getFilesList().size()];
 		for (int i = 0; i < fs.getFilesList().size(); i++) {
 			s[i] = (fs.getFilesList().get(i).getName().replaceAll(".java", ""));
@@ -259,7 +256,7 @@ public class AddPokemonWindow {
 		gbc_comboBox_2.gridx = 1;
 		gbc_comboBox_2.gridy = 10;
 		frmAddNewPokemon.getContentPane().add(comboBox_2, gbc_comboBox_2);
-		
+
 		JPanel panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.insets = new Insets(0, 0, 5, 5);
@@ -268,7 +265,7 @@ public class AddPokemonWindow {
 		gbc_panel.gridy = 11;
 		frmAddNewPokemon.getContentPane().add(panel, gbc_panel);
 		panel.setLayout(new GridLayout(0, 2, 0, 0));
-		
+
 		JButton btnNewButton_1 = new JButton("Back");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -277,11 +274,11 @@ public class AddPokemonWindow {
 			}
 		});
 		panel.add(btnNewButton_1);
-		
+
 		JButton btnNewButton = new JButton("Confirm");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				lblNewLabel_1.setForeground(Color.BLACK);
 				lblNewLabel_4.setForeground(Color.BLACK);
 				lblNewLabel_5.setForeground(Color.BLACK);
@@ -289,7 +286,7 @@ public class AddPokemonWindow {
 				lblNewLabel_7.setForeground(Color.BLACK);
 				lblNewLabel_8.setForeground(Color.BLACK);
 				lblNewLabel_9.setForeground(Color.BLACK);
-				
+
 				int answered = 0;
 				// If all fields changed
 				if (frmtdtxtfldTest.getText().equals(""))
@@ -306,22 +303,37 @@ public class AddPokemonWindow {
 					answered++;
 				if (formattedTextField_6.getText().equals(""))
 					answered++;
-				
+
 				// If user filled all fields
 				if (answered == 0) {
-					
-					System.out.println("\n------- All fields has been filled -------\n\nBeginning Pokemon file writing...");
+
+					System.out.println(
+							"\n------- All fields has been filled -------\n\nBeginning Pokemon file writing...");
 					if (formattedTextField.getText() != "") {
-						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types)comboBox_1.getSelectedItem(), (Types)comboBox.getSelectedItem(), Integer.parseInt(formattedTextField_2.getText()), Integer.parseInt(formattedTextField.getText()), Integer.parseInt(formattedTextField_3.getText()), Integer.parseInt(formattedTextField_4.getText()), Integer.parseInt(formattedTextField_5.getText()), Integer.parseInt(formattedTextField_6.getText()), comboBox_2.getSelectedItem().toString());
+						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types) comboBox_1.getSelectedItem(),
+								(Types) comboBox.getSelectedItem(), Integer.parseInt(formattedTextField_2.getText()),
+								Integer.parseInt(formattedTextField.getText()),
+								Integer.parseInt(formattedTextField_3.getText()),
+								Integer.parseInt(formattedTextField_4.getText()),
+								Integer.parseInt(formattedTextField_5.getText()),
+								Integer.parseInt(formattedTextField_6.getText()),
+								comboBox_2.getSelectedItem().toString());
 					} else {
-						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types)comboBox_1.getSelectedItem(), null, Integer.parseInt(formattedTextField_2.getText()), Integer.parseInt(formattedTextField.getText()), Integer.parseInt(formattedTextField_3.getText()), Integer.parseInt(formattedTextField_4.getText()), Integer.parseInt(formattedTextField_5.getText()), Integer.parseInt(formattedTextField_6.getText()), comboBox_2.getSelectedItem().toString());
+						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types) comboBox_1.getSelectedItem(), null,
+								Integer.parseInt(formattedTextField_2.getText()),
+								Integer.parseInt(formattedTextField.getText()),
+								Integer.parseInt(formattedTextField_3.getText()),
+								Integer.parseInt(formattedTextField_4.getText()),
+								Integer.parseInt(formattedTextField_5.getText()),
+								Integer.parseInt(formattedTextField_6.getText()),
+								comboBox_2.getSelectedItem().toString());
 					}
 					System.out.println("\n------- Pokemon file writing finished -------\n\nDestroying this window");
 					launcher.setVisible(true);
 					getFrame().dispose();
-					
+
 				} else {
-					
+
 					String[] memory = new String[7];
 					memory[0] = frmtdtxtfldTest.getText();
 					memory[1] = formattedTextField_2.getText();
@@ -330,8 +342,8 @@ public class AddPokemonWindow {
 					memory[4] = formattedTextField_4.getText();
 					memory[5] = formattedTextField_5.getText();
 					memory[6] = formattedTextField_6.getText();
-					
-					for (;answered > 0; answered--) {
+
+					for (; answered > 0; answered--) {
 						if (frmtdtxtfldTest.getText().equals("")) {
 							lblNewLabel_1.setForeground(Color.RED);
 							frmtdtxtfldTest.setText("Temp");
@@ -355,7 +367,7 @@ public class AddPokemonWindow {
 							formattedTextField_6.setText("Temp");
 						}
 					}
-					
+
 					frmtdtxtfldTest.setText(memory[0]);
 					formattedTextField_2.setText(memory[1]);
 					formattedTextField.setText(memory[2]);
@@ -363,7 +375,7 @@ public class AddPokemonWindow {
 					formattedTextField_4.setText(memory[4]);
 					formattedTextField_5.setText(memory[5]);
 					formattedTextField_6.setText(memory[6]);
-					
+
 				}
 			}
 		});

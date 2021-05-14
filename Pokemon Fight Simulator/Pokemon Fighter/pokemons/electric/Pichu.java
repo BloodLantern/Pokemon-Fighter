@@ -5,41 +5,41 @@ import pokemons.Pokemon;
 import pokemons.Types;
 
 public class Pichu extends Pokemon {
-	
-public Pichu() {
-		
+
+	public Pichu() {
+
 		this.setName("Pichu");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Pichu(int level) {
-		
+
 		this.setName("Pichu");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Pichu(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Pichu(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.ELECTRIC);
@@ -52,5 +52,5 @@ public Pichu() {
 		this.setNature(Natures.randomNature());
 		this.calculateStats();
 	}
-	
+
 }

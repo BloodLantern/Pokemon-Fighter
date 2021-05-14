@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Golem extends Graveler {
 
-public Golem() {
-		
+	public Golem() {
+
 		this.setName("Golem");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Golem(int level) {
-		
+
 		this.setName("Golem");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Golem(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Golem(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.GROUND);

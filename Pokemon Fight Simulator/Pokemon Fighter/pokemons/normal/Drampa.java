@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Drampa extends Pokemon {
 
-public Drampa() {
-		
+	public Drampa() {
+
 		this.setName("Drampa");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Drampa(int level) {
-		
+
 		this.setName("Drampa");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Drampa(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Drampa(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

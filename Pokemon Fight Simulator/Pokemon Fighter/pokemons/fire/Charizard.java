@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Charizard extends Charmeleon {
 
-public Charizard() {
-		
+	public Charizard() {
+
 		this.setName("Charizard");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Charizard(int level) {
-		
+
 		this.setName("Charizard");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Charizard(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Charizard(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FIRE);

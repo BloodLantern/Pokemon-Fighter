@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Spritzee extends Pokemon {
 
-public Spritzee() {
-		
+	public Spritzee() {
+
 		this.setName("Spritzee");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Spritzee(int level) {
-		
+
 		this.setName("Spritzee");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Spritzee(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Spritzee(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

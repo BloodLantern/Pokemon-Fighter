@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Kubfu extends Pokemon {
 
-public Kubfu() {
-		
+	public Kubfu() {
+
 		this.setName("Kubfu");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Kubfu(int level) {
-		
+
 		this.setName("Kubfu");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Kubfu(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Kubfu(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FIGHTING);

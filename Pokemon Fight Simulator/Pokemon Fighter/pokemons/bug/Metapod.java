@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Metapod extends Caterpie {
 
-public Metapod() {
-		
+	public Metapod() {
+
 		this.setName("Metapod");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Metapod(int level) {
-		
+
 		this.setName("Metapod");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Metapod(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Metapod(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.BUG);

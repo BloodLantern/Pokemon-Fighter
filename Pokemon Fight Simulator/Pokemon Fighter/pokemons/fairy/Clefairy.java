@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Clefairy extends Cleffa {
 
-public Clefairy() {
-		
+	public Clefairy() {
+
 		this.setName("Clefairy");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Clefairy(int level) {
-		
+
 		this.setName("Clefairy");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Clefairy(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Clefairy(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

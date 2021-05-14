@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Glalie extends Snorunt {
 
-public Glalie() {
-		
+	public Glalie() {
+
 		this.setName("Glalie");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Glalie(int level) {
-		
+
 		this.setName("Glalie");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Glalie(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Glalie(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.ICE);

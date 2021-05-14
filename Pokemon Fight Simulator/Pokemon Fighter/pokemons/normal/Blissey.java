@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Blissey extends Chansey {
 
-public Blissey() {
-		
+	public Blissey() {
+
 		this.setName("Blissey");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Blissey(int level) {
-		
+
 		this.setName("Blissey");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Blissey(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Blissey(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

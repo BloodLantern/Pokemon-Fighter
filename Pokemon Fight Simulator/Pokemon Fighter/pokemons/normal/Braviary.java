@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Braviary extends Rufflet {
 
-public Braviary() {
-		
+	public Braviary() {
+
 		this.setName("Braviary");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Braviary(int level) {
-		
+
 		this.setName("Braviary");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Braviary(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Braviary(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

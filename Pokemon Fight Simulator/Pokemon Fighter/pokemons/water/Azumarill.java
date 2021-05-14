@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Azumarill extends Marill {
 
-public Azumarill() {
-		
+	public Azumarill() {
+
 		this.setName("Azumarill");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Azumarill(int level) {
-		
+
 		this.setName("Azumarill");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Azumarill(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Azumarill(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.WATER);

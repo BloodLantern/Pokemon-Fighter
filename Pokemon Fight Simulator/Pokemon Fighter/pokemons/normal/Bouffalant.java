@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Bouffalant extends Pokemon {
 
-public Bouffalant() {
-		
+	public Bouffalant() {
+
 		this.setName("Bouffalant");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Bouffalant(int level) {
-		
+
 		this.setName("Bouffalant");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Bouffalant(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Bouffalant(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Froslass extends Snorunt {
 
-public Froslass() {
-		
+	public Froslass() {
+
 		this.setName("Froslass");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Froslass(int level) {
-		
+
 		this.setName("Froslass");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Froslass(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Froslass(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.ICE);

@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Larvitar extends Pokemon {
 
-public Larvitar() {
-		
+	public Larvitar() {
+
 		this.setName("Larvitar");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Larvitar(int level) {
-		
+
 		this.setName("Larvitar");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Larvitar(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Larvitar(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.GROUND);

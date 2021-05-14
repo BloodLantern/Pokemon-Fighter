@@ -6,40 +6,40 @@ import pokemons.bug.Grubbin;
 
 public class Charjabug extends Grubbin {
 
-public Charjabug() {
-		
+	public Charjabug() {
+
 		this.setName("Charjabug");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Charjabug(int level) {
-		
+
 		this.setName("Charjabug");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Charjabug(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Charjabug(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.ELECTRIC);

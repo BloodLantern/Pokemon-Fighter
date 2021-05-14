@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Clefable extends Clefairy {
 
-public Clefable() {
-		
+	public Clefable() {
+
 		this.setName("Clefable");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Clefable(int level) {
-		
+
 		this.setName("Clefable");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Clefable(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Clefable(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

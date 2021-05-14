@@ -7,40 +7,40 @@ import pokemons.normal.Eevee;
 
 public class Espeon extends Eevee {
 
-public Espeon() {
-		
+	public Espeon() {
+
 		this.setName("Espeon");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Espeon(int level) {
-		
+
 		this.setName("Espeon");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Espeon(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Espeon(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.PSYCHIC);

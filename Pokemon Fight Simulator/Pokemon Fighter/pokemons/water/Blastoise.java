@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Blastoise extends Wartortle {
 
-public Blastoise() {
-		
+	public Blastoise() {
+
 		this.setName("Blastoise");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Blastoise(int level) {
-		
+
 		this.setName("Blastoise");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Blastoise(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Blastoise(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.WATER);

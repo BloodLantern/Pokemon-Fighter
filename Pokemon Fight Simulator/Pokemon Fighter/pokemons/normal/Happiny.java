@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Happiny extends Pokemon {
 
-public Happiny() {
-		
+	public Happiny() {
+
 		this.setName("Happiny");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Happiny(int level) {
-		
+
 		this.setName("Happiny");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Happiny(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Happiny(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

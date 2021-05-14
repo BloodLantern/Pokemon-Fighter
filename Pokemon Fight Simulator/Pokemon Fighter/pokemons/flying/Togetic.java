@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Togetic extends Togepi {
 
-public Togetic() {
-		
+	public Togetic() {
+
 		this.setName("Togetic");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Togetic(int level) {
-		
+
 		this.setName("Togetic");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Togetic(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Togetic(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FLYING);

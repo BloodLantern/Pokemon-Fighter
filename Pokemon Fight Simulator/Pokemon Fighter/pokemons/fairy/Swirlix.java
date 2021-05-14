@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Swirlix extends Pokemon {
 
-public Swirlix() {
-		
+	public Swirlix() {
+
 		this.setName("Swirlix");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Swirlix(int level) {
-		
+
 		this.setName("Swirlix");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Swirlix(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Swirlix(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

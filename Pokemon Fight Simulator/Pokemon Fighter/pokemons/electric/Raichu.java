@@ -4,41 +4,41 @@ import pokemons.Natures;
 import pokemons.Types;
 
 public final class Raichu extends Pikachu {
-	
-public Raichu() {
-		
+
+	public Raichu() {
+
 		this.setName("Raichu");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Raichu(int level) {
-		
+
 		this.setName("Raichu");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Raichu(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Raichu(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.ELECTRIC);
@@ -51,5 +51,5 @@ public Raichu() {
 		this.setNature(Natures.randomNature());
 		this.calculateStats();
 	}
-	
+
 }

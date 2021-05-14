@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Graveler extends Geodude {
 
-public Graveler() {
-		
+	public Graveler() {
+
 		this.setName("Graveler");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Graveler(int level) {
-		
+
 		this.setName("Graveler");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Graveler(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Graveler(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.GROUND);

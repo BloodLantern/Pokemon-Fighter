@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Squirtle extends Pokemon {
 
-public Squirtle() {
-		
+	public Squirtle() {
+
 		this.setName("Squirtle");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Squirtle(int level) {
-		
+
 		this.setName("Squirtle");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Squirtle(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Squirtle(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.WATER);

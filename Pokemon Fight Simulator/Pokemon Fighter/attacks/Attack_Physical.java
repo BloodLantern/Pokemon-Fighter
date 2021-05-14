@@ -130,7 +130,7 @@ public enum Attack_Physical implements Attacks {
 			return -1;
 		}
 	}
-	
+
 	@Override
 	public Types getType() {
 		return type;

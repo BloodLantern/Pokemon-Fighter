@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Alakazam extends Kadabra {
 
-public Alakazam() {
-		
+	public Alakazam() {
+
 		this.setName("Alakazam");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Alakazam(int level) {
-		
+
 		this.setName("Alakazam");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Alakazam(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Alakazam(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.PSYCHIC);

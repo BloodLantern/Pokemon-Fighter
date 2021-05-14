@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Pupitar extends Larvitar {
 
-public Pupitar() {
-		
+	public Pupitar() {
+
 		this.setName("Pupitar");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Pupitar(int level) {
-		
+
 		this.setName("Pupitar");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Pupitar(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Pupitar(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.GROUND);

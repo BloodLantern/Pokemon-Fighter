@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Dragonair extends Dratini {
 
-public Dragonair() {
-		
+	public Dragonair() {
+
 		this.setName("Dragonair");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Dragonair(int level) {
-		
+
 		this.setName("Dragonair");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Dragonair(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Dragonair(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.DRAGON);

@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Minccino extends Pokemon {
 
-public Minccino() {
-		
+	public Minccino() {
+
 		this.setName("Minccino");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Minccino(int level) {
-		
+
 		this.setName("Minccino");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Minccino(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Minccino(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

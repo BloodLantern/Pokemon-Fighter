@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Exploud extends Loudred {
 
-public Exploud() {
-		
+	public Exploud() {
+
 		this.setName("Exploud");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Exploud(int level) {
-		
+
 		this.setName("Exploud");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Exploud(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Exploud(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

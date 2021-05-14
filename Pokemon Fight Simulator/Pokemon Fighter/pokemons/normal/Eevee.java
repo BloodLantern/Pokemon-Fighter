@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Eevee extends Pokemon {
 
-public Eevee() {
-		
+	public Eevee() {
+
 		this.setName("Eevee");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Eevee(int level) {
-		
+
 		this.setName("Eevee");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Eevee(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Eevee(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

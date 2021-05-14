@@ -7,40 +7,40 @@ import pokemons.normal.Eevee;
 
 public class Flareon extends Eevee {
 
-public Flareon() {
-		
+	public Flareon() {
+
 		this.setName("Flareon");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Flareon(int level) {
-		
+
 		this.setName("Flareon");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Flareon(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Flareon(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FIRE);

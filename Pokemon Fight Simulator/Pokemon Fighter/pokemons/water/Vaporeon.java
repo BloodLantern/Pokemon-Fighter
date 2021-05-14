@@ -7,40 +7,40 @@ import pokemons.normal.Eevee;
 
 public class Vaporeon extends Eevee {
 
-public Vaporeon() {
-		
+	public Vaporeon() {
+
 		this.setName("Vaporeon");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Vaporeon(int level) {
-		
+
 		this.setName("Vaporeon");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Vaporeon(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Vaporeon(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.WATER);

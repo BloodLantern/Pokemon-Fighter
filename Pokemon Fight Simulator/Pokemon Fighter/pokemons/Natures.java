@@ -31,7 +31,7 @@ public enum Natures {
 	// These variables are only useful to select a random value of type Natures
 	private static final List<Natures> VALUES = Collections.unmodifiableList(Arrays.asList(values()));
 	private static final Random RANDOM = new Random();
-	
+
 	/**
 	 * @return A random Nature from all available.
 	 */

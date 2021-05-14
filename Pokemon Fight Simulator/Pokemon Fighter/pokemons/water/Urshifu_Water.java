@@ -6,40 +6,40 @@ import pokemons.fighting.Kubfu;
 
 public class Urshifu_Water extends Kubfu {
 
-public Urshifu_Water() {
-		
+	public Urshifu_Water() {
+
 		this.setName("Urshifu");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Urshifu_Water(int level) {
-		
+
 		this.setName("Urshifu");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Urshifu_Water(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Urshifu_Water(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.WATER);

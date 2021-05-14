@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Ditto extends Pokemon {
 
-public Ditto() {
-		
+	public Ditto() {
+
 		this.setName("Ditto");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Ditto(int level) {
-		
+
 		this.setName("Ditto");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Ditto(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Ditto(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

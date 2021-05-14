@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Togepi extends Pokemon {
 
-public Togepi() {
-		
+	public Togepi() {
+
 		this.setName("Togepi");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Togepi(int level) {
-		
+
 		this.setName("Togepi");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Togepi(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Togepi(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

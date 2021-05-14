@@ -6,40 +6,40 @@ import pokemons.Types;
 
 public class Acromatisse extends Spritzee {
 
-public Acromatisse() {
-		
+	public Acromatisse() {
+
 		this.setName("Acromatisse");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Acromatisse(int level) {
-		
+
 		this.setName("Acromatisse");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Acromatisse(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Acromatisse(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.FAIRY);

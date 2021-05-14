@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Diggersby extends Bunnelby {
 
-public Diggersby() {
-		
+	public Diggersby() {
+
 		this.setName("Diggersby");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Diggersby(int level) {
-		
+
 		this.setName("Diggersby");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Diggersby(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Diggersby(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.NORMAL);

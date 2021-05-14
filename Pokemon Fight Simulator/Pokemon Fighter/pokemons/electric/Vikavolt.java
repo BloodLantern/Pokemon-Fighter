@@ -5,40 +5,40 @@ import pokemons.Types;
 
 public class Vikavolt extends Charjabug {
 
-public Vikavolt() {
-		
+	public Vikavolt() {
+
 		this.setName("Vikavolt");
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Vikavolt(int level) {
-		
+
 		this.setName("Vikavolt");
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Vikavolt(String name) {
-		
+
 		this.setName(name);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	public Vikavolt(String name, int level) {
-		
+
 		this.setName(name);
 		this.setLevel(level);
 		this.generateIVs();
 		initStats();
-		
+
 	}
-	
+
 	@Override
 	protected void initStats() {
 		this.setType(Types.ELECTRIC);
