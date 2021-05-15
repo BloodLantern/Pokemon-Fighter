@@ -32,13 +32,13 @@ public enum Attack_Status implements Attacks {
 	}
 
 	@Override
-	public int getPp() {
+	public int getPP() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public void setPp(int pp) {
+	public void setPP(int pp) {
 		// TODO Auto-generated method stub
 
 	}

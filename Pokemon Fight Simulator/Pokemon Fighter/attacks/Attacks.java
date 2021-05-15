@@ -22,9 +22,9 @@ public interface Attacks {
 
 	int getAccuracy();
 
-	int getPp();
+	int getPP();
 
-	void setPp(int pp);
+	void setPP(int pp);
 
 	String getSecondaryEffect();
 

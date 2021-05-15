@@ -15,7 +15,7 @@ import pokemons.Types;
 /**
  * This class is used to add a new Pokemon file to the project.
  * <p>
- * It is used in {@link gui.AddPokemonWindow} but may be used manually
+ * It is used in {@link gui.AddPokemonWindow} but may be used manually.
  * 
  * @author BloodLantern
  */

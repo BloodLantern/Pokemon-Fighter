@@ -50,12 +50,12 @@ public enum Attack_Special implements Attacks {
 	public static int use(Attack_Special attack, Pokemon attacker, Pokemon attacked) {
 		if (attack != null) {
 
-			if (attack.getPp() > 0) {
-				attack.setPp(attack.getPp() - 1);
+			if (attack.getPP() > 0) {
+				attack.setPP(attack.getPP() - 1);
 
 				if (Math.random() > (float) attack.getAccuracy() / 100) {
 					System.out.println(attacker.getName() + " missed its attack!");
-					return -1;
+					return 0;
 				}
 
 				double CM = 1;
@@ -103,7 +103,7 @@ public enum Attack_Special implements Attacks {
 				return finalDamage;
 			} else {
 				System.err.println("You don't have enough PP to use " + attack.getTextName() + " !");
-				return -1;
+				return 0;
 			}
 
 		} else {
@@ -128,12 +128,12 @@ public enum Attack_Special implements Attacks {
 	}
 
 	@Override
-	public int getPp() {
+	public int getPP() {
 		return pp;
 	}
 
 	@Override
-	public void setPp(int pp) {
+	public void setPP(int pp) {
 		this.pp = pp;
 	}
 

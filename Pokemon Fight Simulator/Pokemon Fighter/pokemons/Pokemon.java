@@ -746,23 +746,25 @@ public abstract class Pokemon {
 		return attacks;
 	}
 
-	protected void setAttacks(Attacks attack, int index) {
+	public void setAttacks(Attacks attack, int index) {
 		this.attacks[index] = attack;
 	}
 
 	/**
-	 * @return This Pokemon's learned attack count
+	 * @return The non-null attack count.
 	 */
 	public int getAttacksLength() {
 		int count = 0;
-		try {
-			int i = 0;
-			while (this.getAttacks()[i] != null) {
-				count++;
-				i++;
+		
+		for (Attacks a : this.getAttacks()) {
+			try {
+				if (!a.equals(null))
+					count++;
+			} catch (java.lang.NullPointerException e) {
+				
 			}
-		} catch (Exception e) {
 		}
+		
 		return count;
 	}
 
