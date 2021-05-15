@@ -29,8 +29,10 @@ import pokemons.water.*;
 class Main {
 	
 	public static void main(String[] args) {
-		createAddPokemonWindow();
+		//createAddPokemonWindow();
 		//createFight();
+		Pokemon xe = new Xerneas(100);
+		xe.describe();
 	}
 	
 	private static void createAddPokemonWindow() {
