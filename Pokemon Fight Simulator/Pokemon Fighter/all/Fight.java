@@ -95,8 +95,8 @@ public class Fight {
 
 	private void chooseAction(Player player, Pokemon pokemon) {
 
-		System.out.println("Choose an action to do:\n1 - Attack\n2 - Switch");
-		answer = askAnswer(1, 2);
+		System.out.println("Choose an action to do:\n1 - Attack\n2 - Switch\n3 - Do nothing");
+		answer = askAnswer(1, 3);
 		switch (answer) {
 		case 1:
 			chooseAttack(player, pokemon);
@@ -104,6 +104,9 @@ public class Fight {
 
 		case 2:
 			switchPokemon(player, pokemon);
+			break;
+			
+		case 3:
 			break;
 		}
 	}

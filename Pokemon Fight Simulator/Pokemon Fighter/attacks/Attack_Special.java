@@ -49,15 +49,15 @@ public enum Attack_Special implements Attacks {
 	 */
 	public static int use(Attack_Special attack, Pokemon attacker, Pokemon attacked) {
 		if (attack != null) {
-
-			if (attack.getPP() > 0) {
-				int attackIndex = 0;
-				for (int i = 0; i < attacker.getAttacksLength(); i++) {
-					if (attack.equals(attacker.getAttacks()[i])) {
-						attackIndex = i;
-						break;
-					}
+			int attackIndex = 0;
+			for (int i = 0; i < attacker.getAttacksLength(); i++) {
+				if (attack.equals(attacker.getAttacks()[i])) {
+					attackIndex = i;
+					break;
 				}
+			}
+			if (attacker.getAttacksPP()[attackIndex] > 0) {
+				
 				attacker.setAttacksPP(attackIndex, attacker.getAttacksPP()[attackIndex] - 1);
 
 				if (Math.random() > (float) attack.getAccuracy() / 100) {
@@ -82,7 +82,7 @@ public enum Attack_Special implements Attacks {
 				weakness *= Pokemon.weakness(attacked.getType(), attack.getType());
 				if (attacked.getType2() != null)
 					weakness *= Pokemon.weakness(attacked.getType2(), attack.getType());
-
+				
 				if (weakness == 0.25f) {
 					System.out.println("It is not effective at all!");
 				} else if (weakness == 0.5f) {

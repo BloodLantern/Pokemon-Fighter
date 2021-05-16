@@ -1,7 +1,6 @@
 package all;
 
 import java.awt.EventQueue;
-import java.util.Scanner;
 
 import attacks.*;
 import gui.MainWindow;

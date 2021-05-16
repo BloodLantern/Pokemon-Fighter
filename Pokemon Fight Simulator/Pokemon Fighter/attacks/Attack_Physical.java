@@ -67,14 +67,15 @@ public enum Attack_Physical implements Attacks {
 	 */
 	public static int use(Attack_Physical attack, Pokemon attacker, Pokemon attacked) {
 		if (attack != null) {
-			if (attack.getPP() > 0) {
-				int attackIndex = 0;
-				for (int i = 0; i < attacker.getAttacksLength(); i++) {
-					if (attack.equals(attacker.getAttacks()[i])) {
-						attackIndex = i;
-						break;
-					}
+			int attackIndex = 0;
+			for (int i = 0; i < attacker.getAttacksLength(); i++) {
+				if (attack.equals(attacker.getAttacks()[i])) {
+					attackIndex = i;
+					break;
 				}
+			}
+			if (attacker.getAttacksPP()[attackIndex] > 0) {
+				
 				attacker.setAttacksPP(attackIndex, attacker.getAttacksPP()[attackIndex] - 1);
 
 				if (Math.random() > (float) attack.getAccuracy() / 100) {

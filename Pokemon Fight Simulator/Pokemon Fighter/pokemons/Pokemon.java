@@ -187,12 +187,15 @@ public abstract class Pokemon {
 	}
 
 	/**
-	 * Used to get a type attack multiplier against another type. The first
-	 * parameter is for the attacker and the second for the pokemon attacked.
+	 * Used to get a type attack multiplier against another type.
+	 * 
+	 * @param attacked is the attacked's type.
+	 * @param attacker is the attacker's type. May be an Attack.
+	 * @return The power multiplier for this attacker against this attacked Pokemon.
 	 */
-	public static double weakness(Types attacker, Types attacked) {
+	public static double weakness(Types attacked, Types attacker) {
 		double weakness = 1.0;
-		weakness = Weaknesses.getWeaknessesList()[attacker.getIndex()][attacked.getIndex()];
+		weakness = Weaknesses.getWeaknessesList()[attacked.getIndex()][attacker.getIndex()];
 		return weakness;
 	}
 
