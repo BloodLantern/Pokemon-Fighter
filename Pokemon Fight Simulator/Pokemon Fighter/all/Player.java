@@ -56,12 +56,8 @@ public class Player {
 		int i = 0;
 		
 		for (Pokemon p : this.getTeam()) {
-			try {
-				if (!p.equals(null))
-					i++;
-			} catch (java.lang.NullPointerException e) {
-				
-			}
+			if (p != null)
+				i++;
 		}
 		
 		return i;

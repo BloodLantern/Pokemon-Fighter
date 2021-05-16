@@ -113,15 +113,15 @@ public class Fight {
 
 	private void chooseAttack(Player player, Pokemon pokemon) {
 		int attackCount = 1;
-		System.out.println("Choose an attack to use:\n1 - " + (pokemon.getAttacks()[0]).getTextName() + " > " + pokemon.getAttacks()[0].getPP() + " PP(s)");
+		System.out.println("Choose an attack to use:\n1 - " + (pokemon.getAttacks()[0]).getTextName() + " > " + pokemon.getAttacksPP()[0] + " PP(s)");
 		if (pokemon.getAttacksLength() > 1) {
-			System.out.println("2 - " + (pokemon.getAttacks()[1]).getTextName() + " > " + pokemon.getAttacks()[1].getPP() + " PP(s)");
+			System.out.println("2 - " + (pokemon.getAttacks()[1]).getTextName() + " > " + pokemon.getAttacksPP()[1] + " PP(s)");
 			attackCount = 2;
 			if (pokemon.getAttacksLength() > 2) {
-				System.out.println("3 - " + (pokemon.getAttacks()[2]).getTextName() + " > " + pokemon.getAttacks()[2].getPP() + " PP(s)");
+				System.out.println("3 - " + (pokemon.getAttacks()[2]).getTextName() + " > " + pokemon.getAttacksPP()[2] + " PP(s)");
 				attackCount = 3;
 				if (pokemon.getAttacksLength() > 3) {
-					System.out.println("4 - " + (pokemon.getAttacks()[3]).getTextName() + " > " + pokemon.getAttacks()[3].getPP() + " PP(s)");
+					System.out.println("4 - " + (pokemon.getAttacks()[3]).getTextName() + " > " + pokemon.getAttacksPP()[3] + " PP(s)");
 					attackCount = 4;
 				}
 			}

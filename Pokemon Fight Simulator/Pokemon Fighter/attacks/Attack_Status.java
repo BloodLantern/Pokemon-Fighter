@@ -38,12 +38,6 @@ public enum Attack_Status implements Attacks {
 	}
 
 	@Override
-	public void setPP(int pp) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public String getSecondaryEffect() {
 		// TODO Auto-generated method stub
 		return null;

@@ -29,7 +29,7 @@ public enum Attack_Special implements Attacks {
 	private final Types type;
 	private final int power;
 	private final int accuracy;
-	private int pp;
+	private final int pp;
 	private final String secondaryEffect;
 	private final String textName;
 
@@ -51,7 +51,14 @@ public enum Attack_Special implements Attacks {
 		if (attack != null) {
 
 			if (attack.getPP() > 0) {
-				attack.setPP(attack.getPP() - 1);
+				int attackIndex = 0;
+				for (int i = 0; i < attacker.getAttacksLength(); i++) {
+					if (attack.equals(attacker.getAttacks()[i])) {
+						attackIndex = i;
+						break;
+					}
+				}
+				attacker.setAttacksPP(attackIndex, attacker.getAttacksPP()[attackIndex] - 1);
 
 				if (Math.random() > (float) attack.getAccuracy() / 100) {
 					System.out.println(attacker.getName() + " missed its attack!");
@@ -62,8 +69,6 @@ public enum Attack_Special implements Attacks {
 
 				if (attack.getType() == attacker.getType())
 					CM *= 1.5;
-
-				// TODO Critical hit
 
 				double rdm = 1;
 				do {
@@ -130,11 +135,6 @@ public enum Attack_Special implements Attacks {
 	@Override
 	public int getPP() {
 		return pp;
-	}
-
-	@Override
-	public void setPP(int pp) {
-		this.pp = pp;
 	}
 
 	@Override

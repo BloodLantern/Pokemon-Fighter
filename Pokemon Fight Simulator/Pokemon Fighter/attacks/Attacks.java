@@ -24,8 +24,6 @@ public interface Attacks {
 
 	int getPP();
 
-	void setPP(int pp);
-
 	String getSecondaryEffect();
 
 	String getTextName();

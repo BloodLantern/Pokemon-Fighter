@@ -56,8 +56,16 @@ public abstract class Pokemon {
 	private Status status = null;
 	/**
 	 * Attacks array containing all actually learned and usable attack.
+	 * 
+	 * @see pokemons.Pokemon#attacksPP
 	 */
 	private Attacks[] attacks = new Attacks[4];
+	/**
+	 * Integer array containing all attacks' PPs.
+	 * 
+	 * @see pokemons.Pokemon#attacks
+	 */
+	private int[] attacksPP = new int[4];
 
 	// EV Stats
 	private int totalEV = 0;
@@ -757,12 +765,8 @@ public abstract class Pokemon {
 		int count = 0;
 		
 		for (Attacks a : this.getAttacks()) {
-			try {
-				if (!a.equals(null))
-					count++;
-			} catch (java.lang.NullPointerException e) {
-				
-			}
+			if (a != null)
+				count++;
 		}
 		
 		return count;
@@ -785,6 +789,19 @@ public abstract class Pokemon {
 		} else {
 			return false;
 		}
+	}
+
+	public int[] getAttacksPP() {
+		return attacksPP;
+	}
+
+	public void setAttacksPP(int index, int attacksPP) {
+		this.attacksPP[index] = attacksPP;
+	}
+	
+	public void initAttacksPP() {
+		for (int i = 0; i < this.getAttacksLength(); i++)
+			this.setAttacksPP(i, this.getAttacks()[i].getPP());
 	}
 
 	/**

@@ -44,7 +44,7 @@ public enum Attack_Physical implements Attacks {
 	private final Types type;
 	private final int power;
 	private final int accuracy;
-	private int pp;
+	private final int pp;
 	private final String secondaryEffect;
 	private final String textName;
 	private boolean isMelee;
@@ -68,7 +68,14 @@ public enum Attack_Physical implements Attacks {
 	public static int use(Attack_Physical attack, Pokemon attacker, Pokemon attacked) {
 		if (attack != null) {
 			if (attack.getPP() > 0) {
-				attack.setPP(attack.getPP() - 1);
+				int attackIndex = 0;
+				for (int i = 0; i < attacker.getAttacksLength(); i++) {
+					if (attack.equals(attacker.getAttacks()[i])) {
+						attackIndex = i;
+						break;
+					}
+				}
+				attacker.setAttacksPP(attackIndex, attacker.getAttacksPP()[attackIndex] - 1);
 
 				if (Math.random() > (float) attack.getAccuracy() / 100) {
 					System.out.println(attacker.getName() + " missed its attack!");
@@ -159,12 +166,6 @@ public enum Attack_Physical implements Attacks {
 	@Override
 	public String getTextName() {
 		return textName;
-	}
-
-	@Override
-	public void setPP(int pp) {
-		this.pp = pp;
-
 	}
 
 	public boolean isMelee() {

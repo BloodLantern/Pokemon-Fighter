@@ -95,6 +95,7 @@ class Main {
 				}
 			}
 			p.setOwner(player1);
+			p.initAttacksPP();
 		}
 		// Same for the other player
 		for (Pokemon p : player2.getTeam()) {
@@ -113,6 +114,7 @@ class Main {
 				}
 			}
 			p.setOwner(player2);
+			p.initAttacksPP();
 		}
 
 		Fight f = new Fight(player1, player2);
