@@ -57,7 +57,7 @@ class Main {
 	private static void createFight() {
 		Pokemon go = new Golem(100);
 		Pokemon ty = new Tyranitar(100);
-		
+
 		Player player1 = new Player("Player 1", new Pokemon[] { go, new Alakazam(100), new Eevee(100),
 				new Acromatisse(100), new Clefairy(100), new Xerneas(100) }, go);
 		Player player2 = new Player("Player 2", new Pokemon[] { ty, new Raichu(100), new Azumarill(100),
@@ -75,23 +75,12 @@ class Main {
 		player2.getTeam()[0].addAttack(Attack_Physical.KNOCK_OFF);
 		player2.getTeam()[0].addAttack(Attack_Physical.STONE_EDGE);
 		player2.getTeam()[0].addAttack(Attack_Physical.ICE_PUNCH);
-		
-		Scanner sc = new Scanner(System.in);
-		int answer;
+
 		// Add Attack_Physical.HEADBUTT to the Pokemon if it hasn't already any attack.
 		for (Pokemon p : player1.getTeam()) {
 			if (p.getAttacksLength() < 4) {
-				if (p.addAttack(Attack_Physical.HEADBUTT)) {
-					System.out.println("Successfully added attack HEADBUTT to " + p.getName());
-				} else {
-					System.out.println("Cannot add attack HEADBUTT to " + p.getName());
-					System.out.println("Choose an attack to replace:");
-					for (int i = 0; i < p.getAttacks().length; i++) {
-						System.out.println(i + " - " + p.getAttacks()[i].getTextName());
-					}
-					answer = sc.nextInt();
-					
-					p.setAttacks(Attack_Physical.HEADBUTT, answer);
+				if (p.getAttacksLength() < 4) {
+					p.addAttack(Attack_Physical.HEADBUTT);
 				}
 			}
 			p.setOwner(player1);
@@ -100,18 +89,7 @@ class Main {
 		// Same for the other player
 		for (Pokemon p : player2.getTeam()) {
 			if (p.getAttacksLength() < 4) {
-				if (p.addAttack(Attack_Physical.HEADBUTT)) {
-					System.out.println("Successfully added attack HEADBUTT to " + p.getName());
-				} else {
-					System.out.println("Cannot add attack HEADBUTT to " + p.getName());
-					System.out.println("Choose an attack to replace:");
-					for (int i = 0; i < p.getAttacks().length; i++) {
-						System.out.println(i + " - " + p.getAttacks()[i].getTextName());
-					}
-					answer = sc.nextInt();
-					
-					p.setAttacks(Attack_Physical.HEADBUTT, answer);
-				}
+				p.addAttack(Attack_Physical.HEADBUTT);
 			}
 			p.setOwner(player2);
 			p.initAttacksPP();
@@ -119,7 +97,6 @@ class Main {
 
 		Fight f = new Fight(player1, player2);
 		f.begin();
-		sc.close();
 	}
 
 }

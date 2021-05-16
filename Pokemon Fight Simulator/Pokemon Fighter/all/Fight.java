@@ -96,32 +96,33 @@ public class Fight {
 	private void chooseAction(Player player, Pokemon pokemon) {
 
 		System.out.println("Choose an action to do:\n1 - Attack\n2 - Switch");
-		answer = sc.nextInt();
-		if (answer == 1) {
-
+		answer = askAnswer(1, 2);
+		switch (answer) {
+		case 1:
 			chooseAttack(player, pokemon);
+			break;
 
-		} else if (answer == 2) {
-
+		case 2:
 			switchPokemon(player, pokemon);
-
-		} else {
-			System.err.println("Invalid answer !");
+			break;
 		}
-
 	}
 
 	private void chooseAttack(Player player, Pokemon pokemon) {
 		int attackCount = 1;
-		System.out.println("Choose an attack to use:\n1 - " + (pokemon.getAttacks()[0]).getTextName() + " > " + pokemon.getAttacksPP()[0] + " PP(s)");
+		System.out.println("Choose an attack to use:\n1 - " + (pokemon.getAttacks()[0]).getTextName() + " > "
+				+ pokemon.getAttacksPP()[0] + " PP(s)");
 		if (pokemon.getAttacksLength() > 1) {
-			System.out.println("2 - " + (pokemon.getAttacks()[1]).getTextName() + " > " + pokemon.getAttacksPP()[1] + " PP(s)");
+			System.out.println(
+					"2 - " + (pokemon.getAttacks()[1]).getTextName() + " > " + pokemon.getAttacksPP()[1] + " PP(s)");
 			attackCount = 2;
 			if (pokemon.getAttacksLength() > 2) {
-				System.out.println("3 - " + (pokemon.getAttacks()[2]).getTextName() + " > " + pokemon.getAttacksPP()[2] + " PP(s)");
+				System.out.println("3 - " + (pokemon.getAttacks()[2]).getTextName() + " > " + pokemon.getAttacksPP()[2]
+						+ " PP(s)");
 				attackCount = 3;
 				if (pokemon.getAttacksLength() > 3) {
-					System.out.println("4 - " + (pokemon.getAttacks()[3]).getTextName() + " > " + pokemon.getAttacksPP()[3] + " PP(s)");
+					System.out.println("4 - " + (pokemon.getAttacks()[3]).getTextName() + " > "
+							+ pokemon.getAttacksPP()[3] + " PP(s)");
 					attackCount = 4;
 				}
 			}
@@ -188,7 +189,7 @@ public class Fight {
 			answer = askAnswer(1, i);
 		}
 		i = 0;
-		
+
 		if (answer == 0 && pokemon.getHP() > 0) {
 			chooseAction(player, pokemon);
 		} else {
@@ -204,18 +205,17 @@ public class Fight {
 						}
 						pokemon = p;
 						System.out.println(pokemon.getName() + " !");
-						fastest(pokemon1, pokemon2);
 						break;
 					}
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 * This method is used to get an answer from the console user.
 	 * 
-	 * @param first is above what number should be the answer.
+	 * @param first  is above what number should be the answer.
 	 * @param second is under what number should be the answer.
 	 * @return An Integer value entered by the user.
 	 */

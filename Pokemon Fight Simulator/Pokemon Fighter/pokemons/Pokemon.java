@@ -763,12 +763,12 @@ public abstract class Pokemon {
 	 */
 	public int getAttacksLength() {
 		int count = 0;
-		
+
 		for (Attacks a : this.getAttacks()) {
 			if (a != null)
 				count++;
 		}
-		
+
 		return count;
 	}
 
@@ -798,7 +798,7 @@ public abstract class Pokemon {
 	public void setAttacksPP(int index, int attacksPP) {
 		this.attacksPP[index] = attacksPP;
 	}
-	
+
 	public void initAttacksPP() {
 		for (int i = 0; i < this.getAttacksLength(); i++)
 			this.setAttacksPP(i, this.getAttacks()[i].getPP());

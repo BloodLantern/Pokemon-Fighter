@@ -33,33 +33,32 @@ public class Player {
 		this.team = team;
 		this.defaultSelected = defaultSelected;
 	}
-	
+
 	public boolean areAllDead() {
 		int deadCount = 0;
-		
+
 		for (Pokemon p : this.getTeam())
 			if (p.getHP() <= 0)
 				deadCount++;
-		
+
 		if (deadCount == 6) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	
-	
+
 	/**
 	 * @return The non-null values count.
 	 */
 	public int getTeamLength() {
 		int i = 0;
-		
+
 		for (Pokemon p : this.getTeam()) {
 			if (p != null)
 				i++;
 		}
-		
+
 		return i;
 	}
 
