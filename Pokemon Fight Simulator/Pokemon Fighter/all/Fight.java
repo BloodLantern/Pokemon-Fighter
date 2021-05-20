@@ -18,9 +18,10 @@ public class Fight {
 	Player player2;
 	Pokemon pokemon1;
 	Pokemon pokemon2;
-	Pokemon fastest;
-	Pokemon slowest;
-	Scanner sc;
+	private Pokemon fastest;
+	private Pokemon slowest;
+	private Scanner sc;
+	private int answer;
 
 	public Fight(Player player1, Player player2) {
 
@@ -46,9 +47,21 @@ public class Fight {
 		} while (pokemon1.getHP() > 0 && pokemon2.getHP() > 0);
 
 		if (pokemon1.getHP() <= 0) {
-			System.out.println(pokemon1.getName() + " died.\n" + pokemon2.getName() + " won the fight !");
+			if (player1.areAllDead()) {
+				System.out.println(pokemon1.getName() + " died.\n" + pokemon2.getName() + " won the fight !");
+			} else {
+				System.out.println(pokemon1.getName() + " died.");
+				switchPokemon(player1, pokemon1);
+				begin();
+			}
 		} else {
-			System.out.println(pokemon2.getName() + " died.\n" + pokemon1.getName() + " won the fight !");
+			if (player2.areAllDead()) {
+				System.out.println(pokemon2.getName() + " died.\n" + pokemon1.getName() + " won the fight !");
+			} else {
+				System.out.println(pokemon2.getName() + " died.");
+				switchPokemon(player2, pokemon2);
+				begin();
+			}
 		}
 		sc.close();
 	}
@@ -82,24 +95,47 @@ public class Fight {
 
 	private void chooseAction(Player player, Pokemon pokemon) {
 
-		System.out.println("Choose an action to do:\n1 - Attack\n2 - Switch");
-		int answer = sc.nextInt();
-		if (answer == 1) {
+		System.out.println("Choose an action to do:\n1 - Attack\n2 - Switch\n3 - Do nothing");
+		answer = askAnswer(1, 3);
+		switch (answer) {
+		case 1:
+			chooseAttack(player, pokemon);
+			break;
 
-			System.out.println("Choose an attack to use:\n1 - " + (pokemon.getAttacks()[0]).getTextName());
-			if (pokemon.getAttacksLength() > 1) {
-				System.out.println("2 - " + (pokemon.getAttacks()[1]).getTextName());
-				if (pokemon.getAttacksLength() > 2) {
-					System.out.println("3 - " + (pokemon.getAttacks()[2]).getTextName());
-					if (pokemon.getAttacksLength() > 3) {
-						System.out.println("4 - " + (pokemon.getAttacks()[3]).getTextName());
-					}
+		case 2:
+			switchPokemon(player, pokemon);
+			break;
+			
+		case 3:
+			break;
+		}
+	}
+
+	private void chooseAttack(Player player, Pokemon pokemon) {
+		int attackCount = 1;
+		System.out.println("Choose an attack to use:\n1 - " + (pokemon.getAttacks()[0]).getTextName() + " > "
+				+ pokemon.getAttacksPP()[0] + " PP(s)");
+		if (pokemon.getAttacksLength() > 1) {
+			System.out.println(
+					"2 - " + (pokemon.getAttacks()[1]).getTextName() + " > " + pokemon.getAttacksPP()[1] + " PP(s)");
+			attackCount = 2;
+			if (pokemon.getAttacksLength() > 2) {
+				System.out.println("3 - " + (pokemon.getAttacks()[2]).getTextName() + " > " + pokemon.getAttacksPP()[2]
+						+ " PP(s)");
+				attackCount = 3;
+				if (pokemon.getAttacksLength() > 3) {
+					System.out.println("4 - " + (pokemon.getAttacks()[3]).getTextName() + " > "
+							+ pokemon.getAttacksPP()[3] + " PP(s)");
+					attackCount = 4;
 				}
 			}
-			System.out.println("\n0 - Choose another action");
+		}
+		System.out.println("\n0 - Choose another action");
+		answer = askAnswer(0, attackCount);
 
-			answer = sc.nextInt();
-
+		if (answer == 0) {
+			chooseAction(player, pokemon);
+		} else {
 			if (pokemon.equals(this.fastest)) {
 
 				int HPBefore = this.slowest.getHP();
@@ -137,21 +173,65 @@ public class Fight {
 				}
 
 			}
+		}
+	}
 
-		} else if (answer == 2) {
+	private void switchPokemon(Player player, Pokemon pokemon) {
+		System.out.println("Choose a Pokemon to switch with:");
+		int i = 0;
+		for (Pokemon p : player.getTeam()) {
+			if (!p.equals(pokemon) && p.getHP() > 0) {
+				i++;
+				System.out.println(i + " - " + p.getName());
+			}
+		}
+		if (pokemon.getHP() > 0) {
+			System.out.println("\n0 - Choose another action");
+			answer = askAnswer(0, i);
+		} else {
+			answer = askAnswer(1, i);
+		}
+		i = 0;
 
-			System.out.println("Choose a Pokemon to switch with:");
-			int i = 1;
+		if (answer == 0 && pokemon.getHP() > 0) {
+			chooseAction(player, pokemon);
+		} else {
 			for (Pokemon p : player.getTeam()) {
-				if (!p.equals(pokemon)) {
-					System.out.println(i + " - " + p.getName());
+				if (!p.equals(pokemon) && p.getHP() > 0) {
 					i++;
+					if (answer == i) {
+						System.out.print(pokemon.getName() + " is changing to ");
+						if (pokemon.equals(pokemon1)) {
+							pokemon1 = p;
+						} else {
+							pokemon2 = p;
+						}
+						pokemon = p;
+						System.out.println(pokemon.getName() + " !");
+						break;
+					}
 				}
 			}
-
-		} else {
-			System.err.println("Invalid answer !");
 		}
+	}
 
+	/**
+	 * This method is used to get an answer from the console user.
+	 * 
+	 * @param first  is above what number should be the answer.
+	 * @param second is under what number should be the answer.
+	 * @return An Integer value entered by the user.
+	 */
+	private int askAnswer(int first, int second) {
+		int answer;
+		while (true) {
+			answer = sc.nextInt();
+			if (answer < first || answer > second) {
+				System.out.println("Please enter a correct answer !");
+			} else {
+				break;
+			}
+		}
+		return answer;
 	}
 }

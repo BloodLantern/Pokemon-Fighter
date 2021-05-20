@@ -29,7 +29,7 @@ public enum Attack_Special implements Attacks {
 	private final Types type;
 	private final int power;
 	private final int accuracy;
-	private int pp;
+	private final int pp;
 	private final String secondaryEffect;
 	private final String textName;
 
@@ -49,21 +49,26 @@ public enum Attack_Special implements Attacks {
 	 */
 	public static int use(Attack_Special attack, Pokemon attacker, Pokemon attacked) {
 		if (attack != null) {
-
-			if (attack.getPp() > 0) {
-				attack.setPp(attack.getPp() - 1);
+			int attackIndex = 0;
+			for (int i = 0; i < attacker.getAttacksLength(); i++) {
+				if (attack.equals(attacker.getAttacks()[i])) {
+					attackIndex = i;
+					break;
+				}
+			}
+			if (attacker.getAttacksPP()[attackIndex] > 0) {
+				
+				attacker.setAttacksPP(attackIndex, attacker.getAttacksPP()[attackIndex] - 1);
 
 				if (Math.random() > (float) attack.getAccuracy() / 100) {
 					System.out.println(attacker.getName() + " missed its attack!");
-					return -1;
+					return 0;
 				}
 
 				double CM = 1;
 
 				if (attack.getType() == attacker.getType())
 					CM *= 1.5;
-
-				// TODO Critical hit
 
 				double rdm = 1;
 				do {
@@ -77,7 +82,7 @@ public enum Attack_Special implements Attacks {
 				weakness *= Pokemon.weakness(attacked.getType(), attack.getType());
 				if (attacked.getType2() != null)
 					weakness *= Pokemon.weakness(attacked.getType2(), attack.getType());
-
+				
 				if (weakness == 0.25f) {
 					System.out.println("It is not effective at all!");
 				} else if (weakness == 0.5f) {
@@ -103,7 +108,7 @@ public enum Attack_Special implements Attacks {
 				return finalDamage;
 			} else {
 				System.err.println("You don't have enough PP to use " + attack.getTextName() + " !");
-				return -1;
+				return 0;
 			}
 
 		} else {
@@ -128,13 +133,8 @@ public enum Attack_Special implements Attacks {
 	}
 
 	@Override
-	public int getPp() {
+	public int getPP() {
 		return pp;
-	}
-
-	@Override
-	public void setPp(int pp) {
-		this.pp = pp;
 	}
 
 	@Override

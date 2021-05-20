@@ -56,8 +56,16 @@ public abstract class Pokemon {
 	private Status status = null;
 	/**
 	 * Attacks array containing all actually learned and usable attack.
+	 * 
+	 * @see pokemons.Pokemon#attacksPP
 	 */
 	private Attacks[] attacks = new Attacks[4];
+	/**
+	 * Integer array containing all attacks' PPs.
+	 * 
+	 * @see pokemons.Pokemon#attacks
+	 */
+	private int[] attacksPP = new int[4];
 
 	// EV Stats
 	private int totalEV = 0;
@@ -179,12 +187,15 @@ public abstract class Pokemon {
 	}
 
 	/**
-	 * Used to get a type attack multiplier against another type. The first
-	 * parameter is for the attacker and the second for the pokemon attacked.
+	 * Used to get a type attack multiplier against another type.
+	 * 
+	 * @param attacked is the attacked's type.
+	 * @param attacker is the attacker's type. May be an Attack.
+	 * @return The power multiplier for this attacker against this attacked Pokemon.
 	 */
-	public static double weakness(Types attacker, Types attacked) {
+	public static double weakness(Types attacked, Types attacker) {
 		double weakness = 1.0;
-		weakness = Weaknesses.getWeaknessesList()[attacker.getIndex()][attacked.getIndex()];
+		weakness = Weaknesses.getWeaknessesList()[attacked.getIndex()][attacker.getIndex()];
 		return weakness;
 	}
 
@@ -746,23 +757,21 @@ public abstract class Pokemon {
 		return attacks;
 	}
 
-	protected void setAttacks(Attacks attack, int index) {
+	public void setAttacks(Attacks attack, int index) {
 		this.attacks[index] = attack;
 	}
 
 	/**
-	 * @return This Pokemon's learned attack count
+	 * @return The non-null attack count.
 	 */
 	public int getAttacksLength() {
 		int count = 0;
-		try {
-			int i = 0;
-			while (this.getAttacks()[i] != null) {
+
+		for (Attacks a : this.getAttacks()) {
+			if (a != null)
 				count++;
-				i++;
-			}
-		} catch (Exception e) {
 		}
+
 		return count;
 	}
 
@@ -783,6 +792,19 @@ public abstract class Pokemon {
 		} else {
 			return false;
 		}
+	}
+
+	public int[] getAttacksPP() {
+		return attacksPP;
+	}
+
+	public void setAttacksPP(int index, int attacksPP) {
+		this.attacksPP[index] = attacksPP;
+	}
+
+	public void initAttacksPP() {
+		for (int i = 0; i < this.getAttacksLength(); i++)
+			this.setAttacksPP(i, this.getAttacks()[i].getPP());
 	}
 
 	/**

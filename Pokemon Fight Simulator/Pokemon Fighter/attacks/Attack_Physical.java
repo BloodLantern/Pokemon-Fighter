@@ -44,7 +44,7 @@ public enum Attack_Physical implements Attacks {
 	private final Types type;
 	private final int power;
 	private final int accuracy;
-	private int pp;
+	private final int pp;
 	private final String secondaryEffect;
 	private final String textName;
 	private boolean isMelee;
@@ -67,12 +67,20 @@ public enum Attack_Physical implements Attacks {
 	 */
 	public static int use(Attack_Physical attack, Pokemon attacker, Pokemon attacked) {
 		if (attack != null) {
-			if (attack.getPp() > 0) {
-				attack.setPp(attack.getPp() - 1);
+			int attackIndex = 0;
+			for (int i = 0; i < attacker.getAttacksLength(); i++) {
+				if (attack.equals(attacker.getAttacks()[i])) {
+					attackIndex = i;
+					break;
+				}
+			}
+			if (attacker.getAttacksPP()[attackIndex] > 0) {
+				
+				attacker.setAttacksPP(attackIndex, attacker.getAttacksPP()[attackIndex] - 1);
 
 				if (Math.random() > (float) attack.getAccuracy() / 100) {
 					System.out.println(attacker.getName() + " missed its attack!");
-					return -1;
+					return 0;
 				}
 
 				double CM = 1;
@@ -114,7 +122,6 @@ public enum Attack_Physical implements Attacks {
 				}
 
 				// Damage calc
-				System.out.println(CM);
 				int finalDamage = (int) Math
 						.floor((((attacker.getLevel() * 0.4 + 2) * attacker.getAtk() * attack.getPower())
 								/ (attacked.getDef() * 50) + 2) * CM);
@@ -124,9 +131,10 @@ public enum Attack_Physical implements Attacks {
 				return finalDamage;
 			} else {
 				System.err.println("You don't have enough PP to use " + attack.getTextName() + "!");
-				return -1;
+				return 0;
 			}
 		} else {
+			System.err.println("Attack is null !");
 			return -1;
 		}
 	}
@@ -147,7 +155,7 @@ public enum Attack_Physical implements Attacks {
 	}
 
 	@Override
-	public int getPp() {
+	public int getPP() {
 		return pp;
 	}
 
@@ -159,12 +167,6 @@ public enum Attack_Physical implements Attacks {
 	@Override
 	public String getTextName() {
 		return textName;
-	}
-
-	@Override
-	public void setPp(int pp) {
-		this.pp = pp;
-
 	}
 
 	public boolean isMelee() {

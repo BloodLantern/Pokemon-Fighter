@@ -2,8 +2,7 @@ package all;
 
 import java.awt.EventQueue;
 
-import attacks.Attack_Physical;
-import attacks.Attack_Special;
+import attacks.*;
 import gui.MainWindow;
 import pokemons.Pokemon;
 import pokemons.electric.*;
@@ -55,10 +54,13 @@ class Main {
 	}
 
 	private static void createFight() {
-		Player player1 = new Player(new Pokemon[] { new Golem(100), new Alakazam(100), new Eevee(100),
-				new Acromatisse(100), new Clefairy(100), new Xerneas(100) });
-		Player player2 = new Player(new Pokemon[] { new Tyranitar(100), new Raichu(100), new Azumarill(100),
-				new Bouffalant(100), new Ditto(100), new Wooloo(100) });
+		Pokemon go = new Golem(100);
+		Pokemon ty = new Tyranitar(100);
+
+		Player player1 = new Player("Player 1", new Pokemon[] { go, new Alakazam(100), new Eevee(100),
+				new Acromatisse(100), new Clefairy(100), new Xerneas(100) }, go);
+		Player player2 = new Player("Player 2", new Pokemon[] { ty, new Raichu(100), new Azumarill(100),
+				new Bouffalant(100), new Ditto(100), new Wooloo(100) }, ty);
 
 		player1.getTeam()[0].addAttack(Attack_Physical.EARTHQUAKE);
 		player1.getTeam()[0].addAttack(Attack_Physical.STONE_EDGE);
@@ -68,24 +70,28 @@ class Main {
 		player1.getTeam()[1].addAttack(Attack_Special.PSYCHIC);
 		player1.getTeam()[1].addAttack(Attack_Special.SHADOW_BALL);
 		player1.getTeam()[1].addAttack(Attack_Special.ENERGY_BALL);
-		player1.getTeam()[1].addAttack(Attack_Physical.EARTHQUAKE);
-		player1.getTeam()[1].addAttack(Attack_Physical.KNOCK_OFF);
-		player1.getTeam()[1].addAttack(Attack_Physical.STONE_EDGE);
-		player1.getTeam()[1].addAttack(Attack_Physical.ICE_PUNCH);
+		player2.getTeam()[0].addAttack(Attack_Physical.EARTHQUAKE);
+		player2.getTeam()[0].addAttack(Attack_Physical.KNOCK_OFF);
+		player2.getTeam()[0].addAttack(Attack_Physical.STONE_EDGE);
+		player2.getTeam()[0].addAttack(Attack_Physical.ICE_PUNCH);
 
 		// Add Attack_Physical.HEADBUTT to the Pokemon if it hasn't already any attack.
 		for (Pokemon p : player1.getTeam()) {
 			if (p.getAttacksLength() < 4) {
-				p.addAttack(Attack_Physical.HEADBUTT);
+				if (p.getAttacksLength() < 4) {
+					p.addAttack(Attack_Physical.HEADBUTT);
+				}
 			}
 			p.setOwner(player1);
+			p.initAttacksPP();
 		}
-		// Same
+		// Same for the other player
 		for (Pokemon p : player2.getTeam()) {
 			if (p.getAttacksLength() < 4) {
 				p.addAttack(Attack_Physical.HEADBUTT);
 			}
 			p.setOwner(player2);
+			p.initAttacksPP();
 		}
 
 		Fight f = new Fight(player1, player2);
