@@ -35,22 +35,13 @@ import pokemons.water.*;
 class Main {
 
 	public static void main(String[] args) {
-		//createMainWindow();
-		createFight();
+		createMainWindow();
+		//createFight();
 	}
 
 	private static void createMainWindow() {
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					MainWindow window = new MainWindow();
-					window.getFrame().setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		MainWindow window = new MainWindow();
+		window.getFrame().setVisible(true);
 	}
 
 	private static void createFight() {

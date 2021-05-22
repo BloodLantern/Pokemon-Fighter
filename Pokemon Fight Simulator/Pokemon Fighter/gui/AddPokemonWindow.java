@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -23,19 +24,22 @@ import io.Add_Pokemon;
 import io.FolderScanner;
 import pokemons.Types;
 
-public class AddPokemonWindow {
-
-	private JFrame frmAddNewPokemon;
+/**
+ * This class is about the window that adds a new Pokemon to the system.
+ * 
+ * @author maxim
+ */
+public class AddPokemonWindow extends JFrame {
 
 	/**
-	 * Create the application.
+	 * Creates the application.
 	 */
 	public AddPokemonWindow(JFrame launcher) {
 		initialize(launcher);
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initializes the contents of the frame.
 	 */
 	private void initialize(JFrame launcher) {
 		setFrame(new JFrame());
@@ -48,185 +52,353 @@ public class AddPokemonWindow {
 		gridBagLayout.columnWeights = new double[] { 0.0, 1.0, 0.0, Double.MIN_VALUE };
 		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 				Double.MIN_VALUE };
-		frmAddNewPokemon.getContentPane().setLayout(gridBagLayout);
+		this.getContentPane().setLayout(gridBagLayout);
 
-		JComboBox<Types> comboBox_1 = new JComboBox<Types>(Types.getTypesList());
-		comboBox_1.setMaximumRowCount(18);
-		comboBox_1.setToolTipText("New Pokemon's Primary Type");
+		JComboBox<Types> type1ComboBox = new JComboBox<Types>();
+		for (Types t : Types.getTypesList())
+			type1ComboBox.addItem(t);
+		type1ComboBox.setMaximumRowCount(18);
+		type1ComboBox.setToolTipText("New Pokemon's Primary Type");
 
-		JLabel lblNewLabel = new JLabel("Please complete these fields");
-		lblNewLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.fill = GridBagConstraints.VERTICAL;
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel.gridx = 1;
-		gbc_lblNewLabel.gridy = 0;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
+		JLabel title = new JLabel("Please complete these fields");
+		title.setAlignmentX(Component.CENTER_ALIGNMENT);
+		GridBagConstraints gbc_title = new GridBagConstraints();
+		gbc_title.fill = GridBagConstraints.VERTICAL;
+		gbc_title.insets = new Insets(0, 0, 5, 5);
+		gbc_title.gridx = 1;
+		gbc_title.gridy = 0;
+		this.getContentPane().add(title, gbc_title);
 
-		JLabel lblNewLabel_1 = new JLabel("Name:");
-		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_1.gridx = 0;
-		gbc_lblNewLabel_1.gridy = 1;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel_1, gbc_lblNewLabel_1);
+		JLabel nameLabel = new JLabel("Name:");
+		GridBagConstraints gbc_nameLabel = new GridBagConstraints();
+		gbc_nameLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_nameLabel.gridx = 0;
+		gbc_nameLabel.gridy = 1;
+		this.getContentPane().add(nameLabel, gbc_nameLabel);
 		/*
 		 * MaskFormatter numbers = null; try { numbers = new MaskFormatter("#####"); }
 		 * catch (ParseException e) { e.printStackTrace(); }
 		 */
-		JFormattedTextField frmtdtxtfldTest = new JFormattedTextField();
-		frmtdtxtfldTest.setToolTipText("New Pokemon's name");
-		GridBagConstraints gbc_frmtdtxtfldTest = new GridBagConstraints();
-		gbc_frmtdtxtfldTest.fill = GridBagConstraints.BOTH;
-		gbc_frmtdtxtfldTest.insets = new Insets(0, 0, 5, 5);
-		gbc_frmtdtxtfldTest.gridx = 1;
-		gbc_frmtdtxtfldTest.gridy = 1;
-		frmAddNewPokemon.getContentPane().add(frmtdtxtfldTest, gbc_frmtdtxtfldTest);
+		JFormattedTextField nameTextField = new JFormattedTextField();
+		nameTextField.setToolTipText("New Pokemon's name");
+		GridBagConstraints gbc_nameTextField = new GridBagConstraints();
+		gbc_nameTextField.fill = GridBagConstraints.BOTH;
+		gbc_nameTextField.insets = new Insets(0, 0, 5, 5);
+		gbc_nameTextField.gridx = 1;
+		gbc_nameTextField.gridy = 1;
+		this.getContentPane().add(nameTextField, gbc_nameTextField);
 
-		JLabel lblNewLabel_2 = new JLabel("Type 1:");
-		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
-		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_2.gridx = 0;
-		gbc_lblNewLabel_2.gridy = 2;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel_2, gbc_lblNewLabel_2);
-		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
-		gbc_comboBox_1.anchor = GridBagConstraints.NORTH;
-		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox_1.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox_1.gridx = 1;
-		gbc_comboBox_1.gridy = 2;
-		frmAddNewPokemon.getContentPane().add(comboBox_1, gbc_comboBox_1);
+		JLabel type1Label = new JLabel("Type 1:");
+		GridBagConstraints gbc_type1Label = new GridBagConstraints();
+		gbc_type1Label.insets = new Insets(0, 0, 5, 5);
+		gbc_type1Label.gridx = 0;
+		gbc_type1Label.gridy = 2;
+		this.getContentPane().add(type1Label, gbc_type1Label);
+		GridBagConstraints gbc_type1ComboBox = new GridBagConstraints();
+		gbc_type1ComboBox.anchor = GridBagConstraints.NORTH;
+		gbc_type1ComboBox.fill = GridBagConstraints.HORIZONTAL;
+		gbc_type1ComboBox.insets = new Insets(0, 0, 5, 5);
+		gbc_type1ComboBox.gridx = 1;
+		gbc_type1ComboBox.gridy = 2;
+		this.getContentPane().add(type1ComboBox, gbc_type1ComboBox);
 
-		JLabel lblNewLabel_3 = new JLabel("Type 2:");
-		lblNewLabel_3.setToolTipText("Optionnal");
-		GridBagConstraints gbc_lblNewLabel_3 = new GridBagConstraints();
-		gbc_lblNewLabel_3.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_3.gridx = 0;
-		gbc_lblNewLabel_3.gridy = 3;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel_3, gbc_lblNewLabel_3);
+		JLabel type2Label = new JLabel("Type 2:");
+		type2Label.setToolTipText("Optionnal");
+		GridBagConstraints gbc_type2Label = new GridBagConstraints();
+		gbc_type2Label.insets = new Insets(0, 0, 5, 5);
+		gbc_type2Label.gridx = 0;
+		gbc_type2Label.gridy = 3;
+		this.getContentPane().add(type2Label, gbc_type2Label);
 
-		JComboBox<Types> comboBox = new JComboBox<Types>(Types.getTypesList());
-		comboBox.addItem(null);
-		comboBox.setSelectedItem(null);
-		comboBox.setMaximumRowCount(19);
-		comboBox.setToolTipText("New Pokemon's Secondary Type (Optional)");
+		JComboBox<Types> type2comboBox = new JComboBox<Types>();
+		for (Types t : Types.getTypesList())
+			type2comboBox.addItem(t);
+		type2comboBox.addItem(null);
+		type2comboBox.setSelectedItem(null);
+		type2comboBox.setMaximumRowCount(19);
+		type2comboBox.setToolTipText("New Pokemon's Secondary Type (Optional)");
 
-		GridBagConstraints gbc_comboBox = new GridBagConstraints();
-		gbc_comboBox.anchor = GridBagConstraints.NORTH;
-		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox.gridx = 1;
-		gbc_comboBox.gridy = 3;
-		frmAddNewPokemon.getContentPane().add(comboBox, gbc_comboBox);
+		GridBagConstraints gbc_type2comboBox = new GridBagConstraints();
+		gbc_type2comboBox.anchor = GridBagConstraints.NORTH;
+		gbc_type2comboBox.fill = GridBagConstraints.HORIZONTAL;
+		gbc_type2comboBox.insets = new Insets(0, 0, 5, 5);
+		gbc_type2comboBox.gridx = 1;
+		gbc_type2comboBox.gridy = 3;
+		this.getContentPane().add(type2comboBox, gbc_type2comboBox);
 
-		JLabel lblNewLabel_4 = new JLabel("Base HPs:");
-		GridBagConstraints gbc_lblNewLabel_4 = new GridBagConstraints();
-		gbc_lblNewLabel_4.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_4.gridx = 0;
-		gbc_lblNewLabel_4.gridy = 4;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel_4, gbc_lblNewLabel_4);
+		JLabel hpLabel = new JLabel("Base HPs:");
+		GridBagConstraints gbc_hpLabel = new GridBagConstraints();
+		gbc_hpLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_hpLabel.gridx = 0;
+		gbc_hpLabel.gridy = 4;
+		this.getContentPane().add(hpLabel, gbc_hpLabel);
 
-		JFormattedTextField formattedTextField_2 = new JFormattedTextField(/* numbers */);
-		formattedTextField_2.setToolTipText("New Pokemon's Base Health Points");
-		GridBagConstraints gbc_formattedTextField_2 = new GridBagConstraints();
-		gbc_formattedTextField_2.fill = GridBagConstraints.BOTH;
-		gbc_formattedTextField_2.insets = new Insets(0, 0, 5, 5);
-		gbc_formattedTextField_2.gridx = 1;
-		gbc_formattedTextField_2.gridy = 4;
-		frmAddNewPokemon.getContentPane().add(formattedTextField_2, gbc_formattedTextField_2);
+		JFormattedTextField hpTextField = new JFormattedTextField(/* numbers */);
+		hpTextField.setToolTipText("New Pokemon's Base Health Points");
+		GridBagConstraints gbc_hpTextField = new GridBagConstraints();
+		gbc_hpTextField.fill = GridBagConstraints.BOTH;
+		gbc_hpTextField.insets = new Insets(0, 0, 5, 5);
+		gbc_hpTextField.gridx = 1;
+		gbc_hpTextField.gridy = 4;
+		this.getContentPane().add(hpTextField, gbc_hpTextField);
 
-		JLabel lblNewLabel_5 = new JLabel("Base Atk:");
-		GridBagConstraints gbc_lblNewLabel_5 = new GridBagConstraints();
-		gbc_lblNewLabel_5.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_5.gridx = 0;
-		gbc_lblNewLabel_5.gridy = 5;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel_5, gbc_lblNewLabel_5);
+		JLabel atkLabel = new JLabel("Base Atk:");
+		GridBagConstraints gbc_atkLabel = new GridBagConstraints();
+		gbc_atkLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_atkLabel.gridx = 0;
+		gbc_atkLabel.gridy = 5;
+		this.getContentPane().add(atkLabel, gbc_atkLabel);
 
-		JFormattedTextField formattedTextField = new JFormattedTextField(/* numbers */);
-		formattedTextField.setToolTipText("New Pokemon's Base Attack");
-		GridBagConstraints gbc_formattedTextField = new GridBagConstraints();
-		gbc_formattedTextField.anchor = GridBagConstraints.NORTH;
-		gbc_formattedTextField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_formattedTextField.insets = new Insets(0, 0, 5, 5);
-		gbc_formattedTextField.gridx = 1;
-		gbc_formattedTextField.gridy = 5;
-		frmAddNewPokemon.getContentPane().add(formattedTextField, gbc_formattedTextField);
+		JFormattedTextField atkTextField = new JFormattedTextField(/* numbers */);
+		atkTextField.setToolTipText("New Pokemon's Base Attack");
+		GridBagConstraints gbc_atkTextField = new GridBagConstraints();
+		gbc_atkTextField.anchor = GridBagConstraints.NORTH;
+		gbc_atkTextField.fill = GridBagConstraints.HORIZONTAL;
+		gbc_atkTextField.insets = new Insets(0, 0, 5, 5);
+		gbc_atkTextField.gridx = 1;
+		gbc_atkTextField.gridy = 5;
+		this.getContentPane().add(atkTextField, gbc_atkTextField);
 
-		JLabel lblNewLabel_6 = new JLabel("Base Def:");
-		GridBagConstraints gbc_lblNewLabel_6 = new GridBagConstraints();
-		gbc_lblNewLabel_6.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_6.gridx = 0;
-		gbc_lblNewLabel_6.gridy = 6;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel_6, gbc_lblNewLabel_6);
+		JLabel defLabel = new JLabel("Base Def:");
+		GridBagConstraints gbc_defLabel = new GridBagConstraints();
+		gbc_defLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_defLabel.gridx = 0;
+		gbc_defLabel.gridy = 6;
+		this.getContentPane().add(defLabel, gbc_defLabel);
 
-		JFormattedTextField formattedTextField_3 = new JFormattedTextField(/* numbers */);
-		formattedTextField_3.setToolTipText("New Pokemon's Base Defense");
-		GridBagConstraints gbc_formattedTextField_3 = new GridBagConstraints();
-		gbc_formattedTextField_3.fill = GridBagConstraints.BOTH;
-		gbc_formattedTextField_3.insets = new Insets(0, 0, 5, 5);
-		gbc_formattedTextField_3.gridx = 1;
-		gbc_formattedTextField_3.gridy = 6;
-		frmAddNewPokemon.getContentPane().add(formattedTextField_3, gbc_formattedTextField_3);
+		JFormattedTextField defTextField = new JFormattedTextField(/* numbers */);
+		defTextField.setToolTipText("New Pokemon's Base Defense");
+		GridBagConstraints gbc_defTextField = new GridBagConstraints();
+		gbc_defTextField.fill = GridBagConstraints.BOTH;
+		gbc_defTextField.insets = new Insets(0, 0, 5, 5);
+		gbc_defTextField.gridx = 1;
+		gbc_defTextField.gridy = 6;
+		this.getContentPane().add(defTextField, gbc_defTextField);
 
-		JLabel lblNewLabel_7 = new JLabel("Base SpAtk");
-		GridBagConstraints gbc_lblNewLabel_7 = new GridBagConstraints();
-		gbc_lblNewLabel_7.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_7.gridx = 0;
-		gbc_lblNewLabel_7.gridy = 7;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel_7, gbc_lblNewLabel_7);
+		JLabel spatkLabel = new JLabel("Base SpAtk");
+		GridBagConstraints gbc_spatkLabel = new GridBagConstraints();
+		gbc_spatkLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_spatkLabel.gridx = 0;
+		gbc_spatkLabel.gridy = 7;
+		this.getContentPane().add(spatkLabel, gbc_spatkLabel);
 
-		JFormattedTextField formattedTextField_4 = new JFormattedTextField(/* numbers */);
-		formattedTextField_4.setToolTipText("New Pokemon's Base Special Attack");
-		GridBagConstraints gbc_formattedTextField_4 = new GridBagConstraints();
-		gbc_formattedTextField_4.fill = GridBagConstraints.BOTH;
-		gbc_formattedTextField_4.insets = new Insets(0, 0, 5, 5);
-		gbc_formattedTextField_4.gridx = 1;
-		gbc_formattedTextField_4.gridy = 7;
-		frmAddNewPokemon.getContentPane().add(formattedTextField_4, gbc_formattedTextField_4);
+		JFormattedTextField spatkTextField = new JFormattedTextField(/* numbers */);
+		spatkTextField.setToolTipText("New Pokemon's Base Special Attack");
+		GridBagConstraints gbc_spatkTextField = new GridBagConstraints();
+		gbc_spatkTextField.fill = GridBagConstraints.BOTH;
+		gbc_spatkTextField.insets = new Insets(0, 0, 5, 5);
+		gbc_spatkTextField.gridx = 1;
+		gbc_spatkTextField.gridy = 7;
+		this.getContentPane().add(spatkTextField, gbc_spatkTextField);
 
-		JLabel lblNewLabel_8 = new JLabel("Base SpDef");
-		GridBagConstraints gbc_lblNewLabel_8 = new GridBagConstraints();
-		gbc_lblNewLabel_8.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_8.gridx = 0;
-		gbc_lblNewLabel_8.gridy = 8;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel_8, gbc_lblNewLabel_8);
+		JLabel spdefLabel = new JLabel("Base SpDef");
+		GridBagConstraints gbc_spdefLabel = new GridBagConstraints();
+		gbc_spdefLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_spdefLabel.gridx = 0;
+		gbc_spdefLabel.gridy = 8;
+		this.getContentPane().add(spdefLabel, gbc_spdefLabel);
 
-		JFormattedTextField formattedTextField_5 = new JFormattedTextField(/* numbers */);
-		formattedTextField_5.setToolTipText("New Pokemon's Base Special Defense");
-		GridBagConstraints gbc_formattedTextField_5 = new GridBagConstraints();
-		gbc_formattedTextField_5.fill = GridBagConstraints.BOTH;
-		gbc_formattedTextField_5.insets = new Insets(0, 0, 5, 5);
-		gbc_formattedTextField_5.gridx = 1;
-		gbc_formattedTextField_5.gridy = 8;
-		frmAddNewPokemon.getContentPane().add(formattedTextField_5, gbc_formattedTextField_5);
+		JFormattedTextField spdefTextField = new JFormattedTextField(/* numbers */);
+		spdefTextField.setToolTipText("New Pokemon's Base Special Defense");
+		GridBagConstraints gbc_spdefTextField = new GridBagConstraints();
+		gbc_spdefTextField.fill = GridBagConstraints.BOTH;
+		gbc_spdefTextField.insets = new Insets(0, 0, 5, 5);
+		gbc_spdefTextField.gridx = 1;
+		gbc_spdefTextField.gridy = 8;
+		this.getContentPane().add(spdefTextField, gbc_spdefTextField);
 
-		JLabel lblNewLabel_9 = new JLabel("Base Speed");
-		GridBagConstraints gbc_lblNewLabel_9 = new GridBagConstraints();
-		gbc_lblNewLabel_9.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_9.gridx = 0;
-		gbc_lblNewLabel_9.gridy = 9;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel_9, gbc_lblNewLabel_9);
+		JLabel speedLabel = new JLabel("Base Speed");
+		GridBagConstraints gbc_speedLabel = new GridBagConstraints();
+		gbc_speedLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_speedLabel.gridx = 0;
+		gbc_speedLabel.gridy = 9;
+		this.getContentPane().add(speedLabel, gbc_speedLabel);
 
-		JFormattedTextField formattedTextField_6 = new JFormattedTextField(/* numbers */);
-		formattedTextField_6.setToolTipText("New Pokemon's Base Speed");
-		GridBagConstraints gbc_formattedTextField_6 = new GridBagConstraints();
-		gbc_formattedTextField_6.fill = GridBagConstraints.BOTH;
-		gbc_formattedTextField_6.insets = new Insets(0, 0, 5, 5);
-		gbc_formattedTextField_6.gridx = 1;
-		gbc_formattedTextField_6.gridy = 9;
-		frmAddNewPokemon.getContentPane().add(formattedTextField_6, gbc_formattedTextField_6);
+		JFormattedTextField speedTextField = new JFormattedTextField(/* numbers */);
+		speedTextField.setToolTipText("New Pokemon's Base Speed");
+		GridBagConstraints gbc_speedTextField = new GridBagConstraints();
+		gbc_speedTextField.fill = GridBagConstraints.BOTH;
+		gbc_speedTextField.insets = new Insets(0, 0, 5, 5);
+		gbc_speedTextField.gridx = 1;
+		gbc_speedTextField.gridy = 9;
+		this.getContentPane().add(speedTextField, gbc_speedTextField);
 
-		JLabel lblNewLabel_10 = new JLabel("Evolves from");
-		GridBagConstraints gbc_lblNewLabel_10 = new GridBagConstraints();
-		gbc_lblNewLabel_10.anchor = GridBagConstraints.EAST;
-		gbc_lblNewLabel_10.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_10.gridx = 0;
-		gbc_lblNewLabel_10.gridy = 10;
-		frmAddNewPokemon.getContentPane().add(lblNewLabel_10, gbc_lblNewLabel_10);
+		JLabel evolveLabel = new JLabel("Evolves from");
+		GridBagConstraints gbc_evolveLabel = new GridBagConstraints();
+		gbc_evolveLabel.anchor = GridBagConstraints.EAST;
+		gbc_evolveLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_evolveLabel.gridx = 0;
+		gbc_evolveLabel.gridy = 10;
+		this.getContentPane().add(evolveLabel, gbc_evolveLabel);
 
-		JComboBox<String> comboBox_2 = new JComboBox<String>();
-		comboBox_2.setToolTipText("Who this new Pokemon should evolve from (Leave Pokemon if none)");
-		comboBox_2.addItem("Pokemon");
+		JComboBox<String> evolveComboBox = new JComboBox<String>();
+		evolveComboBox.setToolTipText("Who this new Pokemon should evolve from (Leave Pokemon if none)");
+		evolveComboBox.addItem("Pokemon");
+		scanPokemons(evolveComboBox);
+		evolveComboBox.setSelectedItem("Pokemon");
 
+		GridBagConstraints gbc_evolveComboBox = new GridBagConstraints();
+		gbc_evolveComboBox.insets = new Insets(0, 0, 5, 5);
+		gbc_evolveComboBox.fill = GridBagConstraints.HORIZONTAL;
+		gbc_evolveComboBox.gridx = 1;
+		gbc_evolveComboBox.gridy = 10;
+		this.getContentPane().add(evolveComboBox, gbc_evolveComboBox);
+
+		JPanel backConfirmPanel = new JPanel();
+		GridBagConstraints gbc_backConfirmPanel = new GridBagConstraints();
+		gbc_backConfirmPanel.insets = new Insets(0, 0, 5, 5);
+		gbc_backConfirmPanel.fill = GridBagConstraints.BOTH;
+		gbc_backConfirmPanel.gridx = 1;
+		gbc_backConfirmPanel.gridy = 11;
+		this.getContentPane().add(backConfirmPanel, gbc_backConfirmPanel);
+		backConfirmPanel.setLayout(new GridLayout(0, 2, 0, 0));
+
+		JButton backButton = new JButton("Back");
+		backButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				launcher.setVisible(true);
+				getFrame().dispose();
+			}
+		});
+		backConfirmPanel.add(backButton);
+
+		JButton addButton = new JButton("Add");
+		addButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				nameLabel.setForeground(Color.BLACK);
+				hpLabel.setForeground(Color.BLACK);
+				atkLabel.setForeground(Color.BLACK);
+				defLabel.setForeground(Color.BLACK);
+				spatkLabel.setForeground(Color.BLACK);
+				spdefLabel.setForeground(Color.BLACK);
+				speedLabel.setForeground(Color.BLACK);
+
+				int answered = 0;
+				// If all fields changed
+				if (nameTextField.getText().equals(""))
+					answered++;
+				if (hpTextField.getText().equals(""))
+					answered++;
+				if (atkTextField.getText().equals(""))
+					answered++;
+				if (defTextField.getText().equals(""))
+					answered++;
+				if (spatkTextField.getText().equals(""))
+					answered++;
+				if (spdefTextField.getText().equals(""))
+					answered++;
+				if (speedTextField.getText().equals(""))
+					answered++;
+
+				// If user filled all fields
+				if (answered == 0) {
+
+					System.out.println(
+							"\n------- All fields has been filled -------\n\nBeginning Pokemon file writing...");
+					if (atkTextField.getText() != "") {
+						Add_Pokemon.generate(nameTextField.getText(), (Types) type1ComboBox.getSelectedItem(),
+								(Types) type2comboBox.getSelectedItem(), Integer.parseInt(hpTextField.getText()),
+								Integer.parseInt(atkTextField.getText()), Integer.parseInt(defTextField.getText()),
+								Integer.parseInt(spatkTextField.getText()), Integer.parseInt(spdefTextField.getText()),
+								Integer.parseInt(speedTextField.getText()),
+								evolveComboBox.getSelectedItem().toString());
+					} else {
+						Add_Pokemon.generate(nameTextField.getText(), (Types) type1ComboBox.getSelectedItem(), null,
+								Integer.parseInt(hpTextField.getText()), Integer.parseInt(atkTextField.getText()),
+								Integer.parseInt(defTextField.getText()), Integer.parseInt(spatkTextField.getText()),
+								Integer.parseInt(spdefTextField.getText()), Integer.parseInt(speedTextField.getText()),
+								evolveComboBox.getSelectedItem().toString());
+					}
+					System.out.println("\n------- Pokemon file writing finished -------");
+					
+					class t extends Thread {
+						public void run() {
+							title.setForeground(Color.GREEN);
+							title.setText(nameTextField.getText() + " has been successfully added");
+							scanPokemons(evolveComboBox);
+							evolveComboBox.setSelectedItem(nameTextField.getText());
+							nameTextField.setText("");
+							hpTextField.setText("");
+							atkTextField.setText("");
+							defTextField.setText("");
+							spatkTextField.setText("");
+							spdefTextField.setText("");
+							speedTextField.setText("");
+							try {
+								Thread.sleep(5000);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+							title.setForeground(Color.BLACK);
+							title.setText("Please complete these fields");
+						}
+					}
+					t t = new t();
+					t.start();
+
+				} else {
+
+					String[] memory = new String[7];
+					memory[0] = nameTextField.getText();
+					memory[1] = hpTextField.getText();
+					memory[2] = atkTextField.getText();
+					memory[3] = defTextField.getText();
+					memory[4] = spatkTextField.getText();
+					memory[5] = spdefTextField.getText();
+					memory[6] = speedTextField.getText();
+
+					for (; answered > 0; answered--) {
+						if (nameTextField.getText().equals("")) {
+							nameLabel.setForeground(Color.RED);
+							nameTextField.setText("Temp");
+						} else if (hpTextField.getText().equals("")) {
+							hpLabel.setForeground(Color.RED);
+							hpTextField.setText("Temp");
+						} else if (atkTextField.getText().equals("")) {
+							atkLabel.setForeground(Color.RED);
+							atkTextField.setText("Temp");
+						} else if (defTextField.getText().equals("")) {
+							defLabel.setForeground(Color.RED);
+							defTextField.setText("Temp");
+						} else if (spatkTextField.getText().equals("")) {
+							spatkLabel.setForeground(Color.RED);
+							spatkTextField.setText("Temp");
+						} else if (spdefTextField.getText().equals("")) {
+							spdefLabel.setForeground(Color.RED);
+							spdefTextField.setText("Temp");
+						} else if (speedTextField.getText().equals("")) {
+							speedLabel.setForeground(Color.RED);
+							speedTextField.setText("Temp");
+						}
+					}
+
+					nameTextField.setText(memory[0]);
+					hpTextField.setText(memory[1]);
+					atkTextField.setText(memory[2]);
+					defTextField.setText(memory[3]);
+					spatkTextField.setText(memory[4]);
+					spdefTextField.setText(memory[5]);
+					speedTextField.setText(memory[6]);
+
+				}
+			}
+		});
+		addButton.setToolTipText("Add this Pokemon to database");
+		addButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		backConfirmPanel.add(addButton);
+	}
+
+	public JFrame getFrame() {
+		return this;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.setTitle("Add new Pokemon");
+		frame.setResizable(false);
+	}
+
+	private void scanPokemons(JComboBox<String> component) {
 		// Scanning for all Pokemon files actually existing
 		System.out.println("-----------------------------\nSCANNING FOR POKEMON FILES\n-----------------------------");
 		FolderScanner fs = new FolderScanner(Paths.get("Pokemon Fighter\\pokemons"), "*.java");
@@ -246,152 +418,8 @@ public class AddPokemonWindow {
 		}
 		Arrays.sort(s);
 		for (int i = 0; i < fs.getFilesList().size(); i++) {
-			comboBox_2.addItem(s[i]);
+			component.addItem(s[i]);
 		}
-		comboBox_2.setSelectedItem("Pokemon");
-
-		GridBagConstraints gbc_comboBox_2 = new GridBagConstraints();
-		gbc_comboBox_2.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox_2.gridx = 1;
-		gbc_comboBox_2.gridy = 10;
-		frmAddNewPokemon.getContentPane().add(comboBox_2, gbc_comboBox_2);
-
-		JPanel panel = new JPanel();
-		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.insets = new Insets(0, 0, 5, 5);
-		gbc_panel.fill = GridBagConstraints.BOTH;
-		gbc_panel.gridx = 1;
-		gbc_panel.gridy = 11;
-		frmAddNewPokemon.getContentPane().add(panel, gbc_panel);
-		panel.setLayout(new GridLayout(0, 2, 0, 0));
-
-		JButton btnNewButton_1 = new JButton("Back");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				launcher.setVisible(true);
-				getFrame().dispose();
-			}
-		});
-		panel.add(btnNewButton_1);
-
-		JButton btnNewButton = new JButton("Confirm");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				lblNewLabel_1.setForeground(Color.BLACK);
-				lblNewLabel_4.setForeground(Color.BLACK);
-				lblNewLabel_5.setForeground(Color.BLACK);
-				lblNewLabel_6.setForeground(Color.BLACK);
-				lblNewLabel_7.setForeground(Color.BLACK);
-				lblNewLabel_8.setForeground(Color.BLACK);
-				lblNewLabel_9.setForeground(Color.BLACK);
-
-				int answered = 0;
-				// If all fields changed
-				if (frmtdtxtfldTest.getText().equals(""))
-					answered++;
-				if (formattedTextField_2.getText().equals(""))
-					answered++;
-				if (formattedTextField.getText().equals(""))
-					answered++;
-				if (formattedTextField_3.getText().equals(""))
-					answered++;
-				if (formattedTextField_4.getText().equals(""))
-					answered++;
-				if (formattedTextField_5.getText().equals(""))
-					answered++;
-				if (formattedTextField_6.getText().equals(""))
-					answered++;
-
-				// If user filled all fields
-				if (answered == 0) {
-
-					System.out.println(
-							"\n------- All fields has been filled -------\n\nBeginning Pokemon file writing...");
-					if (formattedTextField.getText() != "") {
-						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types) comboBox_1.getSelectedItem(),
-								(Types) comboBox.getSelectedItem(), Integer.parseInt(formattedTextField_2.getText()),
-								Integer.parseInt(formattedTextField.getText()),
-								Integer.parseInt(formattedTextField_3.getText()),
-								Integer.parseInt(formattedTextField_4.getText()),
-								Integer.parseInt(formattedTextField_5.getText()),
-								Integer.parseInt(formattedTextField_6.getText()),
-								comboBox_2.getSelectedItem().toString());
-					} else {
-						Add_Pokemon.generate(frmtdtxtfldTest.getText(), (Types) comboBox_1.getSelectedItem(), null,
-								Integer.parseInt(formattedTextField_2.getText()),
-								Integer.parseInt(formattedTextField.getText()),
-								Integer.parseInt(formattedTextField_3.getText()),
-								Integer.parseInt(formattedTextField_4.getText()),
-								Integer.parseInt(formattedTextField_5.getText()),
-								Integer.parseInt(formattedTextField_6.getText()),
-								comboBox_2.getSelectedItem().toString());
-					}
-					System.out.println("\n------- Pokemon file writing finished -------\n\nDestroying this window");
-					launcher.setVisible(true);
-					getFrame().dispose();
-
-				} else {
-
-					String[] memory = new String[7];
-					memory[0] = frmtdtxtfldTest.getText();
-					memory[1] = formattedTextField_2.getText();
-					memory[2] = formattedTextField.getText();
-					memory[3] = formattedTextField_3.getText();
-					memory[4] = formattedTextField_4.getText();
-					memory[5] = formattedTextField_5.getText();
-					memory[6] = formattedTextField_6.getText();
-
-					for (; answered > 0; answered--) {
-						if (frmtdtxtfldTest.getText().equals("")) {
-							lblNewLabel_1.setForeground(Color.RED);
-							frmtdtxtfldTest.setText("Temp");
-						} else if (formattedTextField_2.getText().equals("")) {
-							lblNewLabel_4.setForeground(Color.RED);
-							formattedTextField_2.setText("Temp");
-						} else if (formattedTextField.getText().equals("")) {
-							lblNewLabel_5.setForeground(Color.RED);
-							formattedTextField.setText("Temp");
-						} else if (formattedTextField_3.getText().equals("")) {
-							lblNewLabel_6.setForeground(Color.RED);
-							formattedTextField_3.setText("Temp");
-						} else if (formattedTextField_4.getText().equals("")) {
-							lblNewLabel_7.setForeground(Color.RED);
-							formattedTextField_4.setText("Temp");
-						} else if (formattedTextField_5.getText().equals("")) {
-							lblNewLabel_8.setForeground(Color.RED);
-							formattedTextField_5.setText("Temp");
-						} else if (formattedTextField_6.getText().equals("")) {
-							lblNewLabel_9.setForeground(Color.RED);
-							formattedTextField_6.setText("Temp");
-						}
-					}
-
-					frmtdtxtfldTest.setText(memory[0]);
-					formattedTextField_2.setText(memory[1]);
-					formattedTextField.setText(memory[2]);
-					formattedTextField_3.setText(memory[3]);
-					formattedTextField_4.setText(memory[4]);
-					formattedTextField_5.setText(memory[5]);
-					formattedTextField_6.setText(memory[6]);
-
-				}
-			}
-		});
-		btnNewButton.setToolTipText("Add this Pokemon to database");
-		btnNewButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		panel.add(btnNewButton);
-	}
-
-	public JFrame getFrame() {
-		return frmAddNewPokemon;
-	}
-
-	public void setFrame(JFrame frame) {
-		this.frmAddNewPokemon = frame;
-		frmAddNewPokemon.setTitle("Add new Pokemon");
-		frame.setResizable(false);
 	}
 
 }
