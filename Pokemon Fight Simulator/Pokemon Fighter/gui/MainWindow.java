@@ -16,10 +16,13 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import java.awt.GridLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 
 /**
- * This is the class about the Main this of the program. It will be used for
- * the different menus.
+ * This is the class about the Main this of the program. It will be used for the
+ * different menus.
  * 
  * @author maxim
  */
@@ -38,13 +41,16 @@ public class MainWindow extends JFrame {
 	 */
 	private void initialize() {
 		this.setTitle("Pokemon Fight Simulator");
-		this.setBounds(0, 0, 450, 300);
+		this.setSize(480, 400);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 
-		playMenu();
+		mainMenu();
 	}
 
+	/**
+	 * Displays Main Menu.
+	 */
 	private void mainMenu() {
 		this.getContentPane().setName("mainMenu");
 		this.getContentPane().removeAll();
@@ -58,31 +64,58 @@ public class MainWindow extends JFrame {
 
 		JPanel centerContainer = new JPanel();
 		this.getContentPane().add(centerContainer, BorderLayout.CENTER);
+
+		JButton multiPlayerButton = new JButton("Multiplayer");
+		multiPlayerButton.setAlignmentX(0.5f);
+		multiPlayerButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		multiPlayerButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.err.println("Not available yet!");
+			}
+		});
 		centerContainer.setLayout(new BoxLayout(centerContainer, BoxLayout.Y_AXIS));
 
 		JSeparator separator = new JSeparator();
 		separator.setOrientation(SwingConstants.VERTICAL);
 		centerContainer.add(separator);
 
-		JButton playButton = new JButton("Play");
-		playButton.addActionListener(new ActionListener() {
+		JButton singlePlayerButton = new JButton("Single Player");
+		singlePlayerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		singlePlayerButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				playMenu();
+				System.out.println("Beginning a new Single Player fight.");
+				EventQueue.invokeLater(new Runnable() {
+					@Override
+					public void run() {
+						try {
+							FightWindow player1 = new FightWindow(100, 100);
+							player1.getFrame().setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				EventQueue.invokeLater(new Runnable() {
+					@Override
+					public void run() {
+						try {
+							FightWindow player2 = new FightWindow(580, 100);
+							player2.getFrame().setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				getFrame().dispose();
 			}
 		});
-		playButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		playButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		centerContainer.add(playButton);
-
-		JButton optionsButton = new JButton("Options");
-		optionsButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				optionsMenu();
-			}
-		});
-		optionsButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		centerContainer.add(optionsButton);
+		singlePlayerButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+		singlePlayerButton.setAlignmentY(Component.CENTER_ALIGNMENT);
+		centerContainer.add(singlePlayerButton);
+		multiPlayerButton.setAlignmentY(Component.CENTER_ALIGNMENT);
+		centerContainer.add(multiPlayerButton);
 
 		JButton exitButton = new JButton("Exit Game");
 		exitButton.addActionListener(new ActionListener() {
@@ -92,6 +125,15 @@ public class MainWindow extends JFrame {
 				System.exit(0);
 			}
 		});
+
+		JButton optionsButton = new JButton("Options");
+		optionsButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				optionsMenu();
+			}
+		});
+		optionsButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		centerContainer.add(optionsButton);
 		exitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 		centerContainer.add(exitButton);
 
@@ -111,10 +153,13 @@ public class MainWindow extends JFrame {
 		addPokemonButton.setToolTipText(
 				"Opens a new this where you can answer fields corresponding to this new Pokemon's statistics and adds it to the program's database.");
 		this.getContentPane().add(addPokemonButton, BorderLayout.SOUTH);
-		
+
 		this.repaint();
 	}
 
+	/**
+	 * Displays Play Menu.
+	 */
 	private void playMenu() {
 		this.getContentPane().removeAll();
 		this.getContentPane().setName("playMenu");
@@ -129,57 +174,10 @@ public class MainWindow extends JFrame {
 		JPanel centerContainer = new JPanel();
 		this.getContentPane().add(centerContainer, BorderLayout.CENTER);
 
-		JButton singlePlayerButton = new JButton("Single Player");
-		singlePlayerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		singlePlayerButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("Beginning a new Single Player fight.");
-				EventQueue.invokeLater(new Runnable() {
-					@Override
-					public void run() {
-						try {
-							FightWindow player1 = new FightWindow();
-							player1.getFrame().setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-				EventQueue.invokeLater(new Runnable() {
-					@Override
-					public void run() {
-						try {
-							FightWindow player2 = new FightWindow();
-							player2.getFrame().setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-			}
-		});
-		centerContainer.setLayout(new GridLayout(0, 1, 0, 0));
-		singlePlayerButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		singlePlayerButton.setAlignmentY(Component.CENTER_ALIGNMENT);
-		centerContainer.add(singlePlayerButton);
-
-		JButton multiPlayerButton = new JButton("Multiplayer");
-		multiPlayerButton.setAlignmentX(0.5f);
-		multiPlayerButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		multiPlayerButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.err.println("Not available yet!");
-			}
-		});
-		multiPlayerButton.setAlignmentY(Component.CENTER_ALIGNMENT);
-		centerContainer.add(multiPlayerButton);
-		
 		JPanel downContainer = new JPanel();
 		getContentPane().add(downContainer, BorderLayout.SOUTH);
 		downContainer.setLayout(new BoxLayout(downContainer, BoxLayout.X_AXIS));
-		
+
 		JButton backButtonOptions = new JButton("Back");
 		backButtonOptions.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		downContainer.add(backButtonOptions);
@@ -191,16 +189,26 @@ public class MainWindow extends JFrame {
 				mainMenu();
 			}
 		});
-		
-		this.getContentPane().repaint();
+
+		this.repaint();
 	}
 
+	/**
+	 * Displays Options Menu.
+	 */
 	private void optionsMenu() {
 		this.getContentPane().setName("optionsMenu");
 		this.getContentPane().removeAll();
 
+		this.pack();
+		this.setSize(1280, 720);
 	}
 
+	/**
+	 * Used to get this Frame.
+	 * 
+	 * @return This frame.
+	 */
 	public JFrame getFrame() {
 		return this;
 	}
