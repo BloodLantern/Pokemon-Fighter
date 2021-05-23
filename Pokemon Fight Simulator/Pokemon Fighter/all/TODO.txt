@@ -1,0 +1,6 @@
+- Faire fight GUI
+	- Choisir les actions en même temps
+	- 1 window par Player
+- Si un switch survient en même temps qu'une attaque, c'est le sitch qui se fait en 1er
+- Si 2 switch sont en meme temps, peu importe donc c'est le plus rapide en premier
+- Le Pokemon le plus rapide attaque en premier puis l'autre
